@@ -1,8 +1,0 @@
-{
-  "remove": [
-    "#oresandtools:needs_emerald_tool"
-  ],
-  "values": [
-    "#minecraft:incorrect_for_diamond_tool"
-  ]
-}

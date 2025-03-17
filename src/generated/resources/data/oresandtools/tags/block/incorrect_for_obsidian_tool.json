@@ -1,9 +1,0 @@
-{
-  "remove": [
-    "#oresandtools:needs_obsidian_tool"
-  ],
-  "values": [
-    "#minecraft:incorrect_for_diamond_tool",
-    "minecraft:obsidian"
-  ]
-}
