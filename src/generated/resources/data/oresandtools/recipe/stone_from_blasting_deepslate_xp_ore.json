@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:blasting",
+  "category": "blocks",
+  "cookingtime": 200,
+  "experience": 5.0,
+  "group": "xp",
+  "ingredient": {
+    "item": "oresandtools:deepslate_xp_ore"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:stone"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:apple"
+    },
+    "O": {
+      "item": "oresandtools:obsidian_shard"
+    },
+    "V": {
+      "item": "oresandtools:valyrian_dust"
+    }
+  },
+  "pattern": [
+    "VOV",
+    "OAO",
+    "VOV"
+  ],
+  "result": {
+    "count": 1,
+    "id": "oresandtools:dragons_apple"
+  }
+}

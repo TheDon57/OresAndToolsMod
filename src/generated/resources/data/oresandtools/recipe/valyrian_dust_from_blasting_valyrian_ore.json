@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 90,
+  "experience": 2.0,
+  "group": "valyrian_dust",
+  "ingredient": {
+    "item": "oresandtools:valyrian_ore"
+  },
+  "result": {
+    "count": 1,
+    "id": "oresandtools:valyrian_dust"
+  }
+}

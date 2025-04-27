@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.75,
+  "group": "uranium_ingot",
+  "ingredient": {
+    "item": "oresandtools:deepslate_uranium_ore"
+  },
+  "result": {
+    "count": 1,
+    "id": "oresandtools:uranium_ingot"
+  }
+}

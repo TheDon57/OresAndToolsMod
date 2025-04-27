@@ -1,0 +1,6 @@
+{
+    "parent": "item/bow",
+    "textures": {
+        "layer0": "oresandtools:item/valyrian_bow_pulling_0"
+    }
+}

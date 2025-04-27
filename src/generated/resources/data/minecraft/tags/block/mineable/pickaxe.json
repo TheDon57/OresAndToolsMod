@@ -1,0 +1,20 @@
+{
+  "values": [
+    "oresandtools:hardened_diamond_block",
+    "oresandtools:steel_block",
+    "oresandtools:valyrian_ore",
+    "oresandtools:deepslate_valyrian_ore",
+    "oresandtools:endstone_valyrian_ore",
+    "oresandtools:obsidian_ore",
+    "oresandtools:deepslate_obsidian_ore",
+    "oresandtools:xp_ore",
+    "oresandtools:deepslate_xp_ore",
+    "oresandtools:uranium_ore",
+    "oresandtools:deepslate_uranium_ore",
+    "oresandtools:molten_copper_ore",
+    "oresandtools:molten_iron_ore",
+    "oresandtools:molten_gold_ore",
+    "oresandtools:molten_uranium_ore",
+    "oresandtools:molten_stone"
+  ]
+}

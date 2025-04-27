@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_overworld",
+  "features": [
+    "oresandtools:ore_obsidian_small",
+    "oresandtools:ore_obsidian_middle",
+    "oresandtools:ore_obsidian_large"
+  ],
+  "step": "underground_ores"
+}

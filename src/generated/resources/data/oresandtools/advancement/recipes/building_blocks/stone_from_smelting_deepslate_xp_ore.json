@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_deepslate_xp_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": "oresandtools:deepslate_xp_ore"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "oresandtools:stone_from_smelting_deepslate_xp_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_deepslate_xp_ore"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "oresandtools:stone_from_smelting_deepslate_xp_ore"
+    ]
+  }
+}

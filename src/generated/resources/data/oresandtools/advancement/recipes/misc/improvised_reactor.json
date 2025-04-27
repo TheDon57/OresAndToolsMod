@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_improvised_reactor": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#oresandtools:improvised_reactor_materials"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "oresandtools:improvised_reactor"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_improvised_reactor"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "oresandtools:improvised_reactor"
+    ]
+  }
+}

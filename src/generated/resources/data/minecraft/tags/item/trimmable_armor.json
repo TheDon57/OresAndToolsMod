@@ -1,0 +1,32 @@
+{
+  "values": [
+    "oresandtools:copper_helmet",
+    "oresandtools:copper_chestplate",
+    "oresandtools:copper_leggings",
+    "oresandtools:copper_boots",
+    "oresandtools:steel_helmet",
+    "oresandtools:steel_chestplate",
+    "oresandtools:steel_leggings",
+    "oresandtools:steel_boots",
+    "oresandtools:valyrian_helmet",
+    "oresandtools:valyrian_chestplate",
+    "oresandtools:valyrian_leggings",
+    "oresandtools:valyrian_boots",
+    "oresandtools:hardened_diamond_helmet",
+    "oresandtools:hardened_diamond_chestplate",
+    "oresandtools:hardened_diamond_leggings",
+    "oresandtools:hardened_diamond_boots",
+    "oresandtools:hot_hardened_diamond_helmet",
+    "oresandtools:hot_hardened_diamond_chestplate",
+    "oresandtools:hot_hardened_diamond_leggings",
+    "oresandtools:hot_hardened_diamond_boots",
+    "oresandtools:emerald_helmet",
+    "oresandtools:emerald_chestplate",
+    "oresandtools:emerald_leggings",
+    "oresandtools:emerald_boots",
+    "oresandtools:obsidian_helmet",
+    "oresandtools:obsidian_chestplate",
+    "oresandtools:obsidian_leggings",
+    "oresandtools:obsidian_boots"
+  ]
+}

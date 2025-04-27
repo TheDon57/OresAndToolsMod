@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_hot_hardened_diamond": {
+      "conditions": {
+        "items": [
+          {
+            "items": "oresandtools:hot_hardened_diamond"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "oresandtools:hot_hardened_diamond_helmet"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_hot_hardened_diamond"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "oresandtools:hot_hardened_diamond_helmet"
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_overworld",
+  "features": [
+    "oresandtools:ore_xp_small",
+    "oresandtools:ore_xp_middle",
+    "oresandtools:ore_xp_large"
+  ],
+  "step": "underground_ores"
+}

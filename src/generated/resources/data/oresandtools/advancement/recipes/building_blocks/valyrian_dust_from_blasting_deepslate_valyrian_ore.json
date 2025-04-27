@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_deepslate_valyrian_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": "oresandtools:deepslate_valyrian_ore"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "oresandtools:valyrian_dust_from_blasting_deepslate_valyrian_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_deepslate_valyrian_ore"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "oresandtools:valyrian_dust_from_blasting_deepslate_valyrian_ore"
+    ]
+  }
+}

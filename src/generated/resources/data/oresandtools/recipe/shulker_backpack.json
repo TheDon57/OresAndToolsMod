@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": {
+      "item": "minecraft:ender_eye"
+    },
+    "I": {
+      "item": "oresandtools:valyrian_ingot"
+    },
+    "L": {
+      "item": "oresandtools:valyrian_leather"
+    },
+    "S": {
+      "item": "minecraft:shulker_box"
+    }
+  },
+  "pattern": [
+    "LSL",
+    "IEI",
+    "LSL"
+  ],
+  "result": {
+    "count": 1,
+    "id": "oresandtools:shulker_backpack"
+  }
+}

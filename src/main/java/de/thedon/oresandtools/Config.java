@@ -1,63 +1,68 @@
 package de.thedon.oresandtools;
 
-import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
-
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.config.ModConfigEvent;
 import net.neoforged.neoforge.common.ModConfigSpec;
 
-// An example config class. This is not required, but it's a good idea to have one to keep your config organized.
-// Demonstrates how to use Neo's config APIs
 @EventBusSubscriber(modid = OresAndToolsMod.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
 public class Config
 {
     private static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
 
-    private static final ModConfigSpec.BooleanValue LOG_DIRT_BLOCK = BUILDER
-            .comment("Whether to log the dirt block on common setup")
-            .define("logDirtBlock", true);
+    private static final ModConfigSpec.IntValue IMPRO_REACTOR_BURN_TIME = BUILDER
+            .comment("Burn time of the improvised reactor in the furnace")
+            .defineInRange("impro_reactor_burn_time", 204800, 1200, Integer.MAX_VALUE);
 
-    private static final ModConfigSpec.IntValue MAGIC_NUMBER = BUILDER
-            .comment("A magic number")
-            .defineInRange("magicNumber", 42, 0, Integer.MAX_VALUE);
+    private static final ModConfigSpec.IntValue URANIUM_DAMAGE_TICKRATE = BUILDER
+            .comment("After how many ticks the player will get damage from the uranium ingot")
+            .defineInRange("uranium_damage_tickrate", 100, 50, 1200);
 
-    public static final ModConfigSpec.ConfigValue<String> MAGIC_NUMBER_INTRODUCTION = BUILDER
-            .comment("What you want the introduction message to be for the magic number")
-            .define("magicNumberIntroduction", "The magic number is... ");
+    private static final ModConfigSpec.IntValue URANIUM_DAMAGE_AMOUNT = BUILDER
+            .comment("How much damage the player will get damage from the uranium ingot in the specified tickrate")
+            .defineInRange("uranium_damage_amount", 3, 1, 10);
 
-    // a list of strings that are treated as resource locations for items
-    private static final ModConfigSpec.ConfigValue<List<? extends String>> ITEM_STRINGS = BUILDER
-            .comment("A list of items to log on common setup.")
-            .defineListAllowEmpty("items", List.of("minecraft:iron_ingot"), Config::validateItemName);
+    private static final ModConfigSpec.BooleanValue DISABLE_SET_BONUSES = BUILDER
+            .comment("Disables all armor set bonuses")
+            .define("disable_set_bonuses", false);
+
+    private static final ModConfigSpec.IntValue HOT_DIA_FIRE_REFLECT_DURATION = BUILDER
+            .comment("How long enemies will burn if the hit you when you wear full hot diamond armor")
+            .defineInRange("hot_dia_fire_reflect_duration", 1, 1, Integer.MAX_VALUE);
+
+    private static final ModConfigSpec.BooleanValue DISABLE_HOT_DIA_FIRE_ASPECT = BUILDER
+            .comment("Disables the fire aspect effect for hot dia tool or sword")
+            .define("disable_hot_dia_fire_aspect", false);
+
+    private static final ModConfigSpec.IntValue HOT_DIA_FIRE_ASPECT_DURATION = BUILDER
+            .comment("How long enemies will burn if you them with hot dia tool or sword")
+            .defineInRange("hot_dia_fire_aspect_duration", 5, 1, Integer.MAX_VALUE);
+
+    private static final ModConfigSpec.DoubleValue VILLAGER_EMERALD_DROP_CHANCE = BUILDER
+            .comment("Probability that a villager will drop a emerald if killy be emerald sword")
+            .defineInRange("villager_emerald_drop_chance", 0.15, 0.01, 1.0);
 
     static final ModConfigSpec SPEC = BUILDER.build();
 
-    public static boolean logDirtBlock;
-    public static int magicNumber;
-    public static String magicNumberIntroduction;
-    public static Set<Item> items;
-
-    private static boolean validateItemName(final Object obj)
-    {
-        return obj instanceof String itemName && BuiltInRegistries.ITEM.containsKey(ResourceLocation.parse(itemName));
-    }
+    public static int improReactorBurnTime;
+    public static int uraniumDamageTickrate;
+    public static int uraniumDamageAmount;
+    public static boolean disableSetBonuses;
+    public static int hotDiaFireReflectDuration;
+    public static boolean disableHotDiaFireAspect;
+    public static int hotDiaFireAspectDuration;
+    public static double villagerEmeraldDropChance;
 
     @SubscribeEvent
     static void onLoad(final ModConfigEvent event)
     {
-        logDirtBlock = LOG_DIRT_BLOCK.get();
-        magicNumber = MAGIC_NUMBER.get();
-        magicNumberIntroduction = MAGIC_NUMBER_INTRODUCTION.get();
-
-        // convert the list of strings into a set of items
-        items = ITEM_STRINGS.get().stream()
-                .map(itemName -> BuiltInRegistries.ITEM.getValue(ResourceLocation.parse(itemName)))
-                .collect(Collectors.toSet());
+        improReactorBurnTime = IMPRO_REACTOR_BURN_TIME.get();
+        uraniumDamageTickrate = URANIUM_DAMAGE_TICKRATE.get();
+        uraniumDamageAmount = URANIUM_DAMAGE_AMOUNT.get();
+        disableSetBonuses = DISABLE_SET_BONUSES.get();
+        hotDiaFireReflectDuration = HOT_DIA_FIRE_REFLECT_DURATION.get();
+        disableHotDiaFireAspect = DISABLE_HOT_DIA_FIRE_ASPECT.get();
+        hotDiaFireAspectDuration = HOT_DIA_FIRE_ASPECT_DURATION.get();
+        villagerEmeraldDropChance = VILLAGER_EMERALD_DROP_CHANCE.get();
     }
 }

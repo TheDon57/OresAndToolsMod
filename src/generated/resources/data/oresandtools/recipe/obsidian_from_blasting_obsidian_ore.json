@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:blasting",
+  "category": "blocks",
+  "cookingtime": 300,
+  "experience": 3.0,
+  "group": "obsidian",
+  "ingredient": {
+    "item": "oresandtools:obsidian_ore"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:obsidian"
+  }
+}

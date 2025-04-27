@@ -1,0 +1,17 @@
+{
+    "sources": [
+        {
+            "type": "single",
+            "resource": "entity/obsidian_shield_base"
+        },
+        {
+            "type": "single",
+            "resource": "entity/obsidian_shield_base_nopattern"
+        },
+        {
+            "type": "directory",
+            "source": "entity/obsidian_shield",
+            "prefix": "entity/obsidian_shield/"
+        }
+    ]
+}

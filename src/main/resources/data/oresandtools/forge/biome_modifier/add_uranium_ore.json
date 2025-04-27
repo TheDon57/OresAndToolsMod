@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_overworld",
+  "features": [
+    "oresandtools:ore_uranium_small",
+    "oresandtools:ore_uranium_middle",
+    "oresandtools:ore_uranium_large"
+  ],
+  "step": "underground_ores"
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "oresandtools:item/hot_hardened_diamond_axe"
+  }
+}

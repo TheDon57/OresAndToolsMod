@@ -1,0 +1,8 @@
+{
+  "remove": [
+    "#oresandtools:needs_hardened_diamond_tool"
+  ],
+  "values": [
+    "#minecraft:incorrect_for_diamond_tool"
+  ]
+}
