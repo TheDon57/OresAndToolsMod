@@ -20,14 +20,14 @@ public class ModItem extends Item {
 
     @Override
     @ParametersAreNonnullByDefault
-    public void appendHoverText(ItemStack pStack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
         if (withTooltip) {
             if (Screen.hasShiftDown()) {
-                pTooltipComponents.add(Component.translatable("tooltip." + this.getDescriptionId().substring(5)));
+                tooltipComponents.add(Component.translatable("tooltip." + this.getDescriptionId().substring(5)));
             } else {
-                pTooltipComponents.add(Component.translatable("tooltip." + OresAndToolsMod.MOD_ID + ".hold_shift"));
+                tooltipComponents.add(Component.translatable("tooltip." + OresAndToolsMod.MOD_ID + ".hold_shift"));
             }
         }
-        super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
+        super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
     }
 }

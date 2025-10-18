@@ -5,7 +5,7 @@ import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 
-public class PropertyRegistration {
+public class ModItemProperties {
     public static void registerProperties() {
         registerShieldProperty(ModItems.OBSIDIAN_SHIELD.get());
         registerBowProperty(ModItems.VALYRIAN_BOW.get());

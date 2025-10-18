@@ -3,8 +3,8 @@ package de.thedon.oresandtools.render;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import de.thedon.oresandtools.block.ModBlocks;
-import de.thedon.oresandtools.entity.ModBlockEntities;
-import de.thedon.oresandtools.entity.ValyrianChestBlockEntity;
+import de.thedon.oresandtools.block.entity.ModBlockEntities;
+import de.thedon.oresandtools.block.entity.ValyrianChestBlockEntity;
 import de.thedon.oresandtools.item.ModItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ShieldModel;
@@ -52,14 +52,14 @@ public class ModBEWLRenderer extends BlockEntityWithoutLevelRenderer {
     }
 
     @Override
-    public void onResourceManagerReload(@NotNull ResourceManager pResourceManager) {
+    public void onResourceManagerReload(@NotNull ResourceManager resourceManager) {
         this.shieldModel = new ShieldModel(this.entityModelSet.bakeLayer(ModelLayers.SHIELD));
     }
 
     @Override
     @ParametersAreNonnullByDefault
-    public void renderByItem(ItemStack pStack, ItemDisplayContext pDisplayContext, PoseStack pPoseStack, MultiBufferSource pBuffer, int pPackedLight, int pPackedOverlay) {
-        Item item = pStack.getItem();
+    public void renderByItem(ItemStack stack, ItemDisplayContext displayContext, PoseStack poseStack, MultiBufferSource buffer, int packedLight, int packedOverlay) {
+        Item item = stack.getItem();
         if (item instanceof BlockItem blockItem) {
             Block block = blockItem.getBlock();
             BlockState blockstate = block.defaultBlockState();
@@ -69,46 +69,34 @@ public class ModBEWLRenderer extends BlockEntityWithoutLevelRenderer {
             } else {
                 return;
             }
-            this.blockEntityRenderDispatcher.renderItem(blockentity, pPoseStack, pBuffer, pPackedLight, pPackedOverlay);
+            this.blockEntityRenderDispatcher.renderItem(blockentity, poseStack, buffer, packedLight, packedOverlay);
         } else {
-            if (pStack.is(ModItems.OBSIDIAN_SHIELD.get())) {
-                BannerPatternLayers bannerpatternlayers = pStack.getOrDefault(DataComponents.BANNER_PATTERNS, BannerPatternLayers.EMPTY);
-                DyeColor dyecolor = pStack.get(DataComponents.BASE_COLOR);
+            if (stack.is(ModItems.OBSIDIAN_SHIELD.get())) {
+                BannerPatternLayers bannerpatternlayers = stack.getOrDefault(DataComponents.BANNER_PATTERNS, BannerPatternLayers.EMPTY);
+                DyeColor dyecolor = stack.get(DataComponents.BASE_COLOR);
                 boolean flag = !bannerpatternlayers.layers().isEmpty() || dyecolor != null;
-                pPoseStack.pushPose();
-                pPoseStack.scale(1.0F, -1.0F, -1.0F);
+                poseStack.pushPose();
+                poseStack.scale(1.0F, -1.0F, -1.0F);
                 Material material = flag ? OBSIDIAN_SHIELD_BASE : NO_PATTERN_OBSIDIAN_SHIELD;
-                VertexConsumer vertexconsumer = material.sprite()
-                        .wrap(ItemRenderer.getFoilBufferDirect(pBuffer, this.shieldModel.renderType(material.atlasLocation()), true, pStack.hasFoil()));
-                this.shieldModel.handle().render(pPoseStack, vertexconsumer, pPackedLight, pPackedOverlay);
+                VertexConsumer vertexconsumer = material.sprite().wrap(ItemRenderer.getFoilBuffer(buffer, this.shieldModel.renderType(material.atlasLocation()), displayContext == ItemDisplayContext.GUI, stack.hasFoil()));
+                this.shieldModel.handle().render(poseStack, vertexconsumer, packedLight, packedOverlay);
                 if (flag) {
-                    BannerRenderer.renderPatterns(
-                            pPoseStack,
-                            pBuffer,
-                            pPackedLight,
-                            pPackedOverlay,
-                            this.shieldModel.plate(),
-                            material,
-                            false,
-                            Objects.requireNonNullElse(dyecolor, DyeColor.WHITE),
-                            bannerpatternlayers,
-                            pStack.hasFoil()
-                    );
+                    BannerRenderer.renderPatterns(poseStack, buffer, packedLight, packedOverlay, this.shieldModel.plate(), material, false, Objects.requireNonNullElse(dyecolor, DyeColor.WHITE), bannerpatternlayers, stack.hasFoil(), false);
                 } else {
-                    this.shieldModel.plate().render(pPoseStack, vertexconsumer, pPackedLight, pPackedOverlay);
+                    this.shieldModel.plate().render(poseStack, vertexconsumer, packedLight, packedOverlay);
                 }
 
-                pPoseStack.popPose();
+                poseStack.popPose();
             }
         }
     }
 
-    public static void registerItem(RegisterClientExtensionsEvent event, Item pItem) {
+    public static void registerItem(RegisterClientExtensionsEvent event, Item item) {
         event.registerItem(new IClientItemExtensions() {
             @Override
             public @NotNull BlockEntityWithoutLevelRenderer getCustomRenderer() {
                 return new ModBEWLRenderer();
             }
-        }, pItem);
+        }, item);
     }
 }

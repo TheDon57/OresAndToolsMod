@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "D": {
-      "item": "minecraft:diamond"
-    },
-    "O": {
-      "item": "minecraft:obsidian"
-    }
+    "D": "minecraft:diamond",
+    "O": "minecraft:obsidian"
   },
   "pattern": [
     "ODO",

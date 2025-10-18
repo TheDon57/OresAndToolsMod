@@ -11,33 +11,33 @@ import java.util.List;
 public class ModAxeItem extends AxeItem {
     private final boolean withToolTip;
 
-    public ModAxeItem(Tier tier, Properties properties) {
-        this(tier, properties, false);
+    public ModAxeItem(ToolMaterial material, Properties properties) {
+        this(material, properties, false);
     }
 
-    public ModAxeItem(Tier tier, Properties properties, boolean withToolTip) {
-        this(tier, 6f, -3.1f, properties, withToolTip);
+    public ModAxeItem(ToolMaterial material, Properties properties, boolean withToolTip) {
+        this(material, 6f, -3.1f, properties, withToolTip);
     }
 
-    public ModAxeItem(Tier tier, float attackDamage, float attackSpeed, Properties properties) {
-        this(tier, attackDamage, attackSpeed, properties, false);
+    public ModAxeItem(ToolMaterial material, float attackDamage, float attackSpeed, Properties properties) {
+        this(material, attackDamage, attackSpeed, properties, false);
     }
 
-    public ModAxeItem(Tier tier, float attackDamage, float attackSpeed, Properties properties, boolean withToolTip) {
-        super(tier, properties.attributes(AxeItem.createAttributes(tier, attackDamage, attackSpeed)));
+    public ModAxeItem(ToolMaterial material, float attackDamage, float attackSpeed, Properties properties, boolean withToolTip) {
+        super(material, attackDamage, attackSpeed, properties);
         this.withToolTip = withToolTip;
     }
 
     @Override
     @ParametersAreNonnullByDefault
-    public void appendHoverText(ItemStack pStack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
+    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
         if (withToolTip) {
             if (Screen.hasShiftDown()) {
-                pTooltipComponents.add(Component.translatable("tooltip." + this.getDescriptionId().substring(5)));
+                tooltipComponents.add(Component.translatable("tooltip." + this.getDescriptionId().substring(5)));
             } else {
-                pTooltipComponents.add(Component.translatable("tooltip." + OresAndToolsMod.MOD_ID + ".hold_shift"));
+                tooltipComponents.add(Component.translatable("tooltip." + OresAndToolsMod.MOD_ID + ".hold_shift"));
             }
         }
-        super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
+        super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
     }
 }

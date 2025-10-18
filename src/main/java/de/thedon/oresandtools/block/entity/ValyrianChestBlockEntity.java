@@ -1,7 +1,7 @@
-package de.thedon.oresandtools.entity;
+package de.thedon.oresandtools.block.entity;
 
 import de.thedon.oresandtools.OresAndToolsMod;
-import de.thedon.oresandtools.inventory.ValyrianChestMenu;
+import de.thedon.oresandtools.screen.custom.ValyrianChestMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;

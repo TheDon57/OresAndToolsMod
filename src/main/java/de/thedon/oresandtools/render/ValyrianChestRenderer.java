@@ -4,8 +4,8 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
 import de.thedon.oresandtools.block.ModBlocks;
-import de.thedon.oresandtools.block.ValyrianChestBlock;
-import de.thedon.oresandtools.entity.ValyrianChestBlockEntity;
+import de.thedon.oresandtools.block.custom.ValyrianChestBlock;
+import de.thedon.oresandtools.block.entity.ValyrianChestBlockEntity;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -41,70 +41,70 @@ public class ValyrianChestRenderer extends ChestRenderer<ValyrianChestBlockEntit
     private final ModelPart doubleRightBottom;
     private final ModelPart doubleRightLock;
 
-    public ValyrianChestRenderer(BlockEntityRendererProvider.Context pContext) {
-        super(pContext);
+    public ValyrianChestRenderer(BlockEntityRendererProvider.Context context) {
+        super(context);
 
-        ModelPart modelpart = pContext.bakeLayer(ModelLayers.CHEST);
+        ModelPart modelpart = context.bakeLayer(ModelLayers.CHEST);
         this.bottom = modelpart.getChild("bottom");
         this.lid = modelpart.getChild("lid");
         this.lock = modelpart.getChild("lock");
-        ModelPart modelpart1 = pContext.bakeLayer(ModelLayers.DOUBLE_CHEST_LEFT);
+        ModelPart modelpart1 = context.bakeLayer(ModelLayers.DOUBLE_CHEST_LEFT);
         this.doubleLeftBottom = modelpart1.getChild("bottom");
         this.doubleLeftLid = modelpart1.getChild("lid");
         this.doubleLeftLock = modelpart1.getChild("lock");
-        ModelPart modelpart2 = pContext.bakeLayer(ModelLayers.DOUBLE_CHEST_RIGHT);
+        ModelPart modelpart2 = context.bakeLayer(ModelLayers.DOUBLE_CHEST_RIGHT);
         this.doubleRightBottom = modelpart2.getChild("bottom");
         this.doubleRightLid = modelpart2.getChild("lid");
         this.doubleRightLock = modelpart2.getChild("lock");
     }
 
     @Override
-    public void render(ValyrianChestBlockEntity pBlockEntity, float pPartialTick, PoseStack pPoseStack, MultiBufferSource pBuffer, int pPackedLight, int pPackedOverlay) {
-        Level level = pBlockEntity.getLevel();
+    public void render(ValyrianChestBlockEntity blockEntity, float partialTick, @NotNull PoseStack poseStack, @NotNull MultiBufferSource buffer, int packedLight, int packedOverlay) {
+        Level level = blockEntity.getLevel();
         boolean flag = level != null;
-        BlockState blockstate = flag ? pBlockEntity.getBlockState() : ModBlocks.VALYRIAN_CHEST.get().defaultBlockState().setValue(ValyrianChestBlock.FACING, Direction.SOUTH);
+        BlockState blockstate = flag ? blockEntity.getBlockState() : ModBlocks.VALYRIAN_CHEST.get().defaultBlockState().setValue(ValyrianChestBlock.FACING, Direction.SOUTH);
         ChestType chesttype = blockstate.hasProperty(ValyrianChestBlock.TYPE) ? blockstate.getValue(ValyrianChestBlock.TYPE) : ChestType.SINGLE;
         Block block = blockstate.getBlock();
         if (block instanceof ValyrianChestBlock valyrianChestBlock) {
             boolean flag1 = chesttype != ChestType.SINGLE;
-            pPoseStack.pushPose();
+            poseStack.pushPose();
             float f = blockstate.getValue(ValyrianChestBlock.FACING).toYRot();
-            pPoseStack.translate(0.5F, 0.5F, 0.5F);
-            pPoseStack.mulPose(Axis.YP.rotationDegrees(-f));
-            pPoseStack.translate(-0.5F, -0.5F, -0.5F);
+            poseStack.translate(0.5F, 0.5F, 0.5F);
+            poseStack.mulPose(Axis.YP.rotationDegrees(-f));
+            poseStack.translate(-0.5F, -0.5F, -0.5F);
             DoubleBlockCombiner.NeighborCombineResult<? extends ValyrianChestBlockEntity> neighborcombineresult;
             if (flag) {
-                neighborcombineresult = valyrianChestBlock.combine(blockstate, level, pBlockEntity.getBlockPos(), true);
+                neighborcombineresult = valyrianChestBlock.combine(blockstate, level, blockEntity.getBlockPos(), true);
             } else {
                 neighborcombineresult = DoubleBlockCombiner.Combiner::acceptNone;
             }
 
-            float f1 = neighborcombineresult.apply(ValyrianChestBlock.opennessCombiner(pBlockEntity)).get(pPartialTick);
+            float f1 = neighborcombineresult.apply(ValyrianChestBlock.opennessCombiner(blockEntity)).get(partialTick);
             f1 = 1.0F - f1;
             f1 = 1.0F - f1 * f1 * f1;
-            int i = neighborcombineresult.apply(new BrightnessCombiner<>()).applyAsInt(pPackedLight);
-            Material material = this.getMaterial(pBlockEntity, chesttype);
-            VertexConsumer vertexconsumer = material.buffer(pBuffer, RenderType::entityCutout);
+            int i = neighborcombineresult.apply(new BrightnessCombiner<>()).applyAsInt(packedLight);
+            Material material = this.getMaterial(blockEntity, chesttype);
+            VertexConsumer vertexconsumer = material.buffer(buffer, RenderType::entityCutout);
             if (flag1) {
                 if (chesttype == ChestType.LEFT) {
-                    this.render(pPoseStack, vertexconsumer, this.doubleLeftLid, this.doubleLeftLock, this.doubleLeftBottom, f1, i, pPackedOverlay);
+                    this.render(poseStack, vertexconsumer, this.doubleLeftLid, this.doubleLeftLock, this.doubleLeftBottom, f1, i, packedOverlay);
                 } else {
-                    this.render(pPoseStack, vertexconsumer, this.doubleRightLid, this.doubleRightLock, this.doubleRightBottom, f1, i, pPackedOverlay);
+                    this.render(poseStack, vertexconsumer, this.doubleRightLid, this.doubleRightLock, this.doubleRightBottom, f1, i, packedOverlay);
                 }
             } else {
-                this.render(pPoseStack, vertexconsumer, this.lid, this.lock, this.bottom, f1, i, pPackedOverlay);
+                this.render(poseStack, vertexconsumer, this.lid, this.lock, this.bottom, f1, i, packedOverlay);
             }
 
-            pPoseStack.popPose();
+            poseStack.popPose();
         }
     }
 
-    private void render(PoseStack pPoseStack, VertexConsumer pConsumer, ModelPart pLidPart, ModelPart pLockPart, ModelPart pBottomPart, float pLidAngle, int pPackedLight, int pPackedOverlay) {
-        pLidPart.xRot = -(pLidAngle * ((float)Math.PI / 2F));
-        pLockPart.xRot = pLidPart.xRot;
-        pLidPart.render(pPoseStack, pConsumer, pPackedLight, pPackedOverlay);
-        pLockPart.render(pPoseStack, pConsumer, pPackedLight, pPackedOverlay);
-        pBottomPart.render(pPoseStack, pConsumer, pPackedLight, pPackedOverlay);
+    private void render(PoseStack poseStack, VertexConsumer consumer, ModelPart lidPart, ModelPart lockPart, ModelPart bottomPart, float lidAngle, int packedLight, int packedOverlay) {
+        lidPart.xRot = -(lidAngle * ((float)Math.PI / 2F));
+        lockPart.xRot = lidPart.xRot;
+        lidPart.render(poseStack, consumer, packedLight, packedOverlay);
+        lockPart.render(poseStack, consumer, packedLight, packedOverlay);
+        bottomPart.render(poseStack, consumer, packedLight, packedOverlay);
     }
 
     @Override
@@ -116,7 +116,7 @@ public class ValyrianChestRenderer extends ChestRenderer<ValyrianChestBlockEntit
         };
     }
 
-    private static Material chestMaterial(String pChestName) {
-        return new Material(Sheets.CHEST_SHEET, ResourceLocation.withDefaultNamespace("entity/chest/" + pChestName));
+    private static Material chestMaterial(String chestName) {
+        return new Material(Sheets.CHEST_SHEET, ResourceLocation.withDefaultNamespace("entity/chest/" + chestName));
     }
 }

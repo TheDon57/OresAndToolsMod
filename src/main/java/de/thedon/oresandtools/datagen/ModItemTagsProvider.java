@@ -21,7 +21,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
     }
 
     @Override
-    protected void addTags(@NotNull HolderLookup.Provider pProvider) {
+    protected void addTags(@NotNull HolderLookup.Provider provider) {
         tag(ModTags.Items.DRAGON_APPLE_MATERIALS)
                 .add(ModItems.VALYRIAN_DUST.get())
                 .add(ModItems.OBSIDIAN_SHARD.get())
@@ -60,6 +60,47 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.VALYRIAN_INGOT.get())
                 .add(Items.SHULKER_BOX)
                 .add(Items.ENDER_EYE);
+
+        tag(ModTags.Items.IGNITION_ITEMS)
+                .add(ModItems.HOT_HARDENED_DIAMOND.get())
+                .add(ModItems.HOT_HARDENED_DIAMOND_AXE.get())
+                .add(ModItems.HOT_HARDENED_DIAMOND_HOE.get())
+                .add(ModItems.HOT_HARDENED_DIAMOND_PICKAXE.get())
+                .add(ModItems.HOT_HARDENED_DIAMOND_SHOVEL.get())
+                .add(ModItems.HOT_HARDENED_DIAMOND_SWORD.get());
+
+        tag(ModTags.Items.VALYRIAN_ARMOR_SET)
+                .add(ModItems.VALYRIAN_HELMET.get())
+                .add(ModItems.VALYRIAN_CHESTPLATE.get())
+                .add(ModItems.VALYRIAN_LEGGINGS.get())
+                .add(ModItems.VALYRIAN_BOOTS.get());
+
+        tag(ModTags.Items.HOT_HARDENED_DIAMOND_ARMOR_SET)
+                .add(ModItems.HOT_HARDENED_DIAMOND_HELMET.get())
+                .add(ModItems.HOT_HARDENED_DIAMOND_CHESTPLATE.get())
+                .add(ModItems.HOT_HARDENED_DIAMOND_LEGGINGS.get())
+                .add(ModItems.HOT_HARDENED_DIAMOND_BOOTS.get());
+
+        tag(ModTags.Items.COPPER_REPAIRABLE)
+                .add(Items.COPPER_INGOT);
+
+        tag(ModTags.Items.STEEL_REPAIRABLE)
+                .add(ModItems.STEEL_INGOT.get());
+
+        tag(ModTags.Items.VALYRIAN_REPAIRABLE)
+                .add(ModItems.VALYRIAN_INGOT.get());
+
+        tag(ModTags.Items.HARDENED_DIAMOND_REPAIRABLE)
+                .add(ModItems.HARDENED_DIAMOND.get());
+
+        tag(ModTags.Items.HOT_HARDENED_DIAMOND_REPAIRABLE)
+                .add(ModItems.HOT_HARDENED_DIAMOND.get());
+
+        tag(ModTags.Items.EMERALD_REPAIRABLE)
+                .add(Items.EMERALD);
+
+        tag(ModTags.Items.OBSIDIAN_REPAIRABLE)
+                .add(Items.OBSIDIAN);
 
         tag(ItemTags.TRIMMABLE_ARMOR)
                 .add(ModItems.COPPER_HELMET.get())

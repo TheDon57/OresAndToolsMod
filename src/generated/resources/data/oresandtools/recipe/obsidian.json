@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": {
-      "item": "oresandtools:obsidian_shard"
-    }
+    "#": "oresandtools:obsidian_shard"
   },
   "pattern": [
     "###",

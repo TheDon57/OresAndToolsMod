@@ -4,9 +4,7 @@
   "cookingtime": 180,
   "experience": 3.0,
   "group": "valyrian_dust",
-  "ingredient": {
-    "item": "oresandtools:deepslate_valyrian_ore"
-  },
+  "ingredient": "oresandtools:deepslate_valyrian_ore",
   "result": {
     "count": 1,
     "id": "oresandtools:valyrian_dust"

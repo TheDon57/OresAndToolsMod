@@ -52,6 +52,18 @@ public class ModTags {
         public static final TagKey<Item> VALYRIAN_LEATHER_MATERIALS = createTag("valyrian_leather_materials");
         public static final TagKey<Item> SHULKER_BACKPACK_MATERIALS = createTag("shulker_backpack_materials");
 
+        public static final TagKey<Item> COPPER_REPAIRABLE = createTag("copper_repairable");
+        public static final TagKey<Item> STEEL_REPAIRABLE = createTag("steel_repairable");
+        public static final TagKey<Item> VALYRIAN_REPAIRABLE = createTag("valyrian_repairable");
+        public static final TagKey<Item> HARDENED_DIAMOND_REPAIRABLE = createTag("hardened_diamond_repairable");
+        public static final TagKey<Item> HOT_HARDENED_DIAMOND_REPAIRABLE = createTag("hot_hardened_diamond_repairable");
+        public static final TagKey<Item> EMERALD_REPAIRABLE = createTag("emerald_repairable");
+        public static final TagKey<Item> OBSIDIAN_REPAIRABLE = createTag("obsidian_repairable");
+
+        public static final TagKey<Item> IGNITION_ITEMS = createTag("ignition_items");
+        public static final TagKey<Item> VALYRIAN_ARMOR_SET = createTag("valyrian_armor_set");
+        public static final TagKey<Item> HOT_HARDENED_DIAMOND_ARMOR_SET = createTag("hot_hardened_diamond_armor_set");
+
         private static TagKey<Item> createTag(String name) {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(OresAndToolsMod.MOD_ID, name));
         }

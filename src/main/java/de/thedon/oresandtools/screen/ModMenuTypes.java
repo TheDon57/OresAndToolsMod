@@ -1,6 +1,8 @@
-package de.thedon.oresandtools.inventory;
+package de.thedon.oresandtools.screen;
 
 import de.thedon.oresandtools.OresAndToolsMod;
+import de.thedon.oresandtools.screen.custom.BackpackMenu;
+import de.thedon.oresandtools.screen.custom.ValyrianChestMenu;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;

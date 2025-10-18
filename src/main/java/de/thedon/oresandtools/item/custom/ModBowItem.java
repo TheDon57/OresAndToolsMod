@@ -24,7 +24,7 @@ public class ModBowItem extends BowItem {
     int range;
 
     public ModBowItem(Item repairItem, float damageMultiplier, int useDuration, int range, Properties builder) {
-        super(builder);
+        super(builder.repairable(repairItem));
         this.repairItem = repairItem;
         this.damageMultiplier = damageMultiplier;
         this.useDuration = useDuration;
@@ -33,41 +33,37 @@ public class ModBowItem extends BowItem {
 
     @Override
     @ParametersAreNonnullByDefault
-    public boolean isValidRepairItem(ItemStack pStack, ItemStack pRepairCandidate) {
-        return (repairItem == pRepairCandidate.getItem()) || super.isValidRepairItem(pStack, pRepairCandidate);
-    }
+    public boolean releaseUsing(ItemStack stack, Level level, LivingEntity entity, int timeLeft) {
+        if (entity instanceof Player player) {
+            ItemStack itemstack = player.getProjectile(stack);
+            if (itemstack.isEmpty()) {
+                return false;
+            } else {
+                int i = this.getUseDuration(stack, entity) - timeLeft;
+                i = EventHooks.onArrowLoose(stack, level, player, i, !itemstack.isEmpty());
+                if (i < 0) {
+                    return false;
+                } else {
+                    float f = getPowerForTime(i) * damageMultiplier;
+                    if ((double)f < 0.1) {
+                        return false;
+                    } else {
+                        List<ItemStack> list = draw(stack, itemstack, player);
+                        if (level instanceof ServerLevel serverlevel) {
+                            if (!list.isEmpty()) {
+                                this.shoot(serverlevel, player, player.getUsedItemHand(), stack, list, f * 3.0F, 1.0F, f == 1.0F, null);
+                            }
+                        }
 
-    @Override
-    @ParametersAreNonnullByDefault
-    public void releaseUsing(ItemStack pStack, Level pLevel, LivingEntity pEntityLiving, int pTimeLeft) {
-        if (pEntityLiving instanceof Player player) {
-            ItemStack itemstack = player.getProjectile(pStack);
-            if (!itemstack.isEmpty()) {
-                int i = this.getUseDuration(pStack, pEntityLiving) - pTimeLeft;
-                i = EventHooks.onArrowLoose(pStack, pLevel, player, i, true);
-                if (i < 0) return;
-
-                float f = getPowerForTime(i) * damageMultiplier;
-                if (!((double)f < 0.1)) {
-                    List<ItemStack> list = draw(pStack, itemstack, player);
-                    if (pLevel instanceof ServerLevel serverlevel && !list.isEmpty()) {
-                        this.shoot(serverlevel, player, player.getUsedItemHand(), pStack, list, f * 3.0F, 1.0F, f == 1.0F, null);
+                        level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.ARROW_SHOOT, SoundSource.PLAYERS, 1.0F, 1.0F / (level.getRandom().nextFloat() * 0.4F + 1.2F) + f * 0.5F);
+                        player.awardStat(Stats.ITEM_USED.get(this));
+                        return true;
                     }
-
-                    pLevel.playSound(
-                            null,
-                            player.getX(),
-                            player.getY(),
-                            player.getZ(),
-                            SoundEvents.ARROW_SHOOT,
-                            SoundSource.PLAYERS,
-                            1.0F,
-                            1.0F / (pLevel.getRandom().nextFloat() * 0.4F + 1.2F) + f * 0.5F
-                    );
-                    player.awardStat(Stats.ITEM_USED.get(this));
                 }
             }
         }
+
+        return false;
     }
 
     @Override

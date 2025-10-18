@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A": {
-      "item": "minecraft:apple"
-    },
-    "O": {
-      "item": "oresandtools:obsidian_shard"
-    },
-    "V": {
-      "item": "oresandtools:valyrian_dust"
-    }
+    "A": "minecraft:apple",
+    "O": "oresandtools:obsidian_shard",
+    "V": "oresandtools:valyrian_dust"
   },
   "pattern": [
     "VOV",

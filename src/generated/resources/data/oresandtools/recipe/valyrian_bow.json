@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "S": {
-      "item": "minecraft:string"
-    },
-    "V": {
-      "item": "oresandtools:valyrian_ingot"
-    }
+    "S": "minecraft:string",
+    "V": "oresandtools:valyrian_ingot"
   },
   "pattern": [
     " VS",

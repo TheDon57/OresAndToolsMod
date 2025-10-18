@@ -1,6 +1,7 @@
-package de.thedon.oresandtools.inventory;
+package de.thedon.oresandtools.item.custom;
 
 import de.thedon.oresandtools.item.ModItems;
+import de.thedon.oresandtools.screen.custom.BackpackMenu;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;

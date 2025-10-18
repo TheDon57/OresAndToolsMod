@@ -2,15 +2,15 @@ package de.thedon.oresandtools;
 
 import com.mojang.logging.LogUtils;
 import de.thedon.oresandtools.block.ModBlocks;
-import de.thedon.oresandtools.entity.ModBlockEntities;
-import de.thedon.oresandtools.inventory.ModMenuTypes;
-import de.thedon.oresandtools.inventory.BackpackScreen;
-import de.thedon.oresandtools.inventory.ValyrianChestScreen;
+import de.thedon.oresandtools.block.entity.ModBlockEntities;
+import de.thedon.oresandtools.screen.ModMenuTypes;
+import de.thedon.oresandtools.screen.custom.BackpackScreen;
+import de.thedon.oresandtools.screen.custom.ValyrianChestScreen;
 import de.thedon.oresandtools.item.ModCreativeModeTabs;
 import de.thedon.oresandtools.item.ModItems;
 import de.thedon.oresandtools.render.ModBEWLRenderer;
 import de.thedon.oresandtools.render.ValyrianChestRenderer;
-import de.thedon.oresandtools.util.PropertyRegistration;
+import de.thedon.oresandtools.util.ModItemProperties;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -63,12 +63,12 @@ public class OresAndToolsMod {
 
     }
 
-    @EventBusSubscriber(modid = MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    @EventBusSubscriber(modid = MOD_ID, value = Dist.CLIENT)
     public static class ClientModEvents
     {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-            PropertyRegistration.registerProperties();
+            ModItemProperties.registerProperties();
         }
 
         @SubscribeEvent

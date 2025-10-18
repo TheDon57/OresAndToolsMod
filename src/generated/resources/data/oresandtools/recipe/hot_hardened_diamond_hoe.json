@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "#": {
-      "item": "oresandtools:hot_hardened_diamond"
-    },
-    "S": {
-      "item": "minecraft:stick"
-    }
+    "#": "oresandtools:hot_hardened_diamond",
+    "S": "minecraft:stick"
   },
   "pattern": [
     "##",
