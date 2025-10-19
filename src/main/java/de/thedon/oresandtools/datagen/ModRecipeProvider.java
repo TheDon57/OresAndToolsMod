@@ -16,7 +16,6 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
-import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
@@ -24,7 +23,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
-public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
+public class ModRecipeProvider extends RecipeProvider {
     public ModRecipeProvider(HolderLookup.Provider provider, RecipeOutput recipeOutput) {
         super(provider, recipeOutput);
     }

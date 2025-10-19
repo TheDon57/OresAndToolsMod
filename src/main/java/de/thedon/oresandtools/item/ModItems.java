@@ -2,6 +2,7 @@ package de.thedon.oresandtools.item;
 
 import de.thedon.oresandtools.OresAndToolsMod;
 import de.thedon.oresandtools.item.custom.*;
+import de.thedon.oresandtools.item.equipment.ModArmorMaterials;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ShieldItem;

@@ -2,6 +2,6 @@
   "parent": "minecraft:item/generated",
   "textures": {
     "layer0": "oresandtools:item/copper_helmet",
-    "layer1": "minecraft:trims/items/helmet_trim_lapis"
+    "layer1": "minecraft:trims/items/copper_trim_lapis"
   }
 }

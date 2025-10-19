@@ -1,0 +1,22 @@
+package de.thedon.oresandtools.item.equipment;
+
+import de.thedon.oresandtools.OresAndToolsMod;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.equipment.EquipmentAsset;
+
+public interface ModEquipmentAssets {
+    ResourceKey<EquipmentAsset> COPPER = createId("copper");
+    ResourceKey<EquipmentAsset> STEEL = createId("steel");
+    ResourceKey<EquipmentAsset> VALYRIAN = createId("valyrian");
+    ResourceKey<EquipmentAsset> H_DIAMOND = createId("hardened_diamond");
+    ResourceKey<EquipmentAsset> HOT_H_DIAMOND = createId("hot_hardened_diamond");
+    ResourceKey<EquipmentAsset> EMERALD = createId("emerald");
+    ResourceKey<EquipmentAsset> OBSIDIAN = createId("obsidian");
+
+    static ResourceKey<EquipmentAsset> createId(String id) {
+        return ResourceKey.create(
+                ResourceKey.createRegistryKey(ResourceLocation.withDefaultNamespace("equipment_asset")),
+                ResourceLocation.fromNamespaceAndPath(OresAndToolsMod.MOD_ID, id));
+    }
+}

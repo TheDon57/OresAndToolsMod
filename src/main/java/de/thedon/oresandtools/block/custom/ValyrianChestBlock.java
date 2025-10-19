@@ -23,11 +23,17 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.*;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.entity.*;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.block.entity.LidBlockEntity;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.*;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.ChestType;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.pathfinder.PathComputationType;
@@ -127,11 +133,6 @@ public class ValyrianChestBlock extends BaseEntityBlock implements SimpleWaterlo
     @Override
     protected @NotNull MapCodec<? extends BaseEntityBlock> codec() {
         return CODEC;
-    }
-
-    @Override
-    public @NotNull RenderShape getRenderShape(@NotNull BlockState state) {
-        return RenderShape.ENTITYBLOCK_ANIMATED;
     }
 
     @Override

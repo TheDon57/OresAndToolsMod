@@ -2,6 +2,6 @@
   "parent": "minecraft:item/generated",
   "textures": {
     "layer0": "oresandtools:item/obsidian_leggings",
-    "layer1": "minecraft:trims/items/leggings_trim_redstone"
+    "layer1": "minecraft:trims/items/obsidian_trim_redstone"
   }
 }

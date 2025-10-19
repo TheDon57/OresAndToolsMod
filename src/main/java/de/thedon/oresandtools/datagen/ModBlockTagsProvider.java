@@ -13,8 +13,8 @@ import org.jetbrains.annotations.NotNull;
 import java.util.concurrent.CompletableFuture;
 
 public class ModBlockTagsProvider extends BlockTagsProvider {
-    public ModBlockTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, net.neoforged.neoforge.common.data.ExistingFileHelper existingFileHelper) {
-        super(output, lookupProvider, OresAndToolsMod.MOD_ID, existingFileHelper);
+    public ModBlockTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider) {
+        super(output, lookupProvider, OresAndToolsMod.MOD_ID);
     }
 
     @Override
