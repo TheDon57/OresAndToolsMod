@@ -9,6 +9,7 @@ import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.CompletableFuture;
@@ -58,6 +59,10 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.VALYRIAN_INGOT.get())
                 .add(Items.SHULKER_BOX)
                 .add(Items.ENDER_EYE);
+
+        tag(ModTags.Items.VALYRIAN_CHEST_MATERIALS)
+                .add(ModItems.VALYRIAN_INGOT.get())
+                .add(Items.CHEST);
 
         tag(ModTags.Items.IGNITION_ITEMS)
                 .add(ModItems.HOT_HARDENED_DIAMOND.get())
@@ -129,5 +134,87 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.OBSIDIAN_CHESTPLATE.get())
                 .add(ModItems.OBSIDIAN_LEGGINGS.get())
                 .add(ModItems.OBSIDIAN_BOOTS.get());
+
+        tag(ItemTags.SHOVELS)
+                .add(ModItems.COPPER_SHOVEL.get())
+                .add(ModItems.STEEL_SHOVEL.get())
+                .add(ModItems.HARDENED_DIAMOND_SHOVEL.get())
+                .add(ModItems.HOT_HARDENED_DIAMOND_SHOVEL.get())
+                .add(ModItems.VALYRIAN_SHOVEL.get())
+                .add(ModItems.EMERALD_SHOVEL.get())
+                .add(ModItems.OBSIDIAN_SHOVEL.get());
+
+        tag(ItemTags.PICKAXES)
+                .add(ModItems.COPPER_PICKAXE.get())
+                .add(ModItems.STEEL_PICKAXE.get())
+                .add(ModItems.HARDENED_DIAMOND_PICKAXE.get())
+                .add(ModItems.HOT_HARDENED_DIAMOND_PICKAXE.get())
+                .add(ModItems.VALYRIAN_PICKAXE.get())
+                .add(ModItems.EMERALD_PICKAXE.get())
+                .add(ModItems.OBSIDIAN_PICKAXE.get());
+
+        tag(ItemTags.AXES)
+                .add(ModItems.COPPER_AXE.get())
+                .add(ModItems.STEEL_AXE.get())
+                .add(ModItems.HARDENED_DIAMOND_AXE.get())
+                .add(ModItems.HOT_HARDENED_DIAMOND_AXE.get())
+                .add(ModItems.VALYRIAN_AXE.get())
+                .add(ModItems.EMERALD_AXE.get())
+                .add(ModItems.OBSIDIAN_AXE.get());
+
+        tag(ItemTags.HOES)
+                .add(ModItems.COPPER_HOE.get())
+                .add(ModItems.STEEL_HOE.get())
+                .add(ModItems.HARDENED_DIAMOND_HOE.get())
+                .add(ModItems.HOT_HARDENED_DIAMOND_HOE.get())
+                .add(ModItems.VALYRIAN_HOE.get())
+                .add(ModItems.EMERALD_HOE.get())
+                .add(ModItems.OBSIDIAN_HOE.get());
+
+        tag(ItemTags.SWORDS)
+                .add(ModItems.COPPER_SWORD.get())
+                .add(ModItems.STEEL_SWORD.get())
+                .add(ModItems.HARDENED_DIAMOND_SWORD.get())
+                .add(ModItems.HOT_HARDENED_DIAMOND_SWORD.get())
+                .add(ModItems.VALYRIAN_SWORD.get())
+                .add(ModItems.EMERALD_SWORD.get())
+                .add(ModItems.OBSIDIAN_SWORD.get());
+
+        tag(ItemTags.HEAD_ARMOR)
+                .add(ModItems.COPPER_HELMET.get())
+                .add(ModItems.STEEL_HELMET.get())
+                .add(ModItems.HARDENED_DIAMOND_HELMET.get())
+                .add(ModItems.HOT_HARDENED_DIAMOND_HELMET.get())
+                .add(ModItems.VALYRIAN_HELMET.get())
+                .add(ModItems.EMERALD_HELMET.get())
+                .add(ModItems.OBSIDIAN_HELMET.get());
+
+        tag(ItemTags.CHEST_ARMOR)
+                .add(ModItems.COPPER_CHESTPLATE.get())
+                .add(ModItems.STEEL_CHESTPLATE.get())
+                .add(ModItems.HARDENED_DIAMOND_CHESTPLATE.get())
+                .add(ModItems.HOT_HARDENED_DIAMOND_CHESTPLATE.get())
+                .add(ModItems.VALYRIAN_CHESTPLATE.get())
+                .add(ModItems.EMERALD_CHESTPLATE.get())
+                .add(ModItems.OBSIDIAN_CHESTPLATE.get());
+
+        tag(ItemTags.LEG_ARMOR)
+                .add(ModItems.COPPER_LEGGINGS.get())
+                .add(ModItems.STEEL_LEGGINGS.get())
+                .add(ModItems.HARDENED_DIAMOND_LEGGINGS.get())
+                .add(ModItems.HOT_HARDENED_DIAMOND_LEGGINGS.get())
+                .add(ModItems.VALYRIAN_LEGGINGS.get())
+                .add(ModItems.EMERALD_LEGGINGS.get())
+                .add(ModItems.OBSIDIAN_LEGGINGS.get());
+
+        tag(ItemTags.FOOT_ARMOR)
+                .add(ModItems.COPPER_BOOTS.get())
+                .add(ModItems.STEEL_BOOTS.get())
+                .add(ModItems.HARDENED_DIAMOND_BOOTS.get())
+                .add(ModItems.HOT_HARDENED_DIAMOND_BOOTS.get())
+                .add(ModItems.VALYRIAN_BOOTS.get())
+                .add(ModItems.EMERALD_BOOTS.get())
+                .add(ModItems.OBSIDIAN_BOOTS.get());
     }
+
 }

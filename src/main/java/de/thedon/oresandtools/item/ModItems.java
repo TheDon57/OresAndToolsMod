@@ -3,6 +3,7 @@ package de.thedon.oresandtools.item;
 import de.thedon.oresandtools.OresAndToolsMod;
 import de.thedon.oresandtools.item.custom.*;
 import de.thedon.oresandtools.item.equipment.ModArmorMaterials;
+import de.thedon.oresandtools.util.ModTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ShieldItem;
@@ -102,7 +103,7 @@ public class ModItems {
     public static final DeferredItem<Item> VALYRIAN_BOW = ITEMS.registerItem("valyrian_bow", properties -> new ModBowItem(VALYRIAN_INGOT.get(), 1.1f, 60000, 20, properties.durability(3225)));
 
     /* SHIELDS */
-    public static final DeferredItem<Item> OBSIDIAN_SHIELD = ITEMS.registerItem("obsidian_shield", ShieldItem::new, new Item.Properties().durability(2500).repairable(Items.OBSIDIAN));
+    public static final DeferredItem<Item> OBSIDIAN_SHIELD = ITEMS.registerItem("obsidian_shield", properties -> new ModShieldItem(1250, ModTags.Items.OBSIDIAN_REPAIRABLE, properties.fireResistant()));
 
 
     public static void register(IEventBus eventBus) {

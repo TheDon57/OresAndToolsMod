@@ -2,6 +2,6 @@
   "parent": "minecraft:item/generated",
   "textures": {
     "layer0": "oresandtools:item/hot_hardened_diamond_chestplate",
-    "layer1": "minecraft:trims/items/hot_hardened_diamond_trim_diamond"
+    "layer1": "oresandtools:hot_hardened_diamond_diamond"
   }
 }

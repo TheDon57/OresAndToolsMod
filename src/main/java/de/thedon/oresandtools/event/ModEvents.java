@@ -9,11 +9,14 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.util.TriState;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ExperienceOrb;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -33,7 +36,6 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.neoforge.common.util.TriState;
 import net.neoforged.neoforge.event.entity.item.ItemExpireEvent;
 import net.neoforged.neoforge.event.entity.item.ItemTossEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDropsEvent;
@@ -46,6 +48,7 @@ import net.neoforged.neoforge.event.tick.LevelTickEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ModEvents {
@@ -84,18 +87,27 @@ public class ModEvents {
         @SubscribeEvent
         public static void onLivingIncomingDamage(LivingIncomingDamageEvent event) {
             if (event.getEntity() instanceof Player player) {
-                if (player.getArmorSlots() instanceof List<ItemStack> armorItems) {
-                    if (armorItems.size() == 4 && !Config.disableSetBonuses) {
-                        if (armorItems.stream().allMatch(stack -> stack.is(ModTags.Items.VALYRIAN_ARMOR_SET))) {
-                            event.setCanceled(event.getSource().is(DamageTypes.ON_FIRE) || event.getSource().is(DamageTypes.IN_FIRE));
-                            player.extinguishFire();
-                        }
-                        if (armorItems.stream().allMatch(stack -> stack.is(ModTags.Items.HOT_HARDENED_DIAMOND_ARMOR_SET))) {
-                            Entity source = event.getSource().getEntity();
-                            if (source instanceof LivingEntity living) {
-                                living.setRemainingFireTicks(Config.hotDiaFireReflectDuration);
-                                living.hurt(event.getSource(), event.getAmount());
-                            }
+                EquipmentSlot[] equipmentSlots = new EquipmentSlot[]{
+                        EquipmentSlot.HEAD,
+                        EquipmentSlot.CHEST,
+                        EquipmentSlot.LEGS,
+                        EquipmentSlot.FEET
+                };
+
+                List<ItemStack> armorItems = Arrays.stream(equipmentSlots)
+                        .map(slot -> player.getInventory().getItem(slot.getIndex(36)))
+                        .toList();
+
+                if (armorItems.size() == 4 && !Config.disableSetBonuses) {
+                    if (armorItems.stream().allMatch(stack -> stack.is(ModTags.Items.VALYRIAN_ARMOR_SET))) {
+                        event.setCanceled(event.getSource().is(DamageTypes.ON_FIRE) || event.getSource().is(DamageTypes.IN_FIRE));
+                        player.clearFire();
+                    }
+                    if (armorItems.stream().allMatch(stack -> stack.is(ModTags.Items.HOT_HARDENED_DIAMOND_ARMOR_SET))) {
+                        DamageSource source = event.getSource();
+                        if (source.getDirectEntity() instanceof LivingEntity living && source.is(DamageTypes.MOB_ATTACK)) {
+                            living.igniteForTicks(Config.hotDiaFireReflectDuration);
+                            living.hurt(event.getSource(), event.getAmount() * (float)Config.hotDiaDamageReflectPercentage);
                         }
                     }
                 }
@@ -124,7 +136,7 @@ public class ModEvents {
 
                     int fortuneLevel = 0;
                     Holder<Enchantment> fortune = holderLookup.getOrThrow(Enchantments.FORTUNE);
-                    if (!enchantments.keySet().contains(fortune)) {
+                    if (enchantments.keySet().contains(fortune)) {
                         fortuneLevel = enchantments.getLevel(fortune);
                     }
 
@@ -132,14 +144,8 @@ public class ModEvents {
                     if (!enchantments.keySet().contains(silkTouch)) {
                         if (event.getLevel() instanceof Level level) {
                             BlockState blockState = event.getState();
-                            Block block = event.getState().getBlock();
-                            BlockEntity blockEntity = level.getBlockEntity(event.getPos());
-                            int xpAmount = block.getExpDrop(blockState, level, event.getPos(), blockEntity, player, player.getMainHandItem());
-                            if (xpAmount == 0) {
-                                xpAmount = UniformInt.of(2,6).sample(level.getRandom());
-                            }
                             BlockPos pos = event.getPos();
-                            level.addFreshEntity(new ExperienceOrb(level, pos.getX(), pos.getY(), pos.getZ(), xpAmount));
+
                             if (blockState.is(BlockTags.COPPER_ORES)) {
                                 doBlockDrops(level, ModBlocks.MOLTEN_COPPER_ORE.get(), pos, Items.COPPER_INGOT, fortuneLevel);
                             } else if (blockState.is(BlockTags.IRON_ORES)) {
@@ -152,7 +158,17 @@ public class ModEvents {
                                 doBlockDrops(level, ModBlocks.MOLTEN_STONE.get(), pos, null, fortuneLevel);
                             } else if (blockState.is(BlockTags.SAND)) {
                                 doBlockDrops(level, ModBlocks.MOLTEN_SAND.get(), pos, null, fortuneLevel);
+                            } else {
+                                return;
                             }
+
+                            Block block = event.getState().getBlock();
+                            BlockEntity blockEntity = level.getBlockEntity(event.getPos());
+                            int xpAmount = block.getExpDrop(blockState, level, event.getPos(), blockEntity, player, player.getMainHandItem());
+                            if (xpAmount == 0) {
+                                xpAmount = UniformInt.of(2,6).sample(level.getRandom());
+                            }
+                            level.addFreshEntity(new ExperienceOrb(level, pos.getX(), pos.getY(), pos.getZ(), xpAmount));
                         }
                     }
                 }
@@ -255,10 +271,15 @@ public class ModEvents {
                 item == ModItems.HEATING_HARDENED_DIAMOND_3.get()) {
                 event.setCanPickup(TriState.FALSE);
             }
+        }
+
+        @SubscribeEvent
+        public static void onPostItemEntityPickup(ItemEntityPickupEvent.Post event) {
+            Item item = event.getOriginalStack().getItem();
             if (item == ModItems.HOT_HARDENED_DIAMOND.get() || item == ModItems.HARDENED_DIAMOND.get()) {
                 droppedDiamonds.remove(event.getItemEntity());
             }
-        }        
+        }
     }
 
 //    @EventBusSubscriber(modid = OresAndToolsMod.MOD_ID, bus = EventBusSubscriber.Bus.MOD)

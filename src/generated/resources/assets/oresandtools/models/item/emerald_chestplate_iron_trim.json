@@ -2,6 +2,6 @@
   "parent": "minecraft:item/generated",
   "textures": {
     "layer0": "oresandtools:item/emerald_chestplate",
-    "layer1": "minecraft:trims/items/emerald_trim_iron"
+    "layer1": "oresandtools:emerald_iron"
   }
 }

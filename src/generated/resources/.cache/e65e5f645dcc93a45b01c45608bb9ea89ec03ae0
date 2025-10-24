@@ -1,7 +1,7 @@
-// 1.21.4	2025-10-19T03:47:12.775409	Tags for minecraft:block mod id oresandtools
-1723b04cd1bd7e7910532ac0118f816f20c00221 data/minecraft/tags/block/mineable/pickaxe.json
+// 1.21.5	2025-10-24T21:43:30.846523	Tags for minecraft:block mod id oresandtools
+8bb304948b884942522f355ea00675909f68cbce data/minecraft/tags/block/mineable/pickaxe.json
 c528456dcaa0728ebd9a4afccef00864767bce84 data/minecraft/tags/block/mineable/shovel.json
-7f23c1b80c000e8ec4492b1a38e654a98f459619 data/minecraft/tags/block/needs_diamond_tool.json
+780a0393f5d028ac7c8d1d56210701156f5d5c9d data/minecraft/tags/block/needs_diamond_tool.json
 40acfea603079d29f21f37112055f4d387f7f651 data/minecraft/tags/block/needs_iron_tool.json
 d99088d8929ed04c651a03da829b38d24aada1a9 data/minecraft/tags/block/needs_stone_tool.json
 4a8304cbeca120dcb02be8d1f53e15e4a31b9127 data/oresandtools/tags/block/incorrect_for_copper_tool.json

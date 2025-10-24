@@ -1,4 +1,4 @@
-// 1.21.4	2025-10-19T03:47:12.773904	Ores and Tools Mod Recipes
+// 1.21.5	2025-10-24T21:43:30.844975	Ores and Tools Mod Recipes
 c9d76dddce0513fb166c801e5f94f725a67c7442 data/oresandtools/advancement/recipes/building_blocks/hardened_diamond_block.json
 97317f6a14326334fffc647444489b14de7275f5 data/oresandtools/advancement/recipes/building_blocks/obsidian.json
 69a15f196468a85a9646d7fa1e845fd11962afa7 data/oresandtools/advancement/recipes/building_blocks/obsidian_from_blasting_obsidian_ore.json
@@ -65,6 +65,7 @@ eb96553d1b5f965d577fb29baa2615c56b4c2c02 data/oresandtools/advancement/recipes/m
 b76dc022b190e2f83517f6fd0e888de4ab5b2d2b data/oresandtools/advancement/recipes/misc/steel_chunk.json
 7d309f41b029a2032a747ae4eb2216e58f8dbf5d data/oresandtools/advancement/recipes/misc/steel_chunk_2.json
 09422ce07c9b8bdcefb728913dfcf40217487a11 data/oresandtools/advancement/recipes/misc/steel_ingot.json
+e8968a0df38bc7406905653d6c39ca51de643345 data/oresandtools/advancement/recipes/misc/valyrian_chest.json
 6c943ba9f4bd04adf2e102c50001264faffc25f4 data/oresandtools/advancement/recipes/misc/valyrian_ingot.json
 4c39556cffefdeebe5380b25f3653d5b0f911fa8 data/oresandtools/advancement/recipes/misc/valyrian_leather.json
 297122dc9f050f6447eaeb9dbeab19027c098a84 data/oresandtools/advancement/recipes/tools/copper_axe.json
@@ -178,6 +179,7 @@ f5ec6ecdbbbb018f8218b372570b9088bcffada3 data/oresandtools/recipe/uranium_ingot_
 e72463854c05e02f4539284de58a0e0820a3c01e data/oresandtools/recipe/valyrian_axe.json
 222fdcd8ca5aa568538c1bc00dce2680c6ad37db data/oresandtools/recipe/valyrian_boots.json
 d995c8a6f8021e62bc4bd1af0c2c1bdf3321a02d data/oresandtools/recipe/valyrian_bow.json
+2a832eac99a122e5c58abeaa24676ad4a555aa98 data/oresandtools/recipe/valyrian_chest.json
 08309d3ec16dec0066c8000305a94262de88cd3c data/oresandtools/recipe/valyrian_chestplate.json
 e614afa3fa1a97b634d5f5c84cd7b8b9a84fb09b data/oresandtools/recipe/valyrian_dust_from_blasting_deepslate_valyrian_ore.json
 bed248d54b0f042efc2762e1cf5a34321c57cec0 data/oresandtools/recipe/valyrian_dust_from_blasting_valyrian_ore.json

@@ -2,6 +2,6 @@
   "parent": "minecraft:item/generated",
   "textures": {
     "layer0": "oresandtools:item/valyrian_boots",
-    "layer1": "minecraft:trims/items/valyrian_trim_resin"
+    "layer1": "oresandtools:valyrian_resin"
   }
 }

@@ -22,6 +22,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.HARDENED_DIAMOND_BLOCK.get())
                 .add(ModBlocks.STEEL_BLOCK.get())
+                .add(ModBlocks.VALYRIAN_CHEST.get())
                 .add(ModBlocks.VALYRIAN_ORE.get())
                 .add(ModBlocks.DEEPSLATE_VALYRIAN_ORE.get())
                 .add(ModBlocks.ENDSTONE_VALYRIAN_ORE.get())
@@ -62,6 +63,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 
         tag(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(ModBlocks.HARDENED_DIAMOND_BLOCK.get())
+                .add(ModBlocks.VALYRIAN_CHEST.get())
                 .add(ModBlocks.VALYRIAN_ORE.get())
                 .add(ModBlocks.DEEPSLATE_VALYRIAN_ORE.get())
                 .add(ModBlocks.ENDSTONE_VALYRIAN_ORE.get())

@@ -51,6 +51,7 @@ public class ModTags {
         public static final TagKey<Item> VALYRIAN_INGOT_MATERIALS = createTag("valyrian_ingot_materials");
         public static final TagKey<Item> VALYRIAN_LEATHER_MATERIALS = createTag("valyrian_leather_materials");
         public static final TagKey<Item> SHULKER_BACKPACK_MATERIALS = createTag("shulker_backpack_materials");
+        public static final TagKey<Item> VALYRIAN_CHEST_MATERIALS = createTag("valyrian_chest_materials");
 
         public static final TagKey<Item> COPPER_REPAIRABLE = createTag("copper_repairable");
         public static final TagKey<Item> STEEL_REPAIRABLE = createTag("steel_repairable");

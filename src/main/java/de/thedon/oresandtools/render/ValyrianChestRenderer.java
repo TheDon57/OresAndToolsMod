@@ -6,8 +6,8 @@ import com.mojang.math.Axis;
 import de.thedon.oresandtools.block.ModBlocks;
 import de.thedon.oresandtools.block.custom.ValyrianChestBlock;
 import de.thedon.oresandtools.block.entity.ValyrianChestBlockEntity;
+import net.minecraft.client.model.ChestModel;
 import net.minecraft.client.model.geom.ModelLayers;
-import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
@@ -22,44 +22,28 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DoubleBlockCombiner;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.ChestType;
+import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 
 public class ValyrianChestRenderer extends ChestRenderer<ValyrianChestBlockEntity> {
     public static final Material CHEST_LOCATION = chestMaterial("valyrian");
     public static final Material CHEST_LOCATION_LEFT = chestMaterial("valyrian_left");
     public static final Material CHEST_LOCATION_RIGHT = chestMaterial("valyrian_right");
-    private static final String BOTTOM = "bottom";
-    private static final String LID = "lid";
-    private static final String LOCK = "lock";
-    private final ModelPart lid;
-    private final ModelPart bottom;
-    private final ModelPart lock;
-    private final ModelPart doubleLeftLid;
-    private final ModelPart doubleLeftBottom;
-    private final ModelPart doubleLeftLock;
-    private final ModelPart doubleRightLid;
-    private final ModelPart doubleRightBottom;
-    private final ModelPart doubleRightLock;
+
+    private final ChestModel singleModel;
+    private final ChestModel doubleLeftModel;
+    private final ChestModel doubleRightModel;
 
     public ValyrianChestRenderer(BlockEntityRendererProvider.Context context) {
         super(context);
 
-        ModelPart modelpart = context.bakeLayer(ModelLayers.CHEST);
-        this.bottom = modelpart.getChild("bottom");
-        this.lid = modelpart.getChild("lid");
-        this.lock = modelpart.getChild("lock");
-        ModelPart modelpart1 = context.bakeLayer(ModelLayers.DOUBLE_CHEST_LEFT);
-        this.doubleLeftBottom = modelpart1.getChild("bottom");
-        this.doubleLeftLid = modelpart1.getChild("lid");
-        this.doubleLeftLock = modelpart1.getChild("lock");
-        ModelPart modelpart2 = context.bakeLayer(ModelLayers.DOUBLE_CHEST_RIGHT);
-        this.doubleRightBottom = modelpart2.getChild("bottom");
-        this.doubleRightLid = modelpart2.getChild("lid");
-        this.doubleRightLock = modelpart2.getChild("lock");
+        this.singleModel = new ChestModel(context.bakeLayer(ModelLayers.CHEST));
+        this.doubleLeftModel = new ChestModel(context.bakeLayer(ModelLayers.DOUBLE_CHEST_LEFT));
+        this.doubleRightModel = new ChestModel(context.bakeLayer(ModelLayers.DOUBLE_CHEST_RIGHT));
     }
 
     @Override
-    public void render(ValyrianChestBlockEntity blockEntity, float partialTick, @NotNull PoseStack poseStack, @NotNull MultiBufferSource buffer, int packedLight, int packedOverlay) {
+    public void render(ValyrianChestBlockEntity blockEntity, float partialTick, @NotNull PoseStack poseStack, @NotNull MultiBufferSource buffer, int packedLight, int packedOverlay, Vec3 vec) {
         Level level = blockEntity.getLevel();
         boolean flag = level != null;
         BlockState blockstate = flag ? blockEntity.getBlockState() : ModBlocks.VALYRIAN_CHEST.get().defaultBlockState().setValue(ValyrianChestBlock.FACING, Direction.SOUTH);
@@ -87,24 +71,21 @@ public class ValyrianChestRenderer extends ChestRenderer<ValyrianChestBlockEntit
             VertexConsumer vertexconsumer = material.buffer(buffer, RenderType::entityCutout);
             if (flag1) {
                 if (chesttype == ChestType.LEFT) {
-                    this.render(poseStack, vertexconsumer, this.doubleLeftLid, this.doubleLeftLock, this.doubleLeftBottom, f1, i, packedOverlay);
+                    this.render(poseStack, vertexconsumer, this.doubleLeftModel, f1, i, packedOverlay);
                 } else {
-                    this.render(poseStack, vertexconsumer, this.doubleRightLid, this.doubleRightLock, this.doubleRightBottom, f1, i, packedOverlay);
+                    this.render(poseStack, vertexconsumer, this.doubleRightModel, f1, i, packedOverlay);
                 }
             } else {
-                this.render(poseStack, vertexconsumer, this.lid, this.lock, this.bottom, f1, i, packedOverlay);
+                this.render(poseStack, vertexconsumer, this.singleModel, f1, i, packedOverlay);
             }
 
             poseStack.popPose();
         }
     }
 
-    private void render(PoseStack poseStack, VertexConsumer consumer, ModelPart lidPart, ModelPart lockPart, ModelPart bottomPart, float lidAngle, int packedLight, int packedOverlay) {
-        lidPart.xRot = -(lidAngle * ((float)Math.PI / 2F));
-        lockPart.xRot = lidPart.xRot;
-        lidPart.render(poseStack, consumer, packedLight, packedOverlay);
-        lockPart.render(poseStack, consumer, packedLight, packedOverlay);
-        bottomPart.render(poseStack, consumer, packedLight, packedOverlay);
+    private void render(PoseStack poseStack, VertexConsumer buffer, ChestModel model, float openness, int packedLight, int packedOverlay) {
+        model.setupAnim(openness);
+        model.renderToBuffer(poseStack, buffer, packedLight, packedOverlay);
     }
 
     @Override

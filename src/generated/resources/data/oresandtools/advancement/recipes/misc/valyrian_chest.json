@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "oresandtools:valyrian_chest"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_valyrian_chest": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#oresandtools:valyrian_chest_materials"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_valyrian_chest"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "oresandtools:valyrian_chest"
+    ]
+  }
+}

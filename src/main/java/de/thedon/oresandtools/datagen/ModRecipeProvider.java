@@ -139,6 +139,16 @@ public class ModRecipeProvider extends RecipeProvider {
         nineBlockStorageRecipes(output, RecipeCategory.MISC, ModItems.OBSIDIAN_SHARD.get(),
                 RecipeCategory.BUILDING_BLOCKS, Blocks.OBSIDIAN);
 
+        /* CHESTS */
+        shaped(RecipeCategory.MISC, ModBlocks.VALYRIAN_CHEST.get())
+                .define('V', ModItems.VALYRIAN_INGOT.get())
+                .define('C', Blocks.CHEST)
+                .pattern("VVV")
+                .pattern("VCV")
+                .pattern("VVV")
+                .unlockedBy(getHasName(ModBlocks.VALYRIAN_CHEST.get()), has(ModTags.Items.VALYRIAN_CHEST_MATERIALS))
+                .save(output);
+
         /* SMELTING & BLASTING */
         oreSmelting(output, List.of(ModBlocks.OBSIDIAN_ORE.get()), RecipeCategory.BUILDING_BLOCKS,
                 Blocks.OBSIDIAN, 5.0F, 500, "obsidian");
