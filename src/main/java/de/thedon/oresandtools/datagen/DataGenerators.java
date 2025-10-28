@@ -28,7 +28,7 @@ public class DataGenerators {
                 List.of(new LootTableProvider.SubProviderEntry(ModBlockLootTableProvider::new, LootContextParamSets.BLOCK)), lookupProvider));
         BlockTagsProvider blockTagsProvider = new ModBlockTagsProvider(packOutput, lookupProvider);
         generator.addProvider(true, blockTagsProvider);
-        generator.addProvider(true, new ModItemTagsProvider(packOutput, lookupProvider, blockTagsProvider.contentsGetter()));
+        generator.addProvider(true, new ModItemTagsProvider(packOutput, lookupProvider));
         generator.addProvider(true, new ModRecipeProvider.Runner(packOutput, lookupProvider));
         generator.addProvider(true, new ModDatapackProvider(packOutput, lookupProvider));
 
@@ -47,7 +47,7 @@ public class DataGenerators {
                 List.of(new LootTableProvider.SubProviderEntry(ModBlockLootTableProvider::new, LootContextParamSets.BLOCK)), lookupProvider));
         BlockTagsProvider blockTagsProvider = new ModBlockTagsProvider(packOutput, lookupProvider);
         generator.addProvider(true, blockTagsProvider);
-        generator.addProvider(true, new ModItemTagsProvider(packOutput, lookupProvider, blockTagsProvider.contentsGetter()));
+        generator.addProvider(true, new ModItemTagsProvider(packOutput, lookupProvider));
         generator.addProvider(true, new ModRecipeProvider.Runner(packOutput, lookupProvider));
         generator.addProvider(true, new ModDatapackProvider(packOutput, lookupProvider));
 

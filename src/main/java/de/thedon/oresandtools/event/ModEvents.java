@@ -8,6 +8,7 @@ import de.thedon.oresandtools.util.ModTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.tags.BlockTags;
@@ -50,6 +51,7 @@ import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 public class ModEvents {
     @EventBusSubscriber(modid = OresAndToolsMod.MOD_ID)
@@ -188,22 +190,6 @@ public class ModEvents {
                         level.addFreshEntity(new ItemEntity(level, x, y, z, new ItemStack(drop, 2)));
                     } else {
                         level.addFreshEntity(new ItemEntity(level, x, y, z, new ItemStack(drop)));
-                    }
-                }
-            }
-        }
-    
-        @SubscribeEvent
-        public static void onLivingDrops(LivingDropsEvent event) {
-            if (Math.random() < Config.villagerEmeraldDropChance) {
-                if (event.getSource().getEntity() instanceof Player player) {
-                    if (player.getMainHandItem().getItem() == ModItems.EMERALD_SWORD.get()) {
-                        LivingEntity entity = event.getEntity();
-                        if (entity instanceof Villager) {
-                            Level level = entity.getCommandSenderWorld();
-                            event.getDrops().add(new ItemEntity(level, entity.getX(), entity.getY(), entity.getZ(),
-                                new ItemStack(Items.EMERALD)));
-                        }
                     }
                 }
             }

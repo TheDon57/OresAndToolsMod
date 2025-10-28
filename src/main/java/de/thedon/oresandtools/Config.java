@@ -42,10 +42,6 @@ public class Config
             .comment("How long enemies will burn if you them with hot dia tool or sword")
             .defineInRange("hot_dia_fire_aspect_duration", 50, 1, Integer.MAX_VALUE);
 
-    private static final ModConfigSpec.DoubleValue VILLAGER_EMERALD_DROP_CHANCE = BUILDER
-            .comment("Probability that a villager will drop a emerald if killy be emerald sword")
-            .defineInRange("villager_emerald_drop_chance", 0.15, 0.01, 1.0);
-
     static final ModConfigSpec SPEC = BUILDER.build();
 
     public static int improReactorBurnTime;
@@ -56,7 +52,6 @@ public class Config
     public static int hotDiaFireReflectDuration;
     public static boolean disableHotDiaFireAspect;
     public static int hotDiaFireAspectDuration;
-    public static double villagerEmeraldDropChance;
 
     @SubscribeEvent
     static void onLoad(final ModConfigEvent event)
@@ -69,6 +64,5 @@ public class Config
         hotDiaFireReflectDuration = HOT_DIA_FIRE_REFLECT_DURATION.get();
         disableHotDiaFireAspect = DISABLE_HOT_DIA_FIRE_ASPECT.get();
         hotDiaFireAspectDuration = HOT_DIA_FIRE_ASPECT_DURATION.get();
-        villagerEmeraldDropChance = VILLAGER_EMERALD_DROP_CHANCE.get();
     }
 }

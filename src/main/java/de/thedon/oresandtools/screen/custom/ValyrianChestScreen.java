@@ -3,6 +3,7 @@ package de.thedon.oresandtools.screen.custom;
 import de.thedon.oresandtools.OresAndToolsMod;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -63,11 +64,11 @@ public class ValyrianChestScreen extends AbstractContainerScreen<ValyrianChestMe
         int i = (this.width - this.imageWidth) / 2;
         int j = (this.height - this.imageHeight) / 2;
         if (this.background == CONTAINER_BACKGROUND_6x9) {
-            guiGraphics.blit(RenderType::guiTextured, this.background, i, j, 0, 0, this.imageWidth, this.containerRows * 18 + 17, 256, 256);
-            guiGraphics.blit(RenderType::guiTextured, this.background, i, j + this.containerRows * 18 + 17, 0, 126, this.imageWidth, 96, 256, 256);
+            guiGraphics.blit(RenderPipelines.GUI_TEXTURED, this.background, i, j, 0, 0, this.imageWidth, this.containerRows * 18 + 17, 256, 256);
+            guiGraphics.blit(RenderPipelines.GUI_TEXTURED, this.background, i, j + this.containerRows * 18 + 17, 0, 126, this.imageWidth, 96, 256, 256);
         } else {
-            guiGraphics.blit(RenderType::guiTextured, this.background, i, j, 0, 0, this.imageWidth, this.containerRows * 18 + 7, 256, 256);
-            guiGraphics.blit(RenderType::guiTextured, this.background, i, j + this.containerRows * 18 + 7, 0, 170, this.imageWidth, 86, 256, 256);
+            guiGraphics.blit(RenderPipelines.GUI_TEXTURED, this.background, i, j, 0, 0, this.imageWidth, this.containerRows * 18 + 7, 256, 256);
+            guiGraphics.blit(RenderPipelines.GUI_TEXTURED, this.background, i, j + this.containerRows * 18 + 7, 0, 170, this.imageWidth, 86, 256, 256);
         }
     }
 }

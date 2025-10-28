@@ -25,6 +25,8 @@ import net.minecraft.world.level.block.ChestBlock;
 import net.minecraft.world.level.block.entity.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.ChestType;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -33,18 +35,18 @@ import java.util.Objects;
 public class ValyrianChestBlockEntity extends RandomizableContainerBlockEntity implements LidBlockEntity {
     private final ContainerOpenersCounter openersCounter = new ContainerOpenersCounter() {
         @ParametersAreNonnullByDefault
-        protected void onOpen(Level pLevel, BlockPos pPos, BlockState pState) {
-            ValyrianChestBlockEntity.playSound(pLevel, pPos, pState, SoundEvents.CHEST_OPEN);
+        protected void onOpen(Level level, BlockPos pos, BlockState state) {
+            ValyrianChestBlockEntity.playSound(level, pos, state, SoundEvents.CHEST_OPEN);
         }
 
         @ParametersAreNonnullByDefault
-        protected void onClose(Level pLevel, BlockPos pPos, BlockState pState) {
-            ValyrianChestBlockEntity.playSound(pLevel, pPos, pState, SoundEvents.CHEST_CLOSE);
+        protected void onClose(Level level, BlockPos pos, BlockState state) {
+            ValyrianChestBlockEntity.playSound(level, pos, state, SoundEvents.CHEST_CLOSE);
         }
 
         @ParametersAreNonnullByDefault
-        protected void openerCountChanged(Level pLevel, BlockPos pPos, BlockState pState, int pEventId, int pEventParam) {
-            ValyrianChestBlockEntity.this.signalOpenCount(pLevel, pPos, pState, pEventId, pEventParam);
+        protected void openerCountChanged(Level level, BlockPos pos, BlockState state, int eventId, int eventParam) {
+            ValyrianChestBlockEntity.this.signalOpenCount(level, pos, state, eventId, eventParam);
         }
 
         protected boolean isOwnContainer(Player player) {
@@ -84,67 +86,67 @@ public class ValyrianChestBlockEntity extends RandomizableContainerBlockEntity i
 
     @Override
     @ParametersAreNonnullByDefault
-    public void loadAdditional(CompoundTag pTag, HolderLookup.Provider pRegistries) {
-        super.loadAdditional(pTag, pRegistries);
+    public void loadAdditional(ValueInput input) {
+        super.loadAdditional(input);
 
         this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
 
-        if (!this.tryLoadLootTable(pTag)) {
-            ContainerHelper.loadAllItems(pTag, this.items, pRegistries);
+        if (!this.tryLoadLootTable(input)) {
+            ContainerHelper.loadAllItems(input, this.items);
         }
     }
 
     @Override
     @ParametersAreNonnullByDefault
-    public void saveAdditional(CompoundTag pTag, HolderLookup.Provider pRegistries) {
-        super.saveAdditional(pTag, pRegistries);
+    public void saveAdditional(ValueOutput output) {
+        super.saveAdditional(output);
 
-        if (!this.trySaveLootTable(pTag)) {
-            ContainerHelper.saveAllItems(pTag, this.items, pRegistries);
+        if (!this.trySaveLootTable(output)) {
+            ContainerHelper.saveAllItems(output, this.items);
         }
     }
 
-    public static void lidAnimateTick(Level pLevel, BlockPos pPos, BlockState pState, ValyrianChestBlockEntity pBlockEntity) {
-        pBlockEntity.chestLidController.tickLid();
+    public static void lidAnimateTick(Level level, BlockPos pos, BlockState state, ValyrianChestBlockEntity blockEntity) {
+        blockEntity.chestLidController.tickLid();
     }
 
-    static void playSound(Level pLevel, BlockPos pPos, BlockState pState, SoundEvent pSound) {
-        ChestType chesttype = pState.getValue(ChestBlock.TYPE);
+    static void playSound(Level level, BlockPos pos, BlockState state, SoundEvent sound) {
+        ChestType chesttype = state.getValue(ChestBlock.TYPE);
         if (chesttype != ChestType.LEFT) {
-            double d0 = (double)pPos.getX() + 0.5;
-            double d1 = (double)pPos.getY() + 0.5;
-            double d2 = (double)pPos.getZ() + 0.5;
+            double d0 = (double)pos.getX() + 0.5;
+            double d1 = (double)pos.getY() + 0.5;
+            double d2 = (double)pos.getZ() + 0.5;
             if (chesttype == ChestType.RIGHT) {
-                Direction direction = ChestBlock.getConnectedDirection(pState);
+                Direction direction = ChestBlock.getConnectedDirection(state);
                 d0 += (double)direction.getStepX() * 0.5;
                 d2 += (double)direction.getStepZ() * 0.5;
             }
 
-            pLevel.playSound(null, d0, d1, d2, pSound, SoundSource.BLOCKS, 0.5F, pLevel.random.nextFloat() * 0.1F + 0.9F);
+            level.playSound(null, d0, d1, d2, sound, SoundSource.BLOCKS, 0.5F, level.random.nextFloat() * 0.1F + 0.9F);
         }
     }
 
     @Override
-    public boolean triggerEvent(int pId, int pType) {
-        if (pId == 1) {
-            this.chestLidController.shouldBeOpen(pType > 0);
+    public boolean triggerEvent(int id, int type) {
+        if (id == 1) {
+            this.chestLidController.shouldBeOpen(type > 0);
             return true;
         } else {
-            return super.triggerEvent(pId, pType);
+            return super.triggerEvent(id, type);
         }
     }
 
     @Override
-    public void startOpen(@NotNull Player pPlayer) {
-        if (!this.remove && !pPlayer.isSpectator()) {
-            this.openersCounter.incrementOpeners(pPlayer, Objects.requireNonNull(this.getLevel()), this.getBlockPos(), this.getBlockState());
+    public void startOpen(@NotNull Player player) {
+        if (!this.remove && !player.isSpectator()) {
+            this.openersCounter.incrementOpeners(player, Objects.requireNonNull(this.getLevel()), this.getBlockPos(), this.getBlockState());
         }
     }
 
     @Override
-    public void stopOpen(@NotNull Player pPlayer) {
-        if (!this.remove && !pPlayer.isSpectator()) {
-            this.openersCounter.decrementOpeners(pPlayer, Objects.requireNonNull(this.getLevel()), this.getBlockPos(), this.getBlockState());
+    public void stopOpen(@NotNull Player player) {
+        if (!this.remove && !player.isSpectator()) {
+            this.openersCounter.decrementOpeners(player, Objects.requireNonNull(this.getLevel()), this.getBlockPos(), this.getBlockState());
         }
     }
 
@@ -184,8 +186,8 @@ public class ValyrianChestBlockEntity extends RandomizableContainerBlockEntity i
     }
 
     @Override
-    protected @NotNull AbstractContainerMenu createMenu(int pId, @NotNull Inventory pPlayer) {
-        return ValyrianChestMenu.menu6x9(pId, pPlayer, this);
+    protected @NotNull AbstractContainerMenu createMenu(int id, @NotNull Inventory player) {
+        return ValyrianChestMenu.menu6x9(id, player, this);
     }
 
     public void recheckOpen() {

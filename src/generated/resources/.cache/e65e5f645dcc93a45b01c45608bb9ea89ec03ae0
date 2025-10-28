@@ -1,4 +1,4 @@
-// 1.21.5	2025-10-24T21:43:30.846523	Tags for minecraft:block mod id oresandtools
+// 1.21.6	2025-10-28T22:22:26.973215	Tags for minecraft:block mod id oresandtools
 8bb304948b884942522f355ea00675909f68cbce data/minecraft/tags/block/mineable/pickaxe.json
 c528456dcaa0728ebd9a4afccef00864767bce84 data/minecraft/tags/block/mineable/shovel.json
 780a0393f5d028ac7c8d1d56210701156f5d5c9d data/minecraft/tags/block/needs_diamond_tool.json
