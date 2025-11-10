@@ -2,6 +2,6 @@
   "parent": "minecraft:item/generated",
   "textures": {
     "layer0": "oresandtools:item/steel_chestplate",
-    "layer1": "oresandtools:steel_netherite"
+    "layer1": "minecraft:trims/items/chestplate_trim_netherite"
   }
 }

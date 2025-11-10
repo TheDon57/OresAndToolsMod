@@ -2,6 +2,6 @@
   "parent": "minecraft:item/generated",
   "textures": {
     "layer0": "oresandtools:item/hardened_diamond_boots",
-    "layer1": "oresandtools:hardened_diamond_lapis"
+    "layer1": "minecraft:trims/items/boots_trim_lapis"
   }
 }
