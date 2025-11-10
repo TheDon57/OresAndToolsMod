@@ -1,3 +1,4 @@
+/*
 package de.thedon.oresandtools.block.entity;
 
 import de.thedon.oresandtools.OresAndToolsMod;
@@ -5,9 +6,12 @@ import de.thedon.oresandtools.block.custom.ValyrianChestBlock;
 import de.thedon.oresandtools.screen.custom.ValyrianChestMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.CompoundContainer;
 import net.minecraft.world.Container;
@@ -16,15 +20,13 @@ import net.minecraft.world.entity.ContainerUser;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.ChestMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ChestBlock;
-import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraft.world.level.block.entity.ChestBlockEntity;
-import net.minecraft.world.level.block.entity.ContainerOpenersCounter;
+import net.minecraft.world.level.block.entity.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.ChestType;
 import net.minecraft.world.level.storage.ValueInput;
@@ -35,18 +37,20 @@ import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 import java.util.Objects;
 
-public class ValyrianChestBlockEntity extends ChestBlockEntity {
+public class ValyrianChestBlockEntity extends RandomizableContainerBlockEntity implements LidBlockEntity {
+    private static final int EVENT_SET_OPEN_COUNT = 1;
     private static final Component DEFAULT_NAME = Component.translatable("block." + OresAndToolsMod.MOD_ID + ".valyrian_chest");
     private static final int ITEMS_SIZE = 54;
     private NonNullList<ItemStack> items;
     private final ContainerOpenersCounter openersCounter;
+    private final ChestLidController chestLidController;
 
     public ValyrianChestBlockEntity(BlockPos blockPos, BlockState blockState) {
         this(ModBlockEntities.VALYRIAN_CHEST.get(), blockPos, blockState);
     }
 
-    protected ValyrianChestBlockEntity(BlockEntityType<?> blockEntityType, BlockPos pos, BlockState state) {
-        super(blockEntityType, pos, state);
+    public ValyrianChestBlockEntity(BlockEntityType<?> blockEntityType, BlockPos blockPos, BlockState blockState) {
+        super(blockEntityType, blockPos, blockState);
         this.items = NonNullList.withSize(ITEMS_SIZE, ItemStack.EMPTY);
         this.openersCounter = new ContainerOpenersCounter() {
             @ParametersAreNonnullByDefault
@@ -79,6 +83,7 @@ public class ValyrianChestBlockEntity extends ChestBlockEntity {
                 }
             }
         };
+        this.chestLidController = new ChestLidController();
     }
 
     @Override
@@ -110,6 +115,10 @@ public class ValyrianChestBlockEntity extends ChestBlockEntity {
         }
     }
 
+    public static void lidAnimateTick(Level level, BlockPos pos, BlockState state, ValyrianChestBlockEntity blockEntity) {
+        blockEntity.chestLidController.tickLid();
+    }
+
     static void playSound(Level level, BlockPos pos, BlockState state, SoundEvent sound) {
         ChestType chesttype = state.getValue(ChestBlock.TYPE);
         if (chesttype != ChestType.LEFT) {
@@ -123,6 +132,16 @@ public class ValyrianChestBlockEntity extends ChestBlockEntity {
             }
 
             level.playSound(null, d0, d1, d2, sound, SoundSource.BLOCKS, 0.5F, level.random.nextFloat() * 0.1F + 0.9F);
+        }
+    }
+
+    @Override
+    public boolean triggerEvent(int id, int type) {
+        if (id == 1) {
+            this.chestLidController.shouldBeOpen(type > 0);
+            return true;
+        } else {
+            return super.triggerEvent(id, type);
         }
     }
 
@@ -161,10 +180,15 @@ public class ValyrianChestBlockEntity extends ChestBlockEntity {
         }
     }
 
-    public static int getOpenCount(BlockGetter blockGetter, @NotNull BlockPos pos) {
-        BlockState blockstate = blockGetter.getBlockState(pos);
+    @Override
+    public float getOpenNess(float partialTicks) {
+        return this.chestLidController.getOpenness(partialTicks);
+    }
+
+    public static int getOpenCount(BlockGetter blockGetter, BlockPos blockPos) {
+        BlockState blockstate = blockGetter.getBlockState(blockPos);
         if (blockstate.hasBlockEntity()) {
-            BlockEntity blockentity = blockGetter.getBlockEntity(pos);
+            BlockEntity blockentity = blockGetter.getBlockEntity(blockPos);
             if (blockentity instanceof ValyrianChestBlockEntity) {
                 return ((ValyrianChestBlockEntity) blockentity).openersCounter.getOpenerCount();
             }
@@ -173,15 +197,36 @@ public class ValyrianChestBlockEntity extends ChestBlockEntity {
         return 0;
     }
 
+    public static void swapContents(ValyrianChestBlockEntity chest, ValyrianChestBlockEntity otherChest) {
+        NonNullList<ItemStack> nonnulllist = chest.getItems();
+        chest.setItems(otherChest.getItems());
+        otherChest.setItems(nonnulllist);
+    }
+
     @Override
     protected @NotNull AbstractContainerMenu createMenu(int id, @NotNull Inventory player) {
         return ValyrianChestMenu.menu6x9(id, player, this);
     }
 
     @Override
+    public void setBlockState(@NotNull BlockState state) {
+        BlockState oldState = this.getBlockState();
+        super.setBlockState(state);
+        if (oldState.getValue(ValyrianChestBlock.FACING) != state.getValue(ValyrianChestBlock.FACING) || oldState.getValue(ValyrianChestBlock.TYPE) != state.getValue(ValyrianChestBlock.TYPE)) {
+            this.invalidateCapabilities();
+        }
+
+    }
+
     public void recheckOpen() {
         if (!this.remove) {
             this.openersCounter.recheckOpeners(Objects.requireNonNull(this.getLevel()), this.getBlockPos(), this.getBlockState());
         }
     }
+
+    protected void signalOpenCount(Level level, BlockPos blockPos, BlockState blockState, int previousCount, int newCount) {
+        Block block = blockState.getBlock();
+        level.blockEvent(blockPos, block, 1, newCount);
+    }
 }
+*/

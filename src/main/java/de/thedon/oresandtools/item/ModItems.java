@@ -16,20 +16,20 @@ public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(OresAndToolsMod.MOD_ID);
 
     public static final DeferredItem<Item> HARDENED_DIAMOND = ITEMS.registerItem("hardened_diamond", properties -> new ModItem(properties.fireResistant(), true));
-    public static final DeferredItem<Item> HEATING_HARDENED_DIAMOND_1 = ITEMS.registerItem("heating_hardened_diamond_1", Item::new, new Item.Properties().fireResistant());
-    public static final DeferredItem<Item> HEATING_HARDENED_DIAMOND_2 = ITEMS.registerItem("heating_hardened_diamond_2", Item::new, new Item.Properties().fireResistant());
-    public static final DeferredItem<Item> HEATING_HARDENED_DIAMOND_3 = ITEMS.registerItem("heating_hardened_diamond_3", Item::new, new Item.Properties().fireResistant());
-    public static final DeferredItem<Item> HOT_HARDENED_DIAMOND = ITEMS.registerItem("hot_hardened_diamond", Item::new, new Item.Properties().fireResistant());
-    public static final DeferredItem<Item> VALYRIAN_DUST = ITEMS.registerItem("valyrian_dust", Item::new, new Item.Properties().fireResistant());
-    public static final DeferredItem<Item> OBSIDIAN_SHARD = ITEMS.registerItem("obsidian_shard", Item::new, new Item.Properties().fireResistant());
+    public static final DeferredItem<Item> HEATING_HARDENED_DIAMOND_1 = ITEMS.registerItem("heating_hardened_diamond_1",properties -> new Item(properties.fireResistant()));
+    public static final DeferredItem<Item> HEATING_HARDENED_DIAMOND_2 = ITEMS.registerItem("heating_hardened_diamond_2",properties -> new Item(properties.fireResistant()));
+    public static final DeferredItem<Item> HEATING_HARDENED_DIAMOND_3 = ITEMS.registerItem("heating_hardened_diamond_3",properties -> new Item(properties.fireResistant()));
+    public static final DeferredItem<Item> HOT_HARDENED_DIAMOND = ITEMS.registerItem("hot_hardened_diamond",properties -> new Item(properties.fireResistant()));
+    public static final DeferredItem<Item> VALYRIAN_DUST = ITEMS.registerItem("valyrian_dust",properties -> new Item(properties.fireResistant()));
+    public static final DeferredItem<Item> OBSIDIAN_SHARD = ITEMS.registerItem("obsidian_shard",properties -> new Item(properties.fireResistant()));
     public static final DeferredItem<Item> DRAGONS_APPLE = ITEMS.registerItem("dragons_apple", properties -> new ModItem(properties.food(ModFoodProperties.DRAGONS_APPLE, ModFoodProperties.DRAGONS_APPLE_EFFECT), true));
-    public static final DeferredItem<Item> STEEL_CHUNK = ITEMS.registerItem("steel_chunk", Item::new, new Item.Properties());
-    public static final DeferredItem<Item> STEEL_INGOT = ITEMS.registerItem("steel_ingot", Item::new, new Item.Properties());
-    public static final DeferredItem<Item> VALYRIAN_INGOT = ITEMS.registerItem("valyrian_ingot", Item::new, new Item.Properties().fireResistant());
+    public static final DeferredItem<Item> STEEL_CHUNK = ITEMS.registerItem("steel_chunk", Item::new);
+    public static final DeferredItem<Item> STEEL_INGOT = ITEMS.registerItem("steel_ingot", Item::new);
+    public static final DeferredItem<Item> VALYRIAN_INGOT = ITEMS.registerItem("valyrian_ingot",properties -> new Item(properties.fireResistant()));
     public static final DeferredItem<Item> RAW_URANIUM = ITEMS.registerItem("raw_uranium", properties -> new ModItem(properties, true));
     public static final DeferredItem<Item> URANIUM_INGOT = ITEMS.registerItem("uranium_ingot", properties -> new ModItem(properties, true));
-    public static final DeferredItem<Item> IMPROVISED_REACTOR = ITEMS.registerItem("improvised_reactor", ImprovisedReactorItem::new ,new Item.Properties());
-    public static final DeferredItem<Item> VALYRIAN_LEATHER = ITEMS.registerItem("valyrian_leather", Item::new, new Item.Properties());
+    public static final DeferredItem<Item> IMPROVISED_REACTOR = ITEMS.registerItem("improvised_reactor", ImprovisedReactorItem::new);
+    public static final DeferredItem<Item> VALYRIAN_LEATHER = ITEMS.registerItem("valyrian_leather", Item::new);
     public static final DeferredItem<Item> SHULKER_BACKPACK = ITEMS.registerItem("shulker_backpack", properties -> new BackpackItem(properties, false));
 
     /* TOOLS */

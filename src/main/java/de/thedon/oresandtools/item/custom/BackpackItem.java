@@ -1,5 +1,6 @@
 package de.thedon.oresandtools.item.custom;
 
+import de.thedon.oresandtools.item.inventory.BackpackContainer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -19,7 +20,7 @@ public class BackpackItem extends ModItem {
         if (!level.isClientSide()) {
             Item item = itemstack.getItem();
             if (item instanceof BackpackItem) {
-                player.openMenu(new BackpackItemStackHandler(itemstack));
+                player.openMenu(new BackpackContainer(itemstack));
                 return InteractionResult.PASS;
             }
         }

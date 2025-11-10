@@ -29,24 +29,24 @@ public class ValyrianChestMenu extends AbstractContainerMenu {
         return new ValyrianChestMenu(ModMenuTypes.VALYRIAN_CHEST_MENU_9x12.get(), containerId, playerInventory, 9, 12);
     }
 
-    public static ValyrianChestMenu menu6x9(int containerId, Inventory playerInventory, Container inventory) {
-        return new ValyrianChestMenu(ModMenuTypes.VALYRIAN_CHEST_MENU_6x9.get(), containerId, playerInventory, inventory, 6, 9);
+    public static ValyrianChestMenu menu6x9(int containerId, Inventory playerInventory, Container container) {
+        return new ValyrianChestMenu(ModMenuTypes.VALYRIAN_CHEST_MENU_6x9.get(), containerId, playerInventory, container, 6, 9);
     }
 
-    public static ValyrianChestMenu menu9x12(int containerId, Inventory playerInventory, Container inventory) {
-        return new ValyrianChestMenu(ModMenuTypes.VALYRIAN_CHEST_MENU_9x12.get(), containerId, playerInventory, inventory, 9, 12);
+    public static ValyrianChestMenu menu9x12(int containerId, Inventory playerInventory, Container container) {
+        return new ValyrianChestMenu(ModMenuTypes.VALYRIAN_CHEST_MENU_9x12.get(), containerId, playerInventory, container, 9, 12);
     }
 
-    public ValyrianChestMenu(MenuType<?> type, int containerId, Inventory playerInventory, Container inventory, int rows, int columns) {
+    public ValyrianChestMenu(MenuType<?> type, int containerId, Inventory playerInventory, Container container, int rows, int columns) {
         super(type, containerId);
 
-        checkContainerSize(inventory, rows * columns);
+        checkContainerSize(container, rows * columns);
 
-        this.container = inventory;
+        this.container = container;
         this.rows = rows;
         this.columns = columns;
 
-        inventory.startOpen(playerInventory.player);
+        container.startOpen(playerInventory.player);
 
         int i = (this.rows - 4) * 18;
         int chestSlotsYOffset = is6x9() ? 18 : 8;
@@ -56,7 +56,7 @@ public class ValyrianChestMenu extends AbstractContainerMenu {
 
         for(int j = 0; j < this.rows; ++j) {
             for(int k = 0; k < this.columns; ++k) {
-                this.addSlot(new Slot(inventory, k + j * this.columns, 8 + k * 18, chestSlotsYOffset + j * 18));
+                this.addSlot(new Slot(container, k + j * this.columns, 8 + k * 18, chestSlotsYOffset + j * 18));
             }
         }
 

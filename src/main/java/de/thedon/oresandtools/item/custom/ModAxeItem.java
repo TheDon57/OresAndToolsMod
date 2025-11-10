@@ -1,6 +1,7 @@
 package de.thedon.oresandtools.item.custom;
 
 import de.thedon.oresandtools.OresAndToolsMod;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.AxeItem;
@@ -36,7 +37,7 @@ public class ModAxeItem extends AxeItem {
     @ParametersAreNonnullByDefault
     public void appendHoverText(ItemStack stack, TooltipContext context, TooltipDisplay tooltipDisplay, Consumer<Component> tooltipAdder, TooltipFlag flag) {
         if (withTooltip) {
-            if (Screen.hasShiftDown()) {
+            if (Minecraft.getInstance().hasShiftDown()) {
                 tooltipAdder.accept(Component.translatable("tooltip." + this.getDescriptionId().substring(5)));
             } else {
                 tooltipAdder.accept(Component.translatable("tooltip." + OresAndToolsMod.MOD_ID + ".hold_shift"));

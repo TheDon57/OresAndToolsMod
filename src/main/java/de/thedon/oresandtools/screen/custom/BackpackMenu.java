@@ -1,27 +1,28 @@
 package de.thedon.oresandtools.screen.custom;
 
 import de.thedon.oresandtools.item.ModItems;
-import de.thedon.oresandtools.item.custom.BackpackItemStackHandler;
+import de.thedon.oresandtools.item.inventory.BackpackContainer;
 import de.thedon.oresandtools.screen.ModMenuTypes;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
-import net.neoforged.neoforge.items.IItemHandler;
-import net.neoforged.neoforge.items.SlotItemHandler;
+import net.neoforged.neoforge.transfer.ResourceHandler;
+import net.neoforged.neoforge.transfer.item.ItemResource;
 import org.jetbrains.annotations.NotNull;
 
 public class BackpackMenu extends AbstractContainerMenu {
     private static final int ROWS = 6;
-    private final BackpackItemStackHandler inventory;
+    private final BackpackContainer inventory;
 
     public BackpackMenu(int pContainerId, Inventory pPlayerInventory, FriendlyByteBuf pExtraData) {
-        this(pContainerId, pPlayerInventory, new BackpackItemStackHandler(new ItemStack(ModItems.SHULKER_BACKPACK.get())));
+        this(pContainerId, pPlayerInventory, new BackpackContainer(new ItemStack(ModItems.SHULKER_BACKPACK.get())));
     }
 
-    public BackpackMenu(int containerId, Inventory playerInventory, BackpackItemStackHandler inventory) {
+    public BackpackMenu(int containerId, Inventory playerInventory, BackpackContainer inventory) {
         super(ModMenuTypes.BACKPACK_MENU.get(), containerId);
         this.inventory = inventory;
         int i = (ROWS - 4) * 18;
@@ -30,10 +31,11 @@ public class BackpackMenu extends AbstractContainerMenu {
 
         for(int j = 0; j < ROWS; ++j) {
             for(int k = 0; k < 9; ++k) {
-                this.addSlot(new SlotItemHandler(this.inventory, k + j * 9, 8 + k * 18, 18 + j * 18));
+                this.addSlot(new Slot(this.inventory, k + j * 9, 8 + k * 18, 18 + j * 18));
             }
         }
 
+        //this.addStandardInventorySlots(playerInventory, 8, 103 + i);
         for(int l = 0; l < 3; ++l) {
             for(int j1 = 0; j1 < 9; ++j1) {
                 this.addSlot(new Slot(playerInventory, j1 + l * 9 + 9, 8 + j1 * 18, 103 + l * 18 + i));
@@ -45,8 +47,8 @@ public class BackpackMenu extends AbstractContainerMenu {
         }
     }
 
-    protected static void checkContainerSize(IItemHandler itemHandler, int minSize) {
-        int i = itemHandler.getSlots();
+    protected static void checkContainerSize(Container container, int minSize) {
+        int i = container.getContainerSize();
         if (i < minSize) {
             throw new IllegalArgumentException("Container size " + i + " is smaller than expected " + minSize);
         }

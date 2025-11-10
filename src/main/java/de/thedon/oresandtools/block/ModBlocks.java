@@ -5,6 +5,8 @@ import de.thedon.oresandtools.block.custom.ValyrianChestBlock;
 import de.thedon.oresandtools.block.custom.XpOreBlock;
 import de.thedon.oresandtools.block.entity.ModBlockEntities;
 import de.thedon.oresandtools.item.ModItems;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.Block;
@@ -27,7 +29,7 @@ public class ModBlocks {
     /* NORMAL BLOCKS */
     public static final DeferredBlock<Block> HARDENED_DIAMOND_BLOCK = registerBlock("hardened_diamond_block", properties -> new Block(properties.strength(25f).requiresCorrectToolForDrops().mapColor(MapColor.DIAMOND).sound(SoundType.METAL)));
     public static final DeferredBlock<Block> STEEL_BLOCK = registerBlock("steel_block", properties -> new Block(properties.strength(8f, 10f).requiresCorrectToolForDrops().mapColor(MapColor.METAL).sound(SoundType.METAL)));
-    public static final DeferredBlock<Block> VALYRIAN_CHEST = registerBlock("valyrian_chest", properties -> new ValyrianChestBlock(properties.strength(5f).requiresCorrectToolForDrops().mapColor(MapColor.DIAMOND).sound(SoundType.METAL), ModBlockEntities.VALYRIAN_CHEST::get));
+    public static final DeferredBlock<Block> VALYRIAN_CHEST = registerBlock("valyrian_chest", properties -> new ValyrianChestBlock(ModBlockEntities.VALYRIAN_CHEST::get, SoundEvents.CHEST_OPEN, SoundEvents.CHEST_CLOSE, properties.strength(5f).requiresCorrectToolForDrops().mapColor(MapColor.DIAMOND).sound(SoundType.METAL)));
 
     /* ORES */
     public static final DeferredBlock<Block> VALYRIAN_ORE = registerBlock("valyrian_ore", properties -> new DropExperienceBlock(UniformInt.of(3, 7), properties.strength(3f, 3f).requiresCorrectToolForDrops().mapColor(MapColor.STONE).sound(SoundType.STONE)));
