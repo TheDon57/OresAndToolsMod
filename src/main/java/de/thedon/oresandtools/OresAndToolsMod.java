@@ -6,6 +6,7 @@ import de.thedon.oresandtools.block.entity.ModBlockEntities;
 import de.thedon.oresandtools.block.entity.renderer.ValyrianChestRenderer;
 import de.thedon.oresandtools.item.ModCreativeModeTabs;
 import de.thedon.oresandtools.item.ModItems;
+import de.thedon.oresandtools.item.crafting.ModRecipeSerializers;
 import de.thedon.oresandtools.render.ObsidianShieldSpecialRenderer;
 import de.thedon.oresandtools.screen.ModMenuTypes;
 import de.thedon.oresandtools.screen.custom.BackpackScreen;
@@ -45,6 +46,7 @@ public class OresAndToolsMod {
         ModBlockEntities.register(modEventBus);
 
         ModMenuTypes.register(modEventBus);
+        ModRecipeSerializers.register(modEventBus);
 
         modEventBus.addListener(this::addCreative);
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);

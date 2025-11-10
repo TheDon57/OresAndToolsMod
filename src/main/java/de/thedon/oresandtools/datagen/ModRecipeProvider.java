@@ -249,6 +249,8 @@ public class ModRecipeProvider extends RecipeProvider {
                 ModItems.VALYRIAN_CHESTPLATE.get(),
                 ModItems.VALYRIAN_LEGGINGS.get(),
                 ModItems.VALYRIAN_BOOTS.get());
+
+
     }
     
     @ParametersAreNonnullByDefault

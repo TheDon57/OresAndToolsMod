@@ -10,8 +10,8 @@
         },
         {
             "type": "directory",
-            "source": "entity/obsidian_shield",
-            "prefix": "entity/obsidian_shield/"
+            "source": "entity/shield",
+            "prefix": "entity/shield/"
         }
     ]
 }
