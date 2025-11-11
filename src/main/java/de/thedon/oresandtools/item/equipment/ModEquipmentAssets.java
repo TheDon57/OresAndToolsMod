@@ -6,7 +6,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.equipment.EquipmentAsset;
 
 public interface ModEquipmentAssets {
-    ResourceKey<EquipmentAsset> COPPER = createId("copper");
     ResourceKey<EquipmentAsset> STEEL = createId("steel");
     ResourceKey<EquipmentAsset> VALYRIAN = createId("valyrian");
     ResourceKey<EquipmentAsset> H_DIAMOND = createId("hardened_diamond");

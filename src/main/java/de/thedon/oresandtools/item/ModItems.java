@@ -33,11 +33,6 @@ public class ModItems {
     public static final DeferredItem<Item> SHULKER_BACKPACK = ITEMS.registerItem("shulker_backpack", properties -> new BackpackItem(properties, false));
 
     /* TOOLS */
-    public static final DeferredItem<Item> COPPER_SHOVEL = ITEMS.registerItem("copper_shovel", properties -> new ModShovelItem(ModToolMaterials.COPPER, properties));
-    public static final DeferredItem<Item> COPPER_PICKAXE = ITEMS.registerItem("copper_pickaxe", properties -> new ModPickaxeItem(ModToolMaterials.COPPER, properties));
-    public static final DeferredItem<Item> COPPER_AXE = ITEMS.registerItem("copper_axe", properties -> new ModAxeItem(ModToolMaterials.COPPER, 6f, -3.1f, properties));
-    public static final DeferredItem<Item> COPPER_HOE = ITEMS.registerItem("copper_hoe", properties -> new ModHoeItem(ModToolMaterials.COPPER, -3, -1f, properties));
-    public static final DeferredItem<Item> COPPER_SWORD = ITEMS.registerItem("copper_sword", properties -> new ModSwordItem(ModToolMaterials.COPPER, properties));
     public static final DeferredItem<Item> STEEL_SHOVEL = ITEMS.registerItem("steel_shovel", properties -> new ModShovelItem(ModToolMaterials.STEEL, properties));
     public static final DeferredItem<Item> STEEL_PICKAXE = ITEMS.registerItem("steel_pickaxe", properties -> new ModPickaxeItem(ModToolMaterials.STEEL, properties));
     public static final DeferredItem<Item> STEEL_AXE = ITEMS.registerItem("steel_axe", properties -> new ModAxeItem(ModToolMaterials.STEEL, 6f, -3.1f, properties));
@@ -70,10 +65,6 @@ public class ModItems {
     public static final DeferredItem<Item> OBSIDIAN_SWORD = ITEMS.registerItem("obsidian_sword", properties -> new ModSwordItem(ModToolMaterials.OBSIDIAN, properties.fireResistant()));
 
     /* ARMOR */
-    public static final DeferredItem<Item> COPPER_HELMET = ITEMS.registerItem("copper_helmet", properties -> new ModArmorItem(ModArmorMaterials.COPPER, ArmorType.HELMET, properties));
-    public static final DeferredItem<Item> COPPER_CHESTPLATE = ITEMS.registerItem("copper_chestplate", properties -> new ModArmorItem(ModArmorMaterials.COPPER, ArmorType.CHESTPLATE, properties));
-    public static final DeferredItem<Item> COPPER_LEGGINGS = ITEMS.registerItem("copper_leggings", properties -> new ModArmorItem(ModArmorMaterials.COPPER, ArmorType.LEGGINGS, properties));
-    public static final DeferredItem<Item> COPPER_BOOTS = ITEMS.registerItem("copper_boots", properties -> new ModArmorItem(ModArmorMaterials.COPPER, ArmorType.BOOTS, properties));
     public static final DeferredItem<Item> STEEL_HELMET = ITEMS.registerItem("steel_helmet", properties -> new ModArmorItem(ModArmorMaterials.STEEL, ArmorType.HELMET, properties));
     public static final DeferredItem<Item> STEEL_CHESTPLATE = ITEMS.registerItem("steel_chestplate", properties -> new ModArmorItem(ModArmorMaterials.STEEL, ArmorType.CHESTPLATE, properties));
     public static final DeferredItem<Item> STEEL_LEGGINGS = ITEMS.registerItem("steel_leggings", properties -> new ModArmorItem(ModArmorMaterials.STEEL, ArmorType.LEGGINGS, properties));

@@ -16,9 +16,6 @@ public class ModTags {
         public static final TagKey<Block> XP_ORES = createTag("xp_ores");
         public static final TagKey<Block> URANIUM_ORES = createTag("uranium_ores");
 
-        public static final TagKey<Block> NEEDS_COPPER_TOOL = createTag("needs_copper_tool");
-        public static final TagKey<Block> INCORRECT_FOR_COPPER_TOOL = createTag("incorrect_for_copper_tool");
-
         public static final TagKey<Block> NEEDS_STEEL_TOOL = createTag("needs_steel_tool");
         public static final TagKey<Block> INCORRECT_FOR_STEEL_TOOL = createTag("incorrect_for_steel_tool");
 
@@ -53,7 +50,6 @@ public class ModTags {
         public static final TagKey<Item> SHULKER_BACKPACK_MATERIALS = createTag("shulker_backpack_materials");
         public static final TagKey<Item> VALYRIAN_CHEST_MATERIALS = createTag("valyrian_chest_materials");
 
-        public static final TagKey<Item> COPPER_REPAIRABLE = createTag("copper_repairable");
         public static final TagKey<Item> STEEL_REPAIRABLE = createTag("steel_repairable");
         public static final TagKey<Item> VALYRIAN_REPAIRABLE = createTag("valyrian_repairable");
         public static final TagKey<Item> HARDENED_DIAMOND_REPAIRABLE = createTag("hardened_diamond_repairable");

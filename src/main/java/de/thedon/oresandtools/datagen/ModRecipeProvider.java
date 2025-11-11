@@ -170,12 +170,6 @@ public class ModRecipeProvider extends RecipeProvider {
                 RecipeCategory.BUILDING_BLOCKS, Blocks.STONE, 5.0F, 200, "xp");
 
         /* TOOLS */
-        toolSetRecipes(output, Items.COPPER_INGOT,
-                ModItems.COPPER_AXE.get(),
-                ModItems.COPPER_HOE.get(),
-                ModItems.COPPER_PICKAXE.get(),
-                ModItems.COPPER_SHOVEL.get(),
-                ModItems.COPPER_SWORD.get());
         toolSetRecipes(output, Items.EMERALD,
                 ModItems.EMERALD_AXE.get(),
                 ModItems.EMERALD_HOE.get(),
@@ -214,11 +208,6 @@ public class ModRecipeProvider extends RecipeProvider {
                 ModItems.VALYRIAN_SWORD.get());
 
         /* ARMOR */
-        armorSetRecipes(output, Items.COPPER_INGOT,
-                ModItems.COPPER_HELMET.get(),
-                ModItems.COPPER_CHESTPLATE.get(),
-                ModItems.COPPER_LEGGINGS.get(),
-                ModItems.COPPER_BOOTS.get());
         armorSetRecipes(output, Items.EMERALD,
                 ModItems.EMERALD_HELMET.get(),
                 ModItems.EMERALD_CHESTPLATE.get(),

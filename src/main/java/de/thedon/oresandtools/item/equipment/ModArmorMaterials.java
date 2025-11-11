@@ -9,9 +9,6 @@ import net.minecraft.world.item.equipment.ArmorType;
 import java.util.EnumMap;
 
 public class ModArmorMaterials {
-    public static final ArmorMaterial COPPER = new ArmorMaterial(10, protectionForType(1, 3, 4, 2, 4),
-            17, SoundEvents.ARMOR_EQUIP_GOLD, 0.0f, 0.0f, ModTags.Items.COPPER_REPAIRABLE, ModEquipmentAssets.COPPER);
-
     public static final ArmorMaterial STEEL = new ArmorMaterial(20, protectionForType(2, 5, 7, 3, 6),
             9, SoundEvents.ARMOR_EQUIP_IRON, 0.0f, 0.0f, ModTags.Items.STEEL_REPAIRABLE, ModEquipmentAssets.STEEL);
 

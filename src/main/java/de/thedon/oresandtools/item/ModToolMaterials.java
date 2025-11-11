@@ -4,9 +4,6 @@ import de.thedon.oresandtools.util.ModTags;
 import net.minecraft.world.item.ToolMaterial;
 
 public class ModToolMaterials {
-    public static final ToolMaterial COPPER = new ToolMaterial(ModTags.Blocks.INCORRECT_FOR_COPPER_TOOL,
-            180, 9f, 1f, 17, ModTags.Items.COPPER_REPAIRABLE);
-
     public static final ToolMaterial STEEL = new ToolMaterial(ModTags.Blocks.INCORRECT_FOR_STEEL_TOOL,
             500, 6.5f, 2.5f, 12, ModTags.Items.STEEL_REPAIRABLE);
 

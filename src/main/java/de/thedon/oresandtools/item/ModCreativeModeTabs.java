@@ -51,10 +51,6 @@ public class ModCreativeModeTabs {
             .withTabsBefore(ResourceLocation.fromNamespaceAndPath(OresAndToolsMod.MOD_ID, "oat_main_tab"))
             .icon(() -> new ItemStack(ModItems.HARDENED_DIAMOND_AXE.get()))
             .displayItems((itemDisplayParameters, output) -> {
-                output.accept(ModItems.COPPER_SHOVEL);
-                output.accept(ModItems.COPPER_PICKAXE);
-                output.accept(ModItems.COPPER_AXE);
-                output.accept(ModItems.COPPER_HOE);
                 output.accept(ModItems.STEEL_SHOVEL);
                 output.accept(ModItems.STEEL_PICKAXE);
                 output.accept(ModItems.STEEL_AXE);
@@ -86,7 +82,6 @@ public class ModCreativeModeTabs {
                             ResourceLocation.fromNamespaceAndPath(OresAndToolsMod.MOD_ID, "oat_tools_tab"))
             .icon(() -> new ItemStack(ModItems.HARDENED_DIAMOND_SWORD.get()))
             .displayItems((itemDisplayParameters, output) -> {
-                output.accept(ModItems.COPPER_SWORD);
                 output.accept(ModItems.STEEL_SWORD);
                 output.accept(ModItems.HARDENED_DIAMOND_SWORD);
                 output.accept(ModItems.HOT_HARDENED_DIAMOND_SWORD);
@@ -95,10 +90,6 @@ public class ModCreativeModeTabs {
                 output.accept(ModItems.OBSIDIAN_SWORD);
                 output.accept(ModItems.VALYRIAN_BOW);
                 output.accept(ModItems.OBSIDIAN_SHIELD);
-                output.accept(ModItems.COPPER_HELMET);
-                output.accept(ModItems.COPPER_CHESTPLATE);
-                output.accept(ModItems.COPPER_LEGGINGS);
-                output.accept(ModItems.COPPER_BOOTS);
                 output.accept(ModItems.STEEL_HELMET);
                 output.accept(ModItems.STEEL_CHESTPLATE);
                 output.accept(ModItems.STEEL_LEGGINGS);

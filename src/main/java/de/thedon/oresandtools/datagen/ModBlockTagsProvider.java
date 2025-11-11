@@ -82,12 +82,6 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.MOLTEN_IRON_ORE.get())
                 .add(ModBlocks.MOLTEN_GOLD_ORE.get());
 
-        tag(ModTags.Blocks.NEEDS_COPPER_TOOL)
-                .addTag(BlockTags.NEEDS_STONE_TOOL);
-        tag(ModTags.Blocks.INCORRECT_FOR_COPPER_TOOL)
-                .addTag(BlockTags.INCORRECT_FOR_STONE_TOOL)
-                .remove(ModTags.Blocks.NEEDS_COPPER_TOOL);
-
         tag(ModTags.Blocks.NEEDS_STEEL_TOOL)
                 .addTag(BlockTags.NEEDS_IRON_TOOL);
         tag(ModTags.Blocks.INCORRECT_FOR_STEEL_TOOL)

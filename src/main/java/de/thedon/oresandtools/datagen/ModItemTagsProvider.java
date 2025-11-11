@@ -82,9 +82,6 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.HOT_HARDENED_DIAMOND_LEGGINGS.get())
                 .add(ModItems.HOT_HARDENED_DIAMOND_BOOTS.get());
 
-        tag(ModTags.Items.COPPER_REPAIRABLE)
-                .add(Items.COPPER_INGOT);
-
         tag(ModTags.Items.STEEL_REPAIRABLE)
                 .add(ModItems.STEEL_INGOT.get());
 
@@ -104,10 +101,6 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(Items.OBSIDIAN);
 
         tag(ItemTags.TRIMMABLE_ARMOR)
-                .add(ModItems.COPPER_HELMET.get())
-                .add(ModItems.COPPER_CHESTPLATE.get())
-                .add(ModItems.COPPER_LEGGINGS.get())
-                .add(ModItems.COPPER_BOOTS.get())
                 .add(ModItems.STEEL_HELMET.get())
                 .add(ModItems.STEEL_CHESTPLATE.get())
                 .add(ModItems.STEEL_LEGGINGS.get())
@@ -134,7 +127,6 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.OBSIDIAN_BOOTS.get());
 
         tag(ItemTags.SHOVELS)
-                .add(ModItems.COPPER_SHOVEL.get())
                 .add(ModItems.STEEL_SHOVEL.get())
                 .add(ModItems.HARDENED_DIAMOND_SHOVEL.get())
                 .add(ModItems.HOT_HARDENED_DIAMOND_SHOVEL.get())
@@ -143,7 +135,6 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.OBSIDIAN_SHOVEL.get());
 
         tag(ItemTags.PICKAXES)
-                .add(ModItems.COPPER_PICKAXE.get())
                 .add(ModItems.STEEL_PICKAXE.get())
                 .add(ModItems.HARDENED_DIAMOND_PICKAXE.get())
                 .add(ModItems.HOT_HARDENED_DIAMOND_PICKAXE.get())
@@ -152,7 +143,6 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.OBSIDIAN_PICKAXE.get());
 
         tag(ItemTags.AXES)
-                .add(ModItems.COPPER_AXE.get())
                 .add(ModItems.STEEL_AXE.get())
                 .add(ModItems.HARDENED_DIAMOND_AXE.get())
                 .add(ModItems.HOT_HARDENED_DIAMOND_AXE.get())
@@ -161,7 +151,6 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.OBSIDIAN_AXE.get());
 
         tag(ItemTags.HOES)
-                .add(ModItems.COPPER_HOE.get())
                 .add(ModItems.STEEL_HOE.get())
                 .add(ModItems.HARDENED_DIAMOND_HOE.get())
                 .add(ModItems.HOT_HARDENED_DIAMOND_HOE.get())
@@ -170,7 +159,6 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.OBSIDIAN_HOE.get());
 
         tag(ItemTags.SWORDS)
-                .add(ModItems.COPPER_SWORD.get())
                 .add(ModItems.STEEL_SWORD.get())
                 .add(ModItems.HARDENED_DIAMOND_SWORD.get())
                 .add(ModItems.HOT_HARDENED_DIAMOND_SWORD.get())
@@ -179,7 +167,6 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.OBSIDIAN_SWORD.get());
 
         tag(ItemTags.HEAD_ARMOR)
-                .add(ModItems.COPPER_HELMET.get())
                 .add(ModItems.STEEL_HELMET.get())
                 .add(ModItems.HARDENED_DIAMOND_HELMET.get())
                 .add(ModItems.HOT_HARDENED_DIAMOND_HELMET.get())
@@ -188,7 +175,6 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.OBSIDIAN_HELMET.get());
 
         tag(ItemTags.CHEST_ARMOR)
-                .add(ModItems.COPPER_CHESTPLATE.get())
                 .add(ModItems.STEEL_CHESTPLATE.get())
                 .add(ModItems.HARDENED_DIAMOND_CHESTPLATE.get())
                 .add(ModItems.HOT_HARDENED_DIAMOND_CHESTPLATE.get())
@@ -197,7 +183,6 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.OBSIDIAN_CHESTPLATE.get());
 
         tag(ItemTags.LEG_ARMOR)
-                .add(ModItems.COPPER_LEGGINGS.get())
                 .add(ModItems.STEEL_LEGGINGS.get())
                 .add(ModItems.HARDENED_DIAMOND_LEGGINGS.get())
                 .add(ModItems.HOT_HARDENED_DIAMOND_LEGGINGS.get())
@@ -206,7 +191,6 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.OBSIDIAN_LEGGINGS.get());
 
         tag(ItemTags.FOOT_ARMOR)
-                .add(ModItems.COPPER_BOOTS.get())
                 .add(ModItems.STEEL_BOOTS.get())
                 .add(ModItems.HARDENED_DIAMOND_BOOTS.get())
                 .add(ModItems.HOT_HARDENED_DIAMOND_BOOTS.get())

@@ -76,11 +76,6 @@ public class ModModelProvider extends ModelProvider {
         itemModels.generateFlatItem(ModItems.SHULKER_BACKPACK.get(), ModelTemplates.FLAT_ITEM);
 
         /* TOOLS */
-        itemModels.generateFlatItem(ModItems.COPPER_SHOVEL.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
-        itemModels.generateFlatItem(ModItems.COPPER_PICKAXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
-        itemModels.generateFlatItem(ModItems.COPPER_AXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
-        itemModels.generateFlatItem(ModItems.COPPER_HOE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
-        itemModels.generateFlatItem(ModItems.COPPER_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModels.generateFlatItem(ModItems.STEEL_SHOVEL.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModels.generateFlatItem(ModItems.STEEL_PICKAXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModels.generateFlatItem(ModItems.STEEL_AXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
@@ -113,10 +108,6 @@ public class ModModelProvider extends ModelProvider {
         itemModels.generateFlatItem(ModItems.OBSIDIAN_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
 
         /* ARMOR */
-        itemModels.generateTrimmableItem(ModItems.COPPER_HELMET.get(), ModEquipmentAssets.COPPER, ItemModelGenerators.TRIM_PREFIX_HELMET, false);
-        itemModels.generateTrimmableItem(ModItems.COPPER_CHESTPLATE.get(), ModEquipmentAssets.COPPER, ItemModelGenerators.TRIM_PREFIX_CHESTPLATE, false);
-        itemModels.generateTrimmableItem(ModItems.COPPER_LEGGINGS.get(), ModEquipmentAssets.COPPER, ItemModelGenerators.TRIM_PREFIX_LEGGINGS, false);
-        itemModels.generateTrimmableItem(ModItems.COPPER_BOOTS.get(), ModEquipmentAssets.COPPER, ItemModelGenerators.TRIM_PREFIX_BOOTS, false);
         itemModels.generateTrimmableItem(ModItems.STEEL_HELMET.get(), ModEquipmentAssets.STEEL, ItemModelGenerators.TRIM_PREFIX_HELMET, false);
         itemModels.generateTrimmableItem(ModItems.STEEL_CHESTPLATE.get(), ModEquipmentAssets.STEEL, ItemModelGenerators.TRIM_PREFIX_CHESTPLATE, false);
         itemModels.generateTrimmableItem(ModItems.STEEL_LEGGINGS.get(), ModEquipmentAssets.STEEL, ItemModelGenerators.TRIM_PREFIX_LEGGINGS, false);

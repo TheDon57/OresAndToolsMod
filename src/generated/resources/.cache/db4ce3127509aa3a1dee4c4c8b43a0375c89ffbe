@@ -1,15 +1,14 @@
-// 1.21.10	2025-10-31T17:01:11.216481	Tags for minecraft:item mod id oresandtools
-2278d2b4d88f8aa0a72219886eac1da51217401a data/minecraft/tags/item/axes.json
-d9596148f480201764614574d6a1b537ecbc2aaf data/minecraft/tags/item/chest_armor.json
-896f4f8048b0111e3cfe124e69714082034a53d7 data/minecraft/tags/item/foot_armor.json
-cf2668e9255f3ef7591d0668cc1a832cf731f77f data/minecraft/tags/item/head_armor.json
-220f13f5b69d5be3dee158ff8c63821946bb43d0 data/minecraft/tags/item/hoes.json
-745c0057b77715ee971d32db5e2df9b576b79acd data/minecraft/tags/item/leg_armor.json
-93776a94f65601bad46f93e89f68af3619439cc7 data/minecraft/tags/item/pickaxes.json
-6723763789b1e8110446b3d9aa262098cf6062ee data/minecraft/tags/item/shovels.json
-abfb8273971d6675c2e517ca8c66f6d91eadb352 data/minecraft/tags/item/swords.json
-70318c115a3bd7c06a46b10c0902166cb34f444e data/minecraft/tags/item/trimmable_armor.json
-6222fd0d7d2ce08ee1f70be68a61f4e167dda650 data/oresandtools/tags/item/copper_repairable.json
+// 1.21.10	2025-11-11T01:27:29.469764	Tags for minecraft:item mod id oresandtools
+b5db19f2946b3fcfbd2d270ea2f1cee5aa892f1a data/minecraft/tags/item/axes.json
+9fa839551dd6857d0fa3d88d773cb5bcd6974e61 data/minecraft/tags/item/chest_armor.json
+3678124c77c3f824e1c9a8169381658f213c0c17 data/minecraft/tags/item/foot_armor.json
+bf00cccb061cec61238b6413d3da58fd497356f2 data/minecraft/tags/item/head_armor.json
+ea94c8be8bca35bbff45af38f771ab7f21919166 data/minecraft/tags/item/hoes.json
+75eb370ac4273398c760071853a2435d30a5ac32 data/minecraft/tags/item/leg_armor.json
+a3a411d3881f12fdb7a4bbbc3373c5726437f419 data/minecraft/tags/item/pickaxes.json
+566861f860fd3bfd67fc3574753378ff73135341 data/minecraft/tags/item/shovels.json
+34a433e3606b28a4381d782c74851745684142d8 data/minecraft/tags/item/swords.json
+47de96b109ab5ad9145d7e8ffc3b63cc7b92a58c data/minecraft/tags/item/trimmable_armor.json
 6d11ff0b624411f0a70b7ab60f5a8825eed1f340 data/oresandtools/tags/item/dragon_apple_materials.json
 8c4f379d97e2cd8c7f9297bf4fab7e60083ecb0d data/oresandtools/tags/item/emerald_repairable.json
 56a844b602b08d2dcccc1d21202fd37437d59b16 data/oresandtools/tags/item/hardened_diamond_materials.json
