@@ -16,9 +16,6 @@ public class ModTags {
         public static final TagKey<Block> XP_ORES = createTag("xp_ores");
         public static final TagKey<Block> URANIUM_ORES = createTag("uranium_ores");
 
-        public static final TagKey<Block> NEEDS_COPPER_TOOL = createTag("needs_copper_tool");
-        public static final TagKey<Block> INCORRECT_FOR_COPPER_TOOL = createTag("incorrect_for_copper_tool");
-
         public static final TagKey<Block> NEEDS_STEEL_TOOL = createTag("needs_steel_tool");
         public static final TagKey<Block> INCORRECT_FOR_STEEL_TOOL = createTag("incorrect_for_steel_tool");
 
@@ -51,6 +48,18 @@ public class ModTags {
         public static final TagKey<Item> VALYRIAN_INGOT_MATERIALS = createTag("valyrian_ingot_materials");
         public static final TagKey<Item> VALYRIAN_LEATHER_MATERIALS = createTag("valyrian_leather_materials");
         public static final TagKey<Item> SHULKER_BACKPACK_MATERIALS = createTag("shulker_backpack_materials");
+        public static final TagKey<Item> VALYRIAN_CHEST_MATERIALS = createTag("valyrian_chest_materials");
+
+        public static final TagKey<Item> STEEL_REPAIRABLE = createTag("steel_repairable");
+        public static final TagKey<Item> VALYRIAN_REPAIRABLE = createTag("valyrian_repairable");
+        public static final TagKey<Item> HARDENED_DIAMOND_REPAIRABLE = createTag("hardened_diamond_repairable");
+        public static final TagKey<Item> HOT_HARDENED_DIAMOND_REPAIRABLE = createTag("hot_hardened_diamond_repairable");
+        public static final TagKey<Item> EMERALD_REPAIRABLE = createTag("emerald_repairable");
+        public static final TagKey<Item> OBSIDIAN_REPAIRABLE = createTag("obsidian_repairable");
+
+        public static final TagKey<Item> IGNITION_ITEMS = createTag("ignition_items");
+        public static final TagKey<Item> VALYRIAN_ARMOR_SET = createTag("valyrian_armor_set");
+        public static final TagKey<Item> HOT_HARDENED_DIAMOND_ARMOR_SET = createTag("hot_hardened_diamond_armor_set");
 
         private static TagKey<Item> createTag(String name) {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(OresAndToolsMod.MOD_ID, name));

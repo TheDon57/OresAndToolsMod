@@ -1,43 +1,48 @@
 package de.thedon.oresandtools.item.custom;
 
 import de.thedon.oresandtools.OresAndToolsMod;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ShovelItem;
+import net.minecraft.world.item.ToolMaterial;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.TooltipDisplay;
 
 import javax.annotation.ParametersAreNonnullByDefault;
-import java.util.List;
+import java.util.function.Consumer;
 
 public class ModShovelItem extends ShovelItem {
-    private final boolean withToolTip;
+    private final boolean withTooltip;
 
-    public ModShovelItem(Tier tier, Properties properties) {
-        this(tier, properties, false);
+    public ModShovelItem(ToolMaterial material, Properties properties) {
+        this(material, properties, false);
     }
 
-    public ModShovelItem(Tier tier, Properties properties, boolean withToolTip) {
-        this(tier, 1.5f, -3f, properties, withToolTip);
+    public ModShovelItem(ToolMaterial material, Properties properties, boolean withToolTip) {
+        this(material, 1.5f, -3f, properties, withToolTip);
     }
 
-    public ModShovelItem(Tier tier, float attackDamage, float attackSpeed, Properties properties) {
-            this(tier, attackDamage, attackSpeed, properties, false);
-        }
+    public ModShovelItem(ToolMaterial material, float attackDamage, float attackSpeed, Properties properties) {
+        this(material, attackDamage, attackSpeed, properties, false);
+    }
 
-    public ModShovelItem(Tier tier, float attackDamage, float attackSpeed, Properties properties, boolean withToolTip) {
-        super(tier, properties.attributes(ShovelItem.createAttributes(tier, attackDamage, attackSpeed)));
-        this.withToolTip = withToolTip;
+    public ModShovelItem(ToolMaterial material, float attackDamage, float attackSpeed, Properties properties, boolean withToolTip) {
+        super(material, attackDamage, attackSpeed, properties);
+        this.withTooltip = withToolTip;
     }
 
     @Override
     @ParametersAreNonnullByDefault
-    public void appendHoverText(ItemStack pStack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
-        if (withToolTip) {
-            if (Screen.hasShiftDown()) {
-                pTooltipComponents.add(Component.translatable("tooltip." + this.getDescriptionId().substring(5)));
+    public void appendHoverText(ItemStack stack, TooltipContext context, TooltipDisplay tooltipDisplay, Consumer<Component> tooltipAdder, TooltipFlag flag) {
+        if (withTooltip) {
+            if (Minecraft.getInstance().hasShiftDown()) {
+                tooltipAdder.accept(Component.translatable("tooltip." + this.getDescriptionId().substring(5)));
             } else {
-                pTooltipComponents.add(Component.translatable("tooltip." + OresAndToolsMod.MOD_ID + ".hold_shift"));
+                tooltipAdder.accept(Component.translatable("tooltip." + OresAndToolsMod.MOD_ID + ".hold_shift"));
             }
         }
-        super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
+        super.appendHoverText(stack, context, tooltipDisplay, tooltipAdder, flag);
     }
 }

@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "oresandtools:valyrian"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "oresandtools:valyrian"
+      }
+    ]
+  }
+}

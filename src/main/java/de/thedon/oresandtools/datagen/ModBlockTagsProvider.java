@@ -13,15 +13,16 @@ import org.jetbrains.annotations.NotNull;
 import java.util.concurrent.CompletableFuture;
 
 public class ModBlockTagsProvider extends BlockTagsProvider {
-    public ModBlockTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, net.neoforged.neoforge.common.data.ExistingFileHelper existingFileHelper) {
-        super(output, lookupProvider, OresAndToolsMod.MOD_ID, existingFileHelper);
+    public ModBlockTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider) {
+        super(output, lookupProvider, OresAndToolsMod.MOD_ID);
     }
 
     @Override
-    protected void addTags(@NotNull HolderLookup.Provider pProvider) {
+    protected void addTags(@NotNull HolderLookup.Provider provider) {
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.HARDENED_DIAMOND_BLOCK.get())
                 .add(ModBlocks.STEEL_BLOCK.get())
+                .add(ModBlocks.VALYRIAN_CHEST.get())
                 .add(ModBlocks.VALYRIAN_ORE.get())
                 .add(ModBlocks.DEEPSLATE_VALYRIAN_ORE.get())
                 .add(ModBlocks.ENDSTONE_VALYRIAN_ORE.get())
@@ -62,6 +63,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 
         tag(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(ModBlocks.HARDENED_DIAMOND_BLOCK.get())
+                .add(ModBlocks.VALYRIAN_CHEST.get())
                 .add(ModBlocks.VALYRIAN_ORE.get())
                 .add(ModBlocks.DEEPSLATE_VALYRIAN_ORE.get())
                 .add(ModBlocks.ENDSTONE_VALYRIAN_ORE.get())
@@ -79,12 +81,6 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.XP_ORE.get())
                 .add(ModBlocks.MOLTEN_IRON_ORE.get())
                 .add(ModBlocks.MOLTEN_GOLD_ORE.get());
-
-        tag(ModTags.Blocks.NEEDS_COPPER_TOOL)
-                .addTag(BlockTags.NEEDS_STONE_TOOL);
-        tag(ModTags.Blocks.INCORRECT_FOR_COPPER_TOOL)
-                .addTag(BlockTags.INCORRECT_FOR_STONE_TOOL)
-                .remove(ModTags.Blocks.NEEDS_COPPER_TOOL);
 
         tag(ModTags.Blocks.NEEDS_STEEL_TOOL)
                 .addTag(BlockTags.NEEDS_IRON_TOOL);

@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "oresandtools:emerald"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "oresandtools:emerald"
+      }
+    ]
+  }
+}

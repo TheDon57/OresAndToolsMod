@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "L": {
-      "item": "minecraft:leather"
-    },
-    "V": {
-      "item": "oresandtools:valyrian_dust"
-    }
+    "L": "minecraft:leather",
+    "V": "oresandtools:valyrian_dust"
   },
   "pattern": [
     "VVV",

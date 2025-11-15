@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "B": {
-      "item": "minecraft:water_bucket"
-    },
-    "C": {
-      "tag": "minecraft:coals"
-    },
-    "U": {
-      "item": "oresandtools:uranium_ingot"
-    }
+    "B": "minecraft:water_bucket",
+    "C": "#minecraft:coals",
+    "U": "oresandtools:uranium_ingot"
   },
   "pattern": [
     "C",

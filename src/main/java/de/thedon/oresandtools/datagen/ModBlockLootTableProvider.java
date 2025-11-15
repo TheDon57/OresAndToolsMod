@@ -24,8 +24,8 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Set;
 
 public class ModBlockLootTableProvider extends BlockLootSubProvider {
-    protected ModBlockLootTableProvider(HolderLookup.Provider pRegistries) {
-        super(Set.of(), FeatureFlags.REGISTRY.allFlags(), pRegistries);
+    protected ModBlockLootTableProvider(HolderLookup.Provider registries) {
+        super(Set.of(), FeatureFlags.REGISTRY.allFlags(), registries);
     }
 
     @Override
@@ -58,19 +58,19 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         return ModBlocks.BLOCKS.getEntries().stream().map(Holder::value)::iterator;
     }
 
-    protected LootTable.Builder createValyrianOreDrops(Block pBlock) {
+    protected LootTable.Builder createValyrianOreDrops(Block block) {
         HolderLookup.RegistryLookup<Enchantment> registrylookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
-        return createSilkTouchDispatchTable(pBlock,
-                this.applyExplosionDecay(pBlock, LootItem.lootTableItem(ModItems.VALYRIAN_DUST.get())
+        return createSilkTouchDispatchTable(block,
+                this.applyExplosionDecay(block, LootItem.lootTableItem(ModItems.VALYRIAN_DUST.get())
                                 .apply(SetItemCountFunction.setCount(BinomialDistributionGenerator.binomial(3, 0.5F)))
                                 .when(LootItemRandomChanceCondition.randomChance(0.25F)))
                         .append(LootItem.lootTableItem(ModItems.VALYRIAN_DUST.get())
                                 .apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE)))));
     }
 
-    protected LootTable.Builder createObsidianOreDrops(Block pBlock) {
+    protected LootTable.Builder createObsidianOreDrops(Block block) {
         HolderLookup.RegistryLookup<Enchantment> registrylookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
-        return createSilkTouchDispatchTable(pBlock, this.applyExplosionDecay(pBlock, LootItem.lootTableItem(
+        return createSilkTouchDispatchTable(block, this.applyExplosionDecay(block, LootItem.lootTableItem(
                         ModItems.OBSIDIAN_SHARD.get())
                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 5.0F)))
                 .apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE)))));

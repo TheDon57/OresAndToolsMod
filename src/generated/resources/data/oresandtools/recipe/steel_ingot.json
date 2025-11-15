@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "oresandtools:steel_block"
-    }
+    "oresandtools:steel_block"
   ],
   "result": {
     "count": 9,

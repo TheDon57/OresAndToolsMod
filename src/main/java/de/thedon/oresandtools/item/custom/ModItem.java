@@ -1,14 +1,16 @@
 package de.thedon.oresandtools.item.custom;
 
 import de.thedon.oresandtools.OresAndToolsMod;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.TooltipDisplay;
 
 import javax.annotation.ParametersAreNonnullByDefault;
-import java.util.List;
+import java.util.function.Consumer;
 
 public class ModItem extends Item {
     private final boolean withTooltip;
@@ -20,14 +22,14 @@ public class ModItem extends Item {
 
     @Override
     @ParametersAreNonnullByDefault
-    public void appendHoverText(ItemStack pStack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
+    public void appendHoverText(ItemStack stack, TooltipContext context, TooltipDisplay tooltipDisplay, Consumer<Component> tooltipAdder, TooltipFlag flag) {
         if (withTooltip) {
-            if (Screen.hasShiftDown()) {
-                pTooltipComponents.add(Component.translatable("tooltip." + this.getDescriptionId().substring(5)));
+            if (Minecraft.getInstance().hasShiftDown()) {
+                tooltipAdder.accept(Component.translatable("tooltip." + this.getDescriptionId().substring(5)));
             } else {
-                pTooltipComponents.add(Component.translatable("tooltip." + OresAndToolsMod.MOD_ID + ".hold_shift"));
+                tooltipAdder.accept(Component.translatable("tooltip." + OresAndToolsMod.MOD_ID + ".hold_shift"));
             }
         }
-        super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
+        super.appendHoverText(stack, context, tooltipDisplay, tooltipAdder, flag);
     }
 }
