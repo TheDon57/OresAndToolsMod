@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_enderite_bow": {
+      "conditions": {
+        "items": [
+          {
+            "items": "oresandtools:enderite_dust"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "oresandtools:enderite_bow"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_enderite_bow"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "oresandtools:enderite_bow"
+    ]
+  }
+}

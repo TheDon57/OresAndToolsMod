@@ -1,0 +1,10 @@
+{
+  "model": {
+    "type": "minecraft:special",
+    "base": "oresandtools:item/enderite_chest",
+    "model": {
+      "type": "minecraft:chest",
+      "texture": "minecraft:enderite"
+    }
+  }
+}
