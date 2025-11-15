@@ -3,14 +3,14 @@ package de.thedon.oresandtools;
 import com.mojang.logging.LogUtils;
 import de.thedon.oresandtools.block.ModBlocks;
 import de.thedon.oresandtools.block.entity.ModBlockEntities;
-import de.thedon.oresandtools.block.entity.renderer.ValyrianChestRenderer;
+import de.thedon.oresandtools.block.entity.renderer.EnderiteChestRenderer;
 import de.thedon.oresandtools.item.ModCreativeModeTabs;
 import de.thedon.oresandtools.item.ModItems;
 import de.thedon.oresandtools.item.crafting.ModRecipeSerializers;
 import de.thedon.oresandtools.render.ObsidianShieldSpecialRenderer;
 import de.thedon.oresandtools.screen.ModMenuTypes;
 import de.thedon.oresandtools.screen.custom.BackpackScreen;
-import de.thedon.oresandtools.screen.custom.ValyrianChestScreen;
+import de.thedon.oresandtools.screen.custom.EnderiteChestScreen;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
@@ -75,14 +75,14 @@ public class OresAndToolsMod {
 
         @SubscribeEvent
         public static void onRegisterEntityRenderers(final EntityRenderersEvent.RegisterRenderers event) {
-            event.registerBlockEntityRenderer(ModBlockEntities.VALYRIAN_CHEST.get(), ValyrianChestRenderer::new);
+            event.registerBlockEntityRenderer(ModBlockEntities.ENDERITE_CHEST.get(), EnderiteChestRenderer::new);
         }
 
         @SubscribeEvent
         public static void onRegisterMenuScreens(final RegisterMenuScreensEvent event) {
             event.register(ModMenuTypes.BACKPACK_MENU.get(), BackpackScreen::new);
-            event.register(ModMenuTypes.VALYRIAN_CHEST_MENU_6x9.get(), ValyrianChestScreen::screen6x9);
-            event.register(ModMenuTypes.VALYRIAN_CHEST_MENU_9x12.get(), ValyrianChestScreen::screen9x12);
+            event.register(ModMenuTypes.ENDERITE_CHEST_MENU_6x9.get(), EnderiteChestScreen::screen6x9);
+            event.register(ModMenuTypes.ENDERITE_CHEST_MENU_9x12.get(), EnderiteChestScreen::screen9x12);
         }
 
         @SubscribeEvent

@@ -4,28 +4,27 @@ import de.thedon.oresandtools.OresAndToolsMod;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.renderer.RenderPipelines;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import org.jetbrains.annotations.NotNull;
 
-public class ValyrianChestScreen extends AbstractContainerScreen<ValyrianChestMenu> {
+public class EnderiteChestScreen extends AbstractContainerScreen<EnderiteChestMenu> {
     private static final ResourceLocation CONTAINER_BACKGROUND_6x9 = ResourceLocation.withDefaultNamespace("textures/gui/container/generic_54.png");
     private static final ResourceLocation CONTAINER_BACKGROUND_9x12 = ResourceLocation.fromNamespaceAndPath(OresAndToolsMod.MOD_ID, "textures/gui/container/generic_108.png");
 
     private final ResourceLocation background;
     private final int containerRows;
 
-    public static ValyrianChestScreen screen6x9(ValyrianChestMenu menu, Inventory playerInventory, Component title) {
-        return new ValyrianChestScreen(menu, playerInventory, title, CONTAINER_BACKGROUND_6x9);
+    public static EnderiteChestScreen screen6x9(EnderiteChestMenu menu, Inventory playerInventory, Component title) {
+        return new EnderiteChestScreen(menu, playerInventory, title, CONTAINER_BACKGROUND_6x9);
     }
 
-    public static ValyrianChestScreen screen9x12(ValyrianChestMenu menu, Inventory playerInventory, Component title) {
-        return new ValyrianChestScreen(menu, playerInventory, title, CONTAINER_BACKGROUND_9x12);
+    public static EnderiteChestScreen screen9x12(EnderiteChestMenu menu, Inventory playerInventory, Component title) {
+        return new EnderiteChestScreen(menu, playerInventory, title, CONTAINER_BACKGROUND_9x12);
     }
 
-    public ValyrianChestScreen(ValyrianChestMenu menu, Inventory playerInventory, Component title, ResourceLocation background) {
+    public EnderiteChestScreen(EnderiteChestMenu menu, Inventory playerInventory, Component title, ResourceLocation background) {
         super(menu, playerInventory, title);
         int i = 222;
         int j = 114;

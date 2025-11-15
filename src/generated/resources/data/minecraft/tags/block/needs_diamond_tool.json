@@ -1,10 +1,10 @@
 {
   "values": [
     "oresandtools:hardened_diamond_block",
-    "oresandtools:valyrian_chest",
-    "oresandtools:valyrian_ore",
-    "oresandtools:deepslate_valyrian_ore",
-    "oresandtools:endstone_valyrian_ore",
+    "oresandtools:enderite_chest",
+    "oresandtools:enderite_ore",
+    "oresandtools:deepslate_enderite_ore",
+    "oresandtools:endstone_enderite_ore",
     "oresandtools:obsidian_ore",
     "oresandtools:deepslate_obsidian_ore"
   ]

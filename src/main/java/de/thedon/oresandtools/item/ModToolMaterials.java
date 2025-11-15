@@ -7,8 +7,8 @@ public class ModToolMaterials {
     public static final ToolMaterial STEEL = new ToolMaterial(ModTags.Blocks.INCORRECT_FOR_STEEL_TOOL,
             500, 6.5f, 2.5f, 12, ModTags.Items.STEEL_REPAIRABLE);
 
-    public static final ToolMaterial VALYRIAN = new ToolMaterial(ModTags.Blocks.INCORRECT_FOR_VALYRIAN_TOOL,
-            4000, 10f, 6f, 25, ModTags.Items.VALYRIAN_REPAIRABLE);
+    public static final ToolMaterial ENDERITE = new ToolMaterial(ModTags.Blocks.INCORRECT_FOR_ENDERITE_TOOL,
+            4000, 10f, 6f, 25, ModTags.Items.ENDERITE_REPAIRABLE);
 
     public static final ToolMaterial HARDENED_DIAMOND = new ToolMaterial(ModTags.Blocks.INCORRECT_FOR_HARDENED_DIAMOND_TOOL,
             7000, 8f, 3f, 10, ModTags.Items.HARDENED_DIAMOND_REPAIRABLE);

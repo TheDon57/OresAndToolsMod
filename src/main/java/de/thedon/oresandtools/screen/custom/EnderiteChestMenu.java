@@ -12,32 +12,32 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
-public class ValyrianChestMenu extends AbstractContainerMenu {
+public class EnderiteChestMenu extends AbstractContainerMenu {
     private final Container container;
     private final int rows;
     private final int columns;
 
-    private ValyrianChestMenu(MenuType<?> type, int containerId, Inventory playerInventory, int rows, int columns) {
+    private EnderiteChestMenu(MenuType<?> type, int containerId, Inventory playerInventory, int rows, int columns) {
         this(type, containerId, playerInventory, new SimpleContainer(rows * columns), rows, columns);
     }
 
-    public static ValyrianChestMenu menu6x9(int containerId, Inventory playerInventory, FriendlyByteBuf extraData) {
-        return new ValyrianChestMenu(ModMenuTypes.VALYRIAN_CHEST_MENU_6x9.get(), containerId, playerInventory, 6, 9);
+    public static EnderiteChestMenu menu6x9(int containerId, Inventory playerInventory, FriendlyByteBuf extraData) {
+        return new EnderiteChestMenu(ModMenuTypes.ENDERITE_CHEST_MENU_6x9.get(), containerId, playerInventory, 6, 9);
     }
 
-    public static ValyrianChestMenu menu9x12(int containerId, Inventory playerInventory, FriendlyByteBuf extraData) {
-        return new ValyrianChestMenu(ModMenuTypes.VALYRIAN_CHEST_MENU_9x12.get(), containerId, playerInventory, 9, 12);
+    public static EnderiteChestMenu menu9x12(int containerId, Inventory playerInventory, FriendlyByteBuf extraData) {
+        return new EnderiteChestMenu(ModMenuTypes.ENDERITE_CHEST_MENU_9x12.get(), containerId, playerInventory, 9, 12);
     }
 
-    public static ValyrianChestMenu menu6x9(int containerId, Inventory playerInventory, Container container) {
-        return new ValyrianChestMenu(ModMenuTypes.VALYRIAN_CHEST_MENU_6x9.get(), containerId, playerInventory, container, 6, 9);
+    public static EnderiteChestMenu menu6x9(int containerId, Inventory playerInventory, Container container) {
+        return new EnderiteChestMenu(ModMenuTypes.ENDERITE_CHEST_MENU_6x9.get(), containerId, playerInventory, container, 6, 9);
     }
 
-    public static ValyrianChestMenu menu9x12(int containerId, Inventory playerInventory, Container container) {
-        return new ValyrianChestMenu(ModMenuTypes.VALYRIAN_CHEST_MENU_9x12.get(), containerId, playerInventory, container, 9, 12);
+    public static EnderiteChestMenu menu9x12(int containerId, Inventory playerInventory, Container container) {
+        return new EnderiteChestMenu(ModMenuTypes.ENDERITE_CHEST_MENU_9x12.get(), containerId, playerInventory, container, 9, 12);
     }
 
-    public ValyrianChestMenu(MenuType<?> type, int containerId, Inventory playerInventory, Container container, int rows, int columns) {
+    public EnderiteChestMenu(MenuType<?> type, int containerId, Inventory playerInventory, Container container, int rows, int columns) {
         super(type, containerId);
 
         checkContainerSize(container, rows * columns);

@@ -2,12 +2,12 @@
   "layers": {
     "humanoid": [
       {
-        "texture": "oresandtools:valyrian"
+        "texture": "oresandtools:enderite"
       }
     ],
     "humanoid_leggings": [
       {
-        "texture": "oresandtools:valyrian"
+        "texture": "oresandtools:enderite"
       }
     ]
   }

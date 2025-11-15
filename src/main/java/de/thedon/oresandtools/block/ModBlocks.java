@@ -1,7 +1,7 @@
 package de.thedon.oresandtools.block;
 
 import de.thedon.oresandtools.OresAndToolsMod;
-import de.thedon.oresandtools.block.custom.ValyrianChestBlock;
+import de.thedon.oresandtools.block.custom.EnderiteChestBlock;
 import de.thedon.oresandtools.block.custom.XpOreBlock;
 import de.thedon.oresandtools.block.entity.ModBlockEntities;
 import de.thedon.oresandtools.item.ModItems;
@@ -29,12 +29,12 @@ public class ModBlocks {
     /* NORMAL BLOCKS */
     public static final DeferredBlock<Block> HARDENED_DIAMOND_BLOCK = registerBlock("hardened_diamond_block", properties -> new Block(properties.strength(25f).requiresCorrectToolForDrops().mapColor(MapColor.DIAMOND).sound(SoundType.METAL)));
     public static final DeferredBlock<Block> STEEL_BLOCK = registerBlock("steel_block", properties -> new Block(properties.strength(8f, 10f).requiresCorrectToolForDrops().mapColor(MapColor.METAL).sound(SoundType.METAL)));
-    public static final DeferredBlock<Block> VALYRIAN_CHEST = registerBlock("valyrian_chest", properties -> new ValyrianChestBlock(ModBlockEntities.VALYRIAN_CHEST::get, SoundEvents.CHEST_OPEN, SoundEvents.CHEST_CLOSE, properties.strength(5f).requiresCorrectToolForDrops().mapColor(MapColor.DIAMOND).sound(SoundType.METAL)));
+    public static final DeferredBlock<Block> ENDERITE_CHEST = registerBlock("enderite_chest", properties -> new EnderiteChestBlock(ModBlockEntities.ENDERITE_CHEST::get, SoundEvents.CHEST_OPEN, SoundEvents.CHEST_CLOSE, properties.strength(5f).requiresCorrectToolForDrops().mapColor(MapColor.DIAMOND).sound(SoundType.METAL)));
 
     /* ORES */
-    public static final DeferredBlock<Block> VALYRIAN_ORE = registerBlock("valyrian_ore", properties -> new DropExperienceBlock(UniformInt.of(3, 7), properties.strength(3f, 3f).requiresCorrectToolForDrops().mapColor(MapColor.STONE).sound(SoundType.STONE)));
-    public static final DeferredBlock<Block> DEEPSLATE_VALYRIAN_ORE = registerBlock("deepslate_valyrian_ore", properties -> new DropExperienceBlock(UniformInt.of(3, 7), properties.strength(4.5f, 3f).requiresCorrectToolForDrops().mapColor(MapColor.DEEPSLATE).sound(SoundType.DEEPSLATE)));
-    public static final DeferredBlock<Block> ENDSTONE_VALYRIAN_ORE = registerBlock("endstone_valyrian_ore", properties -> new DropExperienceBlock(UniformInt.of(3, 7), properties.strength(3.5f, 3f).requiresCorrectToolForDrops().mapColor(MapColor.SAND).sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> ENDERITE_ORE = registerBlock("enderite_ore", properties -> new DropExperienceBlock(UniformInt.of(3, 7), properties.strength(3f, 3f).requiresCorrectToolForDrops().mapColor(MapColor.STONE).sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> DEEPSLATE_ENDERITE_ORE = registerBlock("deepslate_enderite_ore", properties -> new DropExperienceBlock(UniformInt.of(3, 7), properties.strength(4.5f, 3f).requiresCorrectToolForDrops().mapColor(MapColor.DEEPSLATE).sound(SoundType.DEEPSLATE)));
+    public static final DeferredBlock<Block> ENDSTONE_ENDERITE_ORE = registerBlock("endstone_enderite_ore", properties -> new DropExperienceBlock(UniformInt.of(3, 7), properties.strength(3.5f, 3f).requiresCorrectToolForDrops().mapColor(MapColor.SAND).sound(SoundType.STONE)));
     public static final DeferredBlock<Block> OBSIDIAN_ORE = registerBlock("obsidian_ore", properties -> new DropExperienceBlock(UniformInt.of(3, 7), properties.strength(5f, 3f).requiresCorrectToolForDrops().mapColor(MapColor.STONE).sound(SoundType.STONE)));
     public static final DeferredBlock<Block> DEEPSLATE_OBSIDIAN_ORE = registerBlock("deepslate_obsidian_ore", properties -> new DropExperienceBlock(UniformInt.of(3, 7), properties.strength(6.5f, 3f).requiresCorrectToolForDrops().mapColor(MapColor.DEEPSLATE).sound(SoundType.DEEPSLATE)));
     public static final DeferredBlock<Block> XP_ORE = registerBlock("xp_ore", properties -> new XpOreBlock(UniformInt.of(12, 20), properties.strength(3f, 3f).requiresCorrectToolForDrops().lightLevel(getLightValueLit(8)).mapColor(MapColor.STONE).sound(SoundType.STONE)));

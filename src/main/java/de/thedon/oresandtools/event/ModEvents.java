@@ -101,7 +101,7 @@ public class ModEvents {
                         .toList();
 
                 if (armorItems.size() == 4 && !Config.disableSetBonuses) {
-                    if (armorItems.stream().allMatch(stack -> stack.is(ModTags.Items.VALYRIAN_ARMOR_SET))) {
+                    if (armorItems.stream().allMatch(stack -> stack.is(ModTags.Items.ENDERITE_ARMOR_SET))) {
                         event.setCanceled(event.getSource().is(DamageTypes.ON_FIRE) || event.getSource().is(DamageTypes.IN_FIRE));
                         player.clearFire();
                     }

@@ -4,8 +4,8 @@ import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import de.thedon.oresandtools.OresAndToolsMod;
 import de.thedon.oresandtools.block.entity.ModBlockEntities;
-import de.thedon.oresandtools.block.entity.ValyrianChestBlockEntity;
-import de.thedon.oresandtools.screen.custom.ValyrianChestMenu;
+import de.thedon.oresandtools.block.entity.EnderiteChestBlockEntity;
+import de.thedon.oresandtools.screen.custom.EnderiteChestMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
@@ -30,8 +30,8 @@ import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.Optional;
 import java.util.function.Supplier;
 
-public class ValyrianChestBlock extends ChestBlock {
-    public static final MapCodec<ValyrianChestBlock> CODEC = RecordCodecBuilder.mapCodec((instance) -> instance.group(BuiltInRegistries.SOUND_EVENT.byNameCodec().fieldOf("open_sound").forGetter(ValyrianChestBlock::getOpenChestSound), BuiltInRegistries.SOUND_EVENT.byNameCodec().fieldOf("close_sound").forGetter(ValyrianChestBlock::getCloseChestSound), propertiesCodec()).apply(instance, (openSound, closeSound, properties) -> new ValyrianChestBlock(ModBlockEntities.VALYRIAN_CHEST::get, openSound, closeSound, properties)));
+public class EnderiteChestBlock extends ChestBlock {
+    public static final MapCodec<EnderiteChestBlock> CODEC = RecordCodecBuilder.mapCodec((instance) -> instance.group(BuiltInRegistries.SOUND_EVENT.byNameCodec().fieldOf("open_sound").forGetter(EnderiteChestBlock::getOpenChestSound), BuiltInRegistries.SOUND_EVENT.byNameCodec().fieldOf("close_sound").forGetter(EnderiteChestBlock::getCloseChestSound), propertiesCodec()).apply(instance, (openSound, closeSound, properties) -> new EnderiteChestBlock(ModBlockEntities.ENDERITE_CHEST::get, openSound, closeSound, properties)));
     private static final DoubleBlockCombiner.Combiner<ChestBlockEntity, Optional<MenuProvider>> MENU_PROVIDER_COMBINER;
 
     @Override
@@ -39,7 +39,7 @@ public class ValyrianChestBlock extends ChestBlock {
         return CODEC;
     }
 
-    public ValyrianChestBlock(Supplier<BlockEntityType<? extends ChestBlockEntity>> blockEntityType, SoundEvent openSound, SoundEvent closeSound, Properties properties) {
+    public EnderiteChestBlock(Supplier<BlockEntityType<? extends ChestBlockEntity>> blockEntityType, SoundEvent openSound, SoundEvent closeSound, Properties properties) {
         super(blockEntityType, openSound, closeSound, properties);
     }
 
@@ -53,7 +53,7 @@ public class ValyrianChestBlock extends ChestBlock {
     @Override
     @ParametersAreNonnullByDefault
     public @NotNull BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return new ValyrianChestBlockEntity(pos, state);
+        return new EnderiteChestBlockEntity(pos, state);
     }
 
     static {
@@ -67,7 +67,7 @@ public class ValyrianChestBlock extends ChestBlock {
                         if (first.canOpen(player) && second.canOpen(player)) {
                             first.unpackLootTable(inventory.player);
                             second.unpackLootTable(inventory.player);
-                            return ValyrianChestMenu.menu9x12(containerId, inventory, container);
+                            return EnderiteChestMenu.menu9x12(containerId, inventory, container);
                         } else {
                             return null;
                         }
@@ -77,7 +77,7 @@ public class ValyrianChestBlock extends ChestBlock {
                         if (first.hasCustomName()) {
                             return first.getDisplayName();
                         } else {
-                            return (second.hasCustomName() ? second.getDisplayName() : Component.translatable("container." + OresAndToolsMod.MOD_ID + ".large_valyrian_chest"));
+                            return (second.hasCustomName() ? second.getDisplayName() : Component.translatable("container." + OresAndToolsMod.MOD_ID + ".large_enderite_chest"));
                         }
                     }
                 });

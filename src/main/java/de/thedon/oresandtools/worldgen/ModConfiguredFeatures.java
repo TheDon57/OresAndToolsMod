@@ -24,12 +24,12 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_URANIUM_LARGE_KEY = registerKey("ore_uranium_large");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_URANIUM_MIDDLE_KEY = registerKey("ore_uranium_middle");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_URANIUM_SMALL_KEY = registerKey("ore_uranium_small");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_VALYRIAN_LARGE_KEY = registerKey("ore_valyrian_large");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_VALYRIAN_MIDDLE_KEY = registerKey("ore_valyrian_middle");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_VALYRIAN_SMALL_KEY = registerKey("ore_valyrian_small");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_END_VALYRIAN_LARGE_KEY = registerKey("ore_end_valyrian_large");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_END_VALYRIAN_MIDDLE_KEY = registerKey("ore_end_valyrian_middle");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_END_VALYRIAN_SMALL_KEY = registerKey("ore_end_valyrian_small");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_ENDERITE_LARGE_KEY = registerKey("ore_enderite_large");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_ENDERITE_MIDDLE_KEY = registerKey("ore_enderite_middle");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_ENDERITE_SMALL_KEY = registerKey("ore_enderite_small");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_END_ENDERITE_LARGE_KEY = registerKey("ore_end_enderite_large");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_END_ENDERITE_MIDDLE_KEY = registerKey("ore_end_enderite_middle");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_END_ENDERITE_SMALL_KEY = registerKey("ore_end_enderite_small");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_XP_LARGE_KEY = registerKey("ore_xp_large");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_XP_MIDDLE_KEY = registerKey("ore_xp_middle");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_XP_SMALL_KEY = registerKey("ore_xp_small");
@@ -55,17 +55,17 @@ public class ModConfiguredFeatures {
         register(context, ORE_URANIUM_MIDDLE_KEY, Feature.ORE, new OreConfiguration(uraniumOres, 2));
         register(context, ORE_URANIUM_SMALL_KEY, Feature.ORE, new OreConfiguration(uraniumOres, 1));
 
-        List<OreConfiguration.TargetBlockState> valyrianOres = List.of(
-                OreConfiguration.target(stoneReplaceables, ModBlocks.VALYRIAN_ORE.get().defaultBlockState()),
-                OreConfiguration.target(deepslateReplaceables, ModBlocks.DEEPSLATE_VALYRIAN_ORE.get().defaultBlockState())
+        List<OreConfiguration.TargetBlockState> enderiteOres = List.of(
+                OreConfiguration.target(stoneReplaceables, ModBlocks.ENDERITE_ORE.get().defaultBlockState()),
+                OreConfiguration.target(deepslateReplaceables, ModBlocks.DEEPSLATE_ENDERITE_ORE.get().defaultBlockState())
         );
-        register(context, ORE_VALYRIAN_LARGE_KEY, Feature.ORE, new OreConfiguration(valyrianOres, 4));
-        register(context, ORE_VALYRIAN_MIDDLE_KEY, Feature.ORE, new OreConfiguration(valyrianOres, 2));
-        register(context, ORE_VALYRIAN_SMALL_KEY, Feature.ORE, new OreConfiguration(valyrianOres, 1));
+        register(context, ORE_ENDERITE_LARGE_KEY, Feature.ORE, new OreConfiguration(enderiteOres, 4));
+        register(context, ORE_ENDERITE_MIDDLE_KEY, Feature.ORE, new OreConfiguration(enderiteOres, 2));
+        register(context, ORE_ENDERITE_SMALL_KEY, Feature.ORE, new OreConfiguration(enderiteOres, 1));
 
-        register(context, ORE_END_VALYRIAN_LARGE_KEY, Feature.ORE, new OreConfiguration(endstoneReplaceables, ModBlocks.ENDSTONE_VALYRIAN_ORE.get().defaultBlockState(), 4));
-        register(context, ORE_END_VALYRIAN_MIDDLE_KEY, Feature.ORE, new OreConfiguration(endstoneReplaceables, ModBlocks.ENDSTONE_VALYRIAN_ORE.get().defaultBlockState(), 2));
-        register(context, ORE_END_VALYRIAN_SMALL_KEY, Feature.ORE, new OreConfiguration(endstoneReplaceables, ModBlocks.ENDSTONE_VALYRIAN_ORE.get().defaultBlockState(), 1));
+        register(context, ORE_END_ENDERITE_LARGE_KEY, Feature.ORE, new OreConfiguration(endstoneReplaceables, ModBlocks.ENDSTONE_ENDERITE_ORE.get().defaultBlockState(), 4));
+        register(context, ORE_END_ENDERITE_MIDDLE_KEY, Feature.ORE, new OreConfiguration(endstoneReplaceables, ModBlocks.ENDSTONE_ENDERITE_ORE.get().defaultBlockState(), 2));
+        register(context, ORE_END_ENDERITE_SMALL_KEY, Feature.ORE, new OreConfiguration(endstoneReplaceables, ModBlocks.ENDSTONE_ENDERITE_ORE.get().defaultBlockState(), 1));
 
         List<OreConfiguration.TargetBlockState> xpOres = List.of(
                 OreConfiguration.target(stoneReplaceables, ModBlocks.XP_ORE.get().defaultBlockState()),

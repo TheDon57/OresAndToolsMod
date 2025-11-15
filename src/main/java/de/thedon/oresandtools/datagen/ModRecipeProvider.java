@@ -48,7 +48,7 @@ public class ModRecipeProvider extends RecipeProvider {
     protected void buildRecipes() {
         /* NORMAL ITEMS */
         shaped(RecipeCategory.FOOD, ModItems.DRAGONS_APPLE.get())
-                .define('V', ModItems.VALYRIAN_DUST.get())
+                .define('V', ModItems.ENDERITE_DUST.get())
                 .define('O', ModItems.OBSIDIAN_SHARD.get())
                 .define('A', Items.APPLE)
                 .pattern("VOV")
@@ -96,33 +96,33 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("III")
                 .unlockedBy(getHasName(ModItems.STEEL_CHUNK.get()), has(ModTags.Items.STEEL_CHUNK_MATERIALS))
                 .save(output, ResourceKey.create(Registries.RECIPE, ResourceLocation.fromNamespaceAndPath(OresAndToolsMod.MOD_ID, getItemName(ModItems.STEEL_CHUNK.get()) + "_2")));
-        shaped(RecipeCategory.COMBAT, ModItems.VALYRIAN_BOW.get())
-                .define('V', ModItems.VALYRIAN_INGOT.get())
+        shaped(RecipeCategory.COMBAT, ModItems.ENDERITE_BOW.get())
+                .define('V', ModItems.ENDERITE_INGOT.get())
                 .define('S', Items.STRING)
                 .pattern(" VS")
                 .pattern("V S")
                 .pattern(" VS")
-                .unlockedBy(getHasName(ModItems.VALYRIAN_BOW.get()), has(ModItems.VALYRIAN_DUST.get()))
+                .unlockedBy(getHasName(ModItems.ENDERITE_BOW.get()), has(ModItems.ENDERITE_DUST.get()))
                 .save(output);
-        shaped(RecipeCategory.MISC, ModItems.VALYRIAN_INGOT.get())
-                .define('V', ModItems.VALYRIAN_DUST.get())
+        shaped(RecipeCategory.MISC, ModItems.ENDERITE_INGOT.get())
+                .define('V', ModItems.ENDERITE_DUST.get())
                 .define('S', ModItems.STEEL_INGOT.get())
                 .pattern("VVV")
                 .pattern("VSV")
                 .pattern("VVV")
-                .unlockedBy(getHasName(ModItems.VALYRIAN_INGOT.get()), has(ModTags.Items.VALYRIAN_INGOT_MATERIALS))
+                .unlockedBy(getHasName(ModItems.ENDERITE_INGOT.get()), has(ModTags.Items.ENDERITE_INGOT_MATERIALS))
                 .save(output);
-        shaped(RecipeCategory.MISC, ModItems.VALYRIAN_LEATHER.get())
-                .define('V', ModItems.VALYRIAN_DUST.get())
+        shaped(RecipeCategory.MISC, ModItems.ENDERITE_LEATHER.get())
+                .define('V', ModItems.ENDERITE_DUST.get())
                 .define('L', Items.LEATHER)
                 .pattern("VVV")
                 .pattern("VLV")
                 .pattern("VVV")
-                .unlockedBy(getHasName(ModItems.VALYRIAN_LEATHER.get()), has(ModTags.Items.VALYRIAN_LEATHER_MATERIALS))
+                .unlockedBy(getHasName(ModItems.ENDERITE_LEATHER.get()), has(ModTags.Items.ENDERITE_LEATHER_MATERIALS))
                 .save(output);
         shaped(RecipeCategory.MISC, ModItems.SHULKER_BACKPACK.get())
-                .define('L', ModItems.VALYRIAN_LEATHER.get())
-                .define('I', ModItems.VALYRIAN_INGOT.get())
+                .define('L', ModItems.ENDERITE_LEATHER.get())
+                .define('I', ModItems.ENDERITE_INGOT.get())
                 .define('S', Blocks.SHULKER_BOX)
                 .define('E', Items.ENDER_EYE)
                 .pattern("LSL")
@@ -140,13 +140,13 @@ public class ModRecipeProvider extends RecipeProvider {
                 RecipeCategory.BUILDING_BLOCKS, Blocks.OBSIDIAN);
 
         /* CHESTS */
-        shaped(RecipeCategory.MISC, ModBlocks.VALYRIAN_CHEST.get())
-                .define('V', ModItems.VALYRIAN_INGOT.get())
+        shaped(RecipeCategory.MISC, ModBlocks.ENDERITE_CHEST.get())
+                .define('V', ModItems.ENDERITE_INGOT.get())
                 .define('C', Blocks.CHEST)
                 .pattern("VVV")
                 .pattern("VCV")
                 .pattern("VVV")
-                .unlockedBy(getHasName(ModBlocks.VALYRIAN_CHEST.get()), has(ModTags.Items.VALYRIAN_CHEST_MATERIALS))
+                .unlockedBy(getHasName(ModBlocks.ENDERITE_CHEST.get()), has(ModTags.Items.ENDERITE_CHEST_MATERIALS))
                 .save(output);
 
         /* SMELTING & BLASTING */
@@ -160,10 +160,10 @@ public class ModRecipeProvider extends RecipeProvider {
                 RecipeCategory.BUILDING_BLOCKS, ModItems.URANIUM_INGOT.get(), 1.0F, 200, "uranium_ingot");
         oreBlasting(output, List.of(ModItems.RAW_URANIUM.get(), ModBlocks.URANIUM_ORE.get(), ModBlocks.DEEPSLATE_URANIUM_ORE.get()),
                 RecipeCategory.BUILDING_BLOCKS, ModItems.URANIUM_INGOT.get(), 0.75F, 100, "uranium_ingot");
-        oreSmelting(output, List.of(ModBlocks.VALYRIAN_ORE.get(), ModBlocks.DEEPSLATE_VALYRIAN_ORE.get()),
-                RecipeCategory.BUILDING_BLOCKS, ModItems.VALYRIAN_DUST.get(), 3.0F, 180, "valyrian_dust");
-        oreBlasting(output, List.of(ModBlocks.VALYRIAN_ORE.get(), ModBlocks.DEEPSLATE_VALYRIAN_ORE.get()),
-                RecipeCategory.BUILDING_BLOCKS, ModItems.VALYRIAN_DUST.get(), 2.0F, 90, "valyrian_dust");
+        oreSmelting(output, List.of(ModBlocks.ENDERITE_ORE.get(), ModBlocks.DEEPSLATE_ENDERITE_ORE.get()),
+                RecipeCategory.BUILDING_BLOCKS, ModItems.ENDERITE_DUST.get(), 3.0F, 180, "enderite_dust");
+        oreBlasting(output, List.of(ModBlocks.ENDERITE_ORE.get(), ModBlocks.DEEPSLATE_ENDERITE_ORE.get()),
+                RecipeCategory.BUILDING_BLOCKS, ModItems.ENDERITE_DUST.get(), 2.0F, 90, "enderite_dust");
         oreSmelting(output, List.of(ModBlocks.XP_ORE.get(), ModBlocks.DEEPSLATE_XP_ORE.get()),
                 RecipeCategory.BUILDING_BLOCKS, Blocks.STONE, 10.0F, 200, "xp");
         oreBlasting(output, List.of(ModBlocks.XP_ORE.get(), ModBlocks.DEEPSLATE_XP_ORE.get()),
@@ -200,12 +200,12 @@ public class ModRecipeProvider extends RecipeProvider {
                 ModItems.STEEL_PICKAXE.get(),
                 ModItems.STEEL_SHOVEL.get(),
                 ModItems.STEEL_SWORD.get());
-        toolSetRecipes(output, ModItems.VALYRIAN_INGOT.get(),
-                ModItems.VALYRIAN_AXE.get(),
-                ModItems.VALYRIAN_HOE.get(),
-                ModItems.VALYRIAN_PICKAXE.get(),
-                ModItems.VALYRIAN_SHOVEL.get(),
-                ModItems.VALYRIAN_SWORD.get());
+        toolSetRecipes(output, ModItems.ENDERITE_INGOT.get(),
+                ModItems.ENDERITE_AXE.get(),
+                ModItems.ENDERITE_HOE.get(),
+                ModItems.ENDERITE_PICKAXE.get(),
+                ModItems.ENDERITE_SHOVEL.get(),
+                ModItems.ENDERITE_SWORD.get());
 
         /* ARMOR */
         armorSetRecipes(output, Items.EMERALD,
@@ -233,11 +233,11 @@ public class ModRecipeProvider extends RecipeProvider {
                 ModItems.STEEL_CHESTPLATE.get(),
                 ModItems.STEEL_LEGGINGS.get(),
                 ModItems.STEEL_BOOTS.get());
-        armorSetRecipes(output, ModItems.VALYRIAN_INGOT.get(),
-                ModItems.VALYRIAN_HELMET.get(),
-                ModItems.VALYRIAN_CHESTPLATE.get(),
-                ModItems.VALYRIAN_LEGGINGS.get(),
-                ModItems.VALYRIAN_BOOTS.get());
+        armorSetRecipes(output, ModItems.ENDERITE_INGOT.get(),
+                ModItems.ENDERITE_HELMET.get(),
+                ModItems.ENDERITE_CHESTPLATE.get(),
+                ModItems.ENDERITE_LEGGINGS.get(),
+                ModItems.ENDERITE_BOOTS.get());
 
 
     }

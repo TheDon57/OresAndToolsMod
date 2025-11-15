@@ -12,8 +12,8 @@ public class ModArmorMaterials {
     public static final ArmorMaterial STEEL = new ArmorMaterial(20, protectionForType(2, 5, 7, 3, 6),
             9, SoundEvents.ARMOR_EQUIP_IRON, 0.0f, 0.0f, ModTags.Items.STEEL_REPAIRABLE, ModEquipmentAssets.STEEL);
 
-    public static final ArmorMaterial VALYRIAN = new ArmorMaterial(50, protectionForType(4, 7, 10, 4, 15),
-            25, SoundEvents.ARMOR_EQUIP_GOLD, 3.0f, 0.0f, ModTags.Items.VALYRIAN_REPAIRABLE, ModEquipmentAssets.VALYRIAN);
+    public static final ArmorMaterial ENDERITE = new ArmorMaterial(50, protectionForType(4, 7, 10, 4, 15),
+            25, SoundEvents.ARMOR_EQUIP_GOLD, 3.0f, 0.0f, ModTags.Items.ENDERITE_REPAIRABLE, ModEquipmentAssets.ENDERITE);
 
     public static final ArmorMaterial H_DIAMOND = new ArmorMaterial(65, protectionForType(3, 6, 8, 3, 11),
             10, SoundEvents.ARMOR_EQUIP_DIAMOND, 2.0f, 0.0f, ModTags.Items.HARDENED_DIAMOND_REPAIRABLE, ModEquipmentAssets.H_DIAMOND);

@@ -20,7 +20,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
     @Override
     protected void addTags(@NotNull HolderLookup.Provider provider) {
         tag(ModTags.Items.DRAGON_APPLE_MATERIALS)
-                .add(ModItems.VALYRIAN_DUST.get())
+                .add(ModItems.ENDERITE_DUST.get())
                 .add(ModItems.OBSIDIAN_SHARD.get())
                 .add(Items.APPLE);
 
@@ -44,22 +44,22 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(Items.RAW_IRON)
                 .add(Items.IRON_NUGGET);
 
-        tag(ModTags.Items.VALYRIAN_INGOT_MATERIALS)
-                .add(ModItems.VALYRIAN_DUST.get())
+        tag(ModTags.Items.ENDERITE_INGOT_MATERIALS)
+                .add(ModItems.ENDERITE_DUST.get())
                 .add(ModItems.STEEL_INGOT.get());
 
-        tag(ModTags.Items.VALYRIAN_LEATHER_MATERIALS)
-                .add(ModItems.VALYRIAN_DUST.get())
+        tag(ModTags.Items.ENDERITE_LEATHER_MATERIALS)
+                .add(ModItems.ENDERITE_DUST.get())
                 .add(Items.LEATHER);
 
         tag(ModTags.Items.SHULKER_BACKPACK_MATERIALS)
-                .add(ModItems.VALYRIAN_LEATHER.get())
-                .add(ModItems.VALYRIAN_INGOT.get())
+                .add(ModItems.ENDERITE_LEATHER.get())
+                .add(ModItems.ENDERITE_INGOT.get())
                 .add(Items.SHULKER_BOX)
                 .add(Items.ENDER_EYE);
 
-        tag(ModTags.Items.VALYRIAN_CHEST_MATERIALS)
-                .add(ModItems.VALYRIAN_INGOT.get())
+        tag(ModTags.Items.ENDERITE_CHEST_MATERIALS)
+                .add(ModItems.ENDERITE_INGOT.get())
                 .add(Items.CHEST);
 
         tag(ModTags.Items.IGNITION_ITEMS)
@@ -70,11 +70,11 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.HOT_HARDENED_DIAMOND_SHOVEL.get())
                 .add(ModItems.HOT_HARDENED_DIAMOND_SWORD.get());
 
-        tag(ModTags.Items.VALYRIAN_ARMOR_SET)
-                .add(ModItems.VALYRIAN_HELMET.get())
-                .add(ModItems.VALYRIAN_CHESTPLATE.get())
-                .add(ModItems.VALYRIAN_LEGGINGS.get())
-                .add(ModItems.VALYRIAN_BOOTS.get());
+        tag(ModTags.Items.ENDERITE_ARMOR_SET)
+                .add(ModItems.ENDERITE_HELMET.get())
+                .add(ModItems.ENDERITE_CHESTPLATE.get())
+                .add(ModItems.ENDERITE_LEGGINGS.get())
+                .add(ModItems.ENDERITE_BOOTS.get());
 
         tag(ModTags.Items.HOT_HARDENED_DIAMOND_ARMOR_SET)
                 .add(ModItems.HOT_HARDENED_DIAMOND_HELMET.get())
@@ -85,8 +85,8 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         tag(ModTags.Items.STEEL_REPAIRABLE)
                 .add(ModItems.STEEL_INGOT.get());
 
-        tag(ModTags.Items.VALYRIAN_REPAIRABLE)
-                .add(ModItems.VALYRIAN_INGOT.get());
+        tag(ModTags.Items.ENDERITE_REPAIRABLE)
+                .add(ModItems.ENDERITE_INGOT.get());
 
         tag(ModTags.Items.HARDENED_DIAMOND_REPAIRABLE)
                 .add(ModItems.HARDENED_DIAMOND.get());
@@ -105,10 +105,10 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.STEEL_CHESTPLATE.get())
                 .add(ModItems.STEEL_LEGGINGS.get())
                 .add(ModItems.STEEL_BOOTS.get())
-                .add(ModItems.VALYRIAN_HELMET.get())
-                .add(ModItems.VALYRIAN_CHESTPLATE.get())
-                .add(ModItems.VALYRIAN_LEGGINGS.get())
-                .add(ModItems.VALYRIAN_BOOTS.get())
+                .add(ModItems.ENDERITE_HELMET.get())
+                .add(ModItems.ENDERITE_CHESTPLATE.get())
+                .add(ModItems.ENDERITE_LEGGINGS.get())
+                .add(ModItems.ENDERITE_BOOTS.get())
                 .add(ModItems.HARDENED_DIAMOND_HELMET.get())
                 .add(ModItems.HARDENED_DIAMOND_CHESTPLATE.get())
                 .add(ModItems.HARDENED_DIAMOND_LEGGINGS.get())
@@ -130,7 +130,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.STEEL_SHOVEL.get())
                 .add(ModItems.HARDENED_DIAMOND_SHOVEL.get())
                 .add(ModItems.HOT_HARDENED_DIAMOND_SHOVEL.get())
-                .add(ModItems.VALYRIAN_SHOVEL.get())
+                .add(ModItems.ENDERITE_SHOVEL.get())
                 .add(ModItems.EMERALD_SHOVEL.get())
                 .add(ModItems.OBSIDIAN_SHOVEL.get());
 
@@ -138,7 +138,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.STEEL_PICKAXE.get())
                 .add(ModItems.HARDENED_DIAMOND_PICKAXE.get())
                 .add(ModItems.HOT_HARDENED_DIAMOND_PICKAXE.get())
-                .add(ModItems.VALYRIAN_PICKAXE.get())
+                .add(ModItems.ENDERITE_PICKAXE.get())
                 .add(ModItems.EMERALD_PICKAXE.get())
                 .add(ModItems.OBSIDIAN_PICKAXE.get());
 
@@ -146,7 +146,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.STEEL_AXE.get())
                 .add(ModItems.HARDENED_DIAMOND_AXE.get())
                 .add(ModItems.HOT_HARDENED_DIAMOND_AXE.get())
-                .add(ModItems.VALYRIAN_AXE.get())
+                .add(ModItems.ENDERITE_AXE.get())
                 .add(ModItems.EMERALD_AXE.get())
                 .add(ModItems.OBSIDIAN_AXE.get());
 
@@ -154,7 +154,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.STEEL_HOE.get())
                 .add(ModItems.HARDENED_DIAMOND_HOE.get())
                 .add(ModItems.HOT_HARDENED_DIAMOND_HOE.get())
-                .add(ModItems.VALYRIAN_HOE.get())
+                .add(ModItems.ENDERITE_HOE.get())
                 .add(ModItems.EMERALD_HOE.get())
                 .add(ModItems.OBSIDIAN_HOE.get());
 
@@ -162,7 +162,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.STEEL_SWORD.get())
                 .add(ModItems.HARDENED_DIAMOND_SWORD.get())
                 .add(ModItems.HOT_HARDENED_DIAMOND_SWORD.get())
-                .add(ModItems.VALYRIAN_SWORD.get())
+                .add(ModItems.ENDERITE_SWORD.get())
                 .add(ModItems.EMERALD_SWORD.get())
                 .add(ModItems.OBSIDIAN_SWORD.get());
 
@@ -170,7 +170,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.STEEL_HELMET.get())
                 .add(ModItems.HARDENED_DIAMOND_HELMET.get())
                 .add(ModItems.HOT_HARDENED_DIAMOND_HELMET.get())
-                .add(ModItems.VALYRIAN_HELMET.get())
+                .add(ModItems.ENDERITE_HELMET.get())
                 .add(ModItems.EMERALD_HELMET.get())
                 .add(ModItems.OBSIDIAN_HELMET.get());
 
@@ -178,7 +178,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.STEEL_CHESTPLATE.get())
                 .add(ModItems.HARDENED_DIAMOND_CHESTPLATE.get())
                 .add(ModItems.HOT_HARDENED_DIAMOND_CHESTPLATE.get())
-                .add(ModItems.VALYRIAN_CHESTPLATE.get())
+                .add(ModItems.ENDERITE_CHESTPLATE.get())
                 .add(ModItems.EMERALD_CHESTPLATE.get())
                 .add(ModItems.OBSIDIAN_CHESTPLATE.get());
 
@@ -186,7 +186,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.STEEL_LEGGINGS.get())
                 .add(ModItems.HARDENED_DIAMOND_LEGGINGS.get())
                 .add(ModItems.HOT_HARDENED_DIAMOND_LEGGINGS.get())
-                .add(ModItems.VALYRIAN_LEGGINGS.get())
+                .add(ModItems.ENDERITE_LEGGINGS.get())
                 .add(ModItems.EMERALD_LEGGINGS.get())
                 .add(ModItems.OBSIDIAN_LEGGINGS.get());
 
@@ -194,7 +194,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.STEEL_BOOTS.get())
                 .add(ModItems.HARDENED_DIAMOND_BOOTS.get())
                 .add(ModItems.HOT_HARDENED_DIAMOND_BOOTS.get())
-                .add(ModItems.VALYRIAN_BOOTS.get())
+                .add(ModItems.ENDERITE_BOOTS.get())
                 .add(ModItems.EMERALD_BOOTS.get())
                 .add(ModItems.OBSIDIAN_BOOTS.get());
     }

@@ -1,8 +1,8 @@
 package de.thedon.oresandtools.block.entity;
 
 import de.thedon.oresandtools.OresAndToolsMod;
-import de.thedon.oresandtools.block.custom.ValyrianChestBlock;
-import de.thedon.oresandtools.screen.custom.ValyrianChestMenu;
+import de.thedon.oresandtools.block.custom.EnderiteChestBlock;
+import de.thedon.oresandtools.screen.custom.EnderiteChestMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.NonNullList;
@@ -35,47 +35,47 @@ import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 import java.util.Objects;
 
-public class ValyrianChestBlockEntity extends ChestBlockEntity {
-    private static final Component DEFAULT_NAME = Component.translatable("block." + OresAndToolsMod.MOD_ID + ".valyrian_chest");
+public class EnderiteChestBlockEntity extends ChestBlockEntity {
+    private static final Component DEFAULT_NAME = Component.translatable("block." + OresAndToolsMod.MOD_ID + ".enderite_chest");
     private static final int ITEMS_SIZE = 54;
     private NonNullList<ItemStack> items;
     private final ContainerOpenersCounter openersCounter;
 
-    public ValyrianChestBlockEntity(BlockPos blockPos, BlockState blockState) {
-        this(ModBlockEntities.VALYRIAN_CHEST.get(), blockPos, blockState);
+    public EnderiteChestBlockEntity(BlockPos blockPos, BlockState blockState) {
+        this(ModBlockEntities.ENDERITE_CHEST.get(), blockPos, blockState);
     }
 
-    protected ValyrianChestBlockEntity(BlockEntityType<?> blockEntityType, BlockPos pos, BlockState state) {
+    protected EnderiteChestBlockEntity(BlockEntityType<?> blockEntityType, BlockPos pos, BlockState state) {
         super(blockEntityType, pos, state);
         this.items = NonNullList.withSize(ITEMS_SIZE, ItemStack.EMPTY);
         this.openersCounter = new ContainerOpenersCounter() {
             @ParametersAreNonnullByDefault
             protected void onOpen(Level level, BlockPos pos, BlockState state) {
                 Block block = state.getBlock();
-                if (block instanceof ValyrianChestBlock chestBlock) {
-                    ValyrianChestBlockEntity.playSound(level, pos, state, chestBlock.getOpenChestSound());
+                if (block instanceof EnderiteChestBlock chestBlock) {
+                    EnderiteChestBlockEntity.playSound(level, pos, state, chestBlock.getOpenChestSound());
                 }
             }
 
             @ParametersAreNonnullByDefault
             protected void onClose(Level level, BlockPos pos, BlockState state) {
                 Block block = state.getBlock();
-                if (block instanceof ValyrianChestBlock chestBlock) {
-                    ValyrianChestBlockEntity.playSound(level, pos, state, chestBlock.getCloseChestSound());
+                if (block instanceof EnderiteChestBlock chestBlock) {
+                    EnderiteChestBlockEntity.playSound(level, pos, state, chestBlock.getCloseChestSound());
                 }
             }
 
             @ParametersAreNonnullByDefault
             protected void openerCountChanged(Level level, BlockPos pos, BlockState state, int eventId, int eventParam) {
-                ValyrianChestBlockEntity.this.signalOpenCount(level, pos, state, eventId, eventParam);
+                EnderiteChestBlockEntity.this.signalOpenCount(level, pos, state, eventId, eventParam);
             }
 
             public boolean isOwnContainer(@NotNull Player player) {
-                if (!(player.containerMenu instanceof ValyrianChestMenu)) {
+                if (!(player.containerMenu instanceof EnderiteChestMenu)) {
                     return false;
                 } else {
-                    Container container = ((ValyrianChestMenu)player.containerMenu).getContainer();
-                    return container == ValyrianChestBlockEntity.this || container instanceof CompoundContainer && ((CompoundContainer)container).contains(ValyrianChestBlockEntity.this);
+                    Container container = ((EnderiteChestMenu)player.containerMenu).getContainer();
+                    return container == EnderiteChestBlockEntity.this || container instanceof CompoundContainer && ((CompoundContainer)container).contains(EnderiteChestBlockEntity.this);
                 }
             }
         };
@@ -165,8 +165,8 @@ public class ValyrianChestBlockEntity extends ChestBlockEntity {
         BlockState blockstate = blockGetter.getBlockState(pos);
         if (blockstate.hasBlockEntity()) {
             BlockEntity blockentity = blockGetter.getBlockEntity(pos);
-            if (blockentity instanceof ValyrianChestBlockEntity) {
-                return ((ValyrianChestBlockEntity) blockentity).openersCounter.getOpenerCount();
+            if (blockentity instanceof EnderiteChestBlockEntity) {
+                return ((EnderiteChestBlockEntity) blockentity).openersCounter.getOpenerCount();
             }
         }
 
@@ -175,7 +175,7 @@ public class ValyrianChestBlockEntity extends ChestBlockEntity {
 
     @Override
     protected @NotNull AbstractContainerMenu createMenu(int id, @NotNull Inventory player) {
-        return ValyrianChestMenu.menu6x9(id, player, this);
+        return EnderiteChestMenu.menu6x9(id, player, this);
     }
 
     @Override

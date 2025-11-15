@@ -20,16 +20,16 @@ public class ModItems {
     public static final DeferredItem<Item> HEATING_HARDENED_DIAMOND_2 = ITEMS.registerItem("heating_hardened_diamond_2",properties -> new Item(properties.fireResistant()));
     public static final DeferredItem<Item> HEATING_HARDENED_DIAMOND_3 = ITEMS.registerItem("heating_hardened_diamond_3",properties -> new Item(properties.fireResistant()));
     public static final DeferredItem<Item> HOT_HARDENED_DIAMOND = ITEMS.registerItem("hot_hardened_diamond",properties -> new Item(properties.fireResistant()));
-    public static final DeferredItem<Item> VALYRIAN_DUST = ITEMS.registerItem("valyrian_dust",properties -> new Item(properties.fireResistant()));
+    public static final DeferredItem<Item> ENDERITE_DUST = ITEMS.registerItem("enderite_dust",properties -> new Item(properties.fireResistant()));
     public static final DeferredItem<Item> OBSIDIAN_SHARD = ITEMS.registerItem("obsidian_shard",properties -> new Item(properties.fireResistant()));
     public static final DeferredItem<Item> DRAGONS_APPLE = ITEMS.registerItem("dragons_apple", properties -> new ModItem(properties.food(ModFoodProperties.DRAGONS_APPLE, ModFoodProperties.DRAGONS_APPLE_EFFECT), true));
     public static final DeferredItem<Item> STEEL_CHUNK = ITEMS.registerItem("steel_chunk", Item::new);
     public static final DeferredItem<Item> STEEL_INGOT = ITEMS.registerItem("steel_ingot", Item::new);
-    public static final DeferredItem<Item> VALYRIAN_INGOT = ITEMS.registerItem("valyrian_ingot",properties -> new Item(properties.fireResistant()));
+    public static final DeferredItem<Item> ENDERITE_INGOT = ITEMS.registerItem("enderite_ingot",properties -> new Item(properties.fireResistant()));
     public static final DeferredItem<Item> RAW_URANIUM = ITEMS.registerItem("raw_uranium", properties -> new ModItem(properties, true));
     public static final DeferredItem<Item> URANIUM_INGOT = ITEMS.registerItem("uranium_ingot", properties -> new ModItem(properties, true));
     public static final DeferredItem<Item> IMPROVISED_REACTOR = ITEMS.registerItem("improvised_reactor", ImprovisedReactorItem::new);
-    public static final DeferredItem<Item> VALYRIAN_LEATHER = ITEMS.registerItem("valyrian_leather", Item::new);
+    public static final DeferredItem<Item> ENDERITE_LEATHER = ITEMS.registerItem("enderite_leather", Item::new);
     public static final DeferredItem<Item> SHULKER_BACKPACK = ITEMS.registerItem("shulker_backpack", properties -> new BackpackItem(properties, false));
 
     /* TOOLS */
@@ -38,11 +38,11 @@ public class ModItems {
     public static final DeferredItem<Item> STEEL_AXE = ITEMS.registerItem("steel_axe", properties -> new ModAxeItem(ModToolMaterials.STEEL, 6f, -3.1f, properties));
     public static final DeferredItem<Item> STEEL_HOE = ITEMS.registerItem("steel_hoe", properties -> new ModHoeItem(ModToolMaterials.STEEL, -3, -1f, properties));
     public static final DeferredItem<Item> STEEL_SWORD = ITEMS.registerItem("steel_sword", properties -> new ModSwordItem(ModToolMaterials.STEEL, properties));
-    public static final DeferredItem<Item> VALYRIAN_SHOVEL = ITEMS.registerItem("valyrian_shovel", properties -> new ModShovelItem(ModToolMaterials.VALYRIAN, properties.fireResistant()));
-    public static final DeferredItem<Item> VALYRIAN_PICKAXE = ITEMS.registerItem("valyrian_pickaxe", properties -> new ModPickaxeItem(ModToolMaterials.VALYRIAN, properties.fireResistant()));
-    public static final DeferredItem<Item> VALYRIAN_AXE = ITEMS.registerItem("valyrian_axe", properties -> new ModAxeItem(ModToolMaterials.VALYRIAN, 4f, -3.1f, properties.fireResistant()));
-    public static final DeferredItem<Item> VALYRIAN_HOE = ITEMS.registerItem("valyrian_hoe", properties -> new ModHoeItem(ModToolMaterials.VALYRIAN, -3, 1f, properties.fireResistant()));
-    public static final DeferredItem<Item> VALYRIAN_SWORD = ITEMS.registerItem("valyrian_sword", properties -> new ModSwordItem(ModToolMaterials.VALYRIAN, properties.fireResistant()));
+    public static final DeferredItem<Item> ENDERITE_SHOVEL = ITEMS.registerItem("enderite_shovel", properties -> new ModShovelItem(ModToolMaterials.ENDERITE, properties.fireResistant()));
+    public static final DeferredItem<Item> ENDERITE_PICKAXE = ITEMS.registerItem("enderite_pickaxe", properties -> new ModPickaxeItem(ModToolMaterials.ENDERITE, properties.fireResistant()));
+    public static final DeferredItem<Item> ENDERITE_AXE = ITEMS.registerItem("enderite_axe", properties -> new ModAxeItem(ModToolMaterials.ENDERITE, 4f, -3.1f, properties.fireResistant()));
+    public static final DeferredItem<Item> ENDERITE_HOE = ITEMS.registerItem("enderite_hoe", properties -> new ModHoeItem(ModToolMaterials.ENDERITE, -3, 1f, properties.fireResistant()));
+    public static final DeferredItem<Item> ENDERITE_SWORD = ITEMS.registerItem("enderite_sword", properties -> new ModSwordItem(ModToolMaterials.ENDERITE, properties.fireResistant()));
     public static final DeferredItem<Item> HARDENED_DIAMOND_SHOVEL = ITEMS.registerItem("hardened_diamond_shovel", properties -> new ModShovelItem(ModToolMaterials.HARDENED_DIAMOND, properties.fireResistant()));
     public static final DeferredItem<Item> HARDENED_DIAMOND_PICKAXE = ITEMS.registerItem("hardened_diamond_pickaxe", properties -> new ModPickaxeItem(ModToolMaterials.HARDENED_DIAMOND, properties.fireResistant()));
     public static final DeferredItem<Item> HARDENED_DIAMOND_AXE = ITEMS.registerItem("hardened_diamond_axe", properties -> new ModAxeItem(ModToolMaterials.HARDENED_DIAMOND, 6f, -3.1f, properties.fireResistant()));
@@ -69,10 +69,10 @@ public class ModItems {
     public static final DeferredItem<Item> STEEL_CHESTPLATE = ITEMS.registerItem("steel_chestplate", properties -> new ModArmorItem(ModArmorMaterials.STEEL, ArmorType.CHESTPLATE, properties));
     public static final DeferredItem<Item> STEEL_LEGGINGS = ITEMS.registerItem("steel_leggings", properties -> new ModArmorItem(ModArmorMaterials.STEEL, ArmorType.LEGGINGS, properties));
     public static final DeferredItem<Item> STEEL_BOOTS = ITEMS.registerItem("steel_boots", properties -> new ModArmorItem(ModArmorMaterials.STEEL, ArmorType.BOOTS, properties));
-    public static final DeferredItem<Item> VALYRIAN_HELMET = ITEMS.registerItem("valyrian_helmet", properties -> new ModArmorItem(ModArmorMaterials.VALYRIAN, ArmorType.HELMET, properties.fireResistant(), true));
-    public static final DeferredItem<Item> VALYRIAN_CHESTPLATE = ITEMS.registerItem("valyrian_chestplate", properties -> new ModArmorItem(ModArmorMaterials.VALYRIAN, ArmorType.CHESTPLATE, properties.fireResistant(), true));
-    public static final DeferredItem<Item> VALYRIAN_LEGGINGS = ITEMS.registerItem("valyrian_leggings", properties -> new ModArmorItem(ModArmorMaterials.VALYRIAN, ArmorType.LEGGINGS, properties.fireResistant(), true));
-    public static final DeferredItem<Item> VALYRIAN_BOOTS = ITEMS.registerItem("valyrian_boots", properties -> new ModArmorItem(ModArmorMaterials.VALYRIAN, ArmorType.BOOTS, properties.fireResistant(), true));
+    public static final DeferredItem<Item> ENDERITE_HELMET = ITEMS.registerItem("enderite_helmet", properties -> new ModArmorItem(ModArmorMaterials.ENDERITE, ArmorType.HELMET, properties.fireResistant(), true));
+    public static final DeferredItem<Item> ENDERITE_CHESTPLATE = ITEMS.registerItem("enderite_chestplate", properties -> new ModArmorItem(ModArmorMaterials.ENDERITE, ArmorType.CHESTPLATE, properties.fireResistant(), true));
+    public static final DeferredItem<Item> ENDERITE_LEGGINGS = ITEMS.registerItem("enderite_leggings", properties -> new ModArmorItem(ModArmorMaterials.ENDERITE, ArmorType.LEGGINGS, properties.fireResistant(), true));
+    public static final DeferredItem<Item> ENDERITE_BOOTS = ITEMS.registerItem("enderite_boots", properties -> new ModArmorItem(ModArmorMaterials.ENDERITE, ArmorType.BOOTS, properties.fireResistant(), true));
     public static final DeferredItem<Item> HARDENED_DIAMOND_HELMET = ITEMS.registerItem("hardened_diamond_helmet", properties -> new ModArmorItem(ModArmorMaterials.H_DIAMOND, ArmorType.HELMET, properties.fireResistant()));
     public static final DeferredItem<Item> HARDENED_DIAMOND_CHESTPLATE = ITEMS.registerItem("hardened_diamond_chestplate", properties -> new ModArmorItem(ModArmorMaterials.H_DIAMOND, ArmorType.CHESTPLATE, properties.fireResistant()));
     public static final DeferredItem<Item> HARDENED_DIAMOND_LEGGINGS = ITEMS.registerItem("hardened_diamond_leggings", properties -> new ModArmorItem(ModArmorMaterials.H_DIAMOND, ArmorType.LEGGINGS, properties.fireResistant()));
@@ -91,7 +91,7 @@ public class ModItems {
     public static final DeferredItem<Item> OBSIDIAN_BOOTS = ITEMS.registerItem("obsidian_boots", properties -> new ModArmorItem(ModArmorMaterials.OBSIDIAN, ArmorType.BOOTS, properties.fireResistant()));
 
     /* BOWS */
-    public static final DeferredItem<Item> VALYRIAN_BOW = ITEMS.registerItem("valyrian_bow", properties -> new ModBowItem(VALYRIAN_INGOT.get(), 1.1f, 60000, 20, properties.durability(3225)));
+    public static final DeferredItem<Item> ENDERITE_BOW = ITEMS.registerItem("enderite_bow", properties -> new ModBowItem(ENDERITE_INGOT.get(), 1.1f, 60000, 20, properties.durability(3225)));
 
     /* SHIELDS */
     public static final DeferredItem<Item> OBSIDIAN_SHIELD = ITEMS.registerItem("obsidian_shield", properties -> new ModShieldItem(1250, ModTags.Items.OBSIDIAN_REPAIRABLE, properties.fireResistant()));

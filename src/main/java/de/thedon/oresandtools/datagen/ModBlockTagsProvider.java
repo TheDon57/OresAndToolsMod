@@ -22,10 +22,10 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.HARDENED_DIAMOND_BLOCK.get())
                 .add(ModBlocks.STEEL_BLOCK.get())
-                .add(ModBlocks.VALYRIAN_CHEST.get())
-                .add(ModBlocks.VALYRIAN_ORE.get())
-                .add(ModBlocks.DEEPSLATE_VALYRIAN_ORE.get())
-                .add(ModBlocks.ENDSTONE_VALYRIAN_ORE.get())
+                .add(ModBlocks.ENDERITE_CHEST.get())
+                .add(ModBlocks.ENDERITE_ORE.get())
+                .add(ModBlocks.DEEPSLATE_ENDERITE_ORE.get())
+                .add(ModBlocks.ENDSTONE_ENDERITE_ORE.get())
                 .add(ModBlocks.OBSIDIAN_ORE.get())
                 .add(ModBlocks.DEEPSLATE_OBSIDIAN_ORE.get())
                 .add(ModBlocks.XP_ORE.get())
@@ -45,9 +45,9 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(Blocks.STONE)
                 .add(Blocks.COBBLESTONE);
 
-        tag(ModTags.Blocks.VALYRIAN_ORES)
-                .add(ModBlocks.VALYRIAN_ORE.get())
-                .add(ModBlocks.DEEPSLATE_VALYRIAN_ORE.get());
+        tag(ModTags.Blocks.ENDERITE_ORES)
+                .add(ModBlocks.ENDERITE_ORE.get())
+                .add(ModBlocks.DEEPSLATE_ENDERITE_ORE.get());
 
         tag(ModTags.Blocks.OBSIDIAN_ORES)
                 .add(ModBlocks.OBSIDIAN_ORE.get())
@@ -63,10 +63,10 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 
         tag(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(ModBlocks.HARDENED_DIAMOND_BLOCK.get())
-                .add(ModBlocks.VALYRIAN_CHEST.get())
-                .add(ModBlocks.VALYRIAN_ORE.get())
-                .add(ModBlocks.DEEPSLATE_VALYRIAN_ORE.get())
-                .add(ModBlocks.ENDSTONE_VALYRIAN_ORE.get())
+                .add(ModBlocks.ENDERITE_CHEST.get())
+                .add(ModBlocks.ENDERITE_ORE.get())
+                .add(ModBlocks.DEEPSLATE_ENDERITE_ORE.get())
+                .add(ModBlocks.ENDSTONE_ENDERITE_ORE.get())
                 .add(ModBlocks.OBSIDIAN_ORE.get())
                 .add(ModBlocks.DEEPSLATE_OBSIDIAN_ORE.get());
 
@@ -88,11 +88,11 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .addTag(BlockTags.INCORRECT_FOR_IRON_TOOL)
                 .remove(ModTags.Blocks.NEEDS_STEEL_TOOL);
 
-        tag(ModTags.Blocks.NEEDS_VALYRIAN_TOOL)
+        tag(ModTags.Blocks.NEEDS_ENDERITE_TOOL)
                 .addTag(BlockTags.NEEDS_DIAMOND_TOOL);
-        tag(ModTags.Blocks.INCORRECT_FOR_VALYRIAN_TOOL)
+        tag(ModTags.Blocks.INCORRECT_FOR_ENDERITE_TOOL)
                 .addTag(BlockTags.INCORRECT_FOR_DIAMOND_TOOL)
-                .remove(ModTags.Blocks.NEEDS_VALYRIAN_TOOL);
+                .remove(ModTags.Blocks.NEEDS_ENDERITE_TOOL);
 
         tag(ModTags.Blocks.NEEDS_HARDENED_DIAMOND_TOOL)
                 .addTag(BlockTags.NEEDS_DIAMOND_TOOL);

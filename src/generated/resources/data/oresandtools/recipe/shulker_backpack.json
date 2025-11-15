@@ -3,8 +3,8 @@
   "category": "misc",
   "key": {
     "E": "minecraft:ender_eye",
-    "I": "oresandtools:valyrian_ingot",
-    "L": "oresandtools:valyrian_leather",
+    "I": "oresandtools:enderite_ingot",
+    "L": "oresandtools:enderite_leather",
     "S": "minecraft:shulker_box"
   },
   "pattern": [
