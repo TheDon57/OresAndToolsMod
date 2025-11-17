@@ -36,7 +36,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
 
         tag(ModTags.Items.OBSIDIAN_SHIELD_MATERIALS)
                 .add(Items.OBSIDIAN)
-                .add(Items.DIAMOND);
+                .add(Items.NETHERITE_INGOT);
 
         tag(ModTags.Items.STEEL_CHUNK_MATERIALS)
                 .add(Items.COAL)

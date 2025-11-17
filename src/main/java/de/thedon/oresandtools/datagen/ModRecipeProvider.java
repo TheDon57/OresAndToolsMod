@@ -75,8 +75,8 @@ public class ModRecipeProvider extends RecipeProvider {
                 .save(output);
         shaped(RecipeCategory.COMBAT, ModItems.OBSIDIAN_SHIELD.get())
                 .define('O', Blocks.OBSIDIAN)
-                .define('D', Items.DIAMOND)
-                .pattern("ODO")
+                .define('N', Items.NETHERITE_INGOT)
+                .pattern("ONO")
                 .pattern("OOO")
                 .pattern(" O ")
                 .unlockedBy(getHasMaterials(ModItems.OBSIDIAN_SHIELD.get()), has(ModTags.Items.OBSIDIAN_SHIELD_MATERIALS))

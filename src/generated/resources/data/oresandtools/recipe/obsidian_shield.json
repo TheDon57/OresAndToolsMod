@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "D": "minecraft:diamond",
+    "N": "minecraft:netherite_ingot",
     "O": "minecraft:obsidian"
   },
   "pattern": [
-    "ODO",
+    "ONO",
     "OOO",
     " O "
   ],

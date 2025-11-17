@@ -1,4 +1,4 @@
-// 1.21.10	2025-11-17T21:11:39.362373	Tags for minecraft:item mod id oresandtools
+// 1.21.10	2025-11-17T22:15:29.229187	Tags for minecraft:item mod id oresandtools
 658b8c478e6125d4b974a16f98374816632c3837 data/minecraft/tags/item/axes.json
 fe0de7a73a155f6727209ce3b4443d588da6933b data/minecraft/tags/item/beacon_payment_items.json
 942312c5259725b0ccf53b1f31f838ff5f5f9179 data/minecraft/tags/item/chest_armor.json
@@ -24,7 +24,7 @@ e93b49d68ba8eb20850ae91d2134beaecb560a17 data/oresandtools/tags/item/improvised_
 101052ad87eee319fc50a00d55651d9a7718c45f data/oresandtools/tags/item/molten_armor_set.json
 a9fbd9353a3569dc1365779c9edb1013be22d717 data/oresandtools/tags/item/molten_repair_materials.json
 26d89c4e3cfa827f5d2a7ef1ef43ec4c8c63cd6e data/oresandtools/tags/item/obsidian_repair_materials.json
-56a844b602b08d2dcccc1d21202fd37437d59b16 data/oresandtools/tags/item/obsidian_shield_materials.json
+2d88cd0ab2c7ccc22a16e8dc99bdd01ba6b32c4d data/oresandtools/tags/item/obsidian_shield_materials.json
 ade76195976499e514d5b73db436cc6362d54d8d data/oresandtools/tags/item/shulker_backpack_materials.json
 f380bcedce686229304f9e86b2de82b909a91391 data/oresandtools/tags/item/steel_chunk_materials.json
 3bca8d539c12a35e94feb15a81fcead1c3bc5038 data/oresandtools/tags/item/steel_repair_materials.json

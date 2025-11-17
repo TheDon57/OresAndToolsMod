@@ -1,4 +1,4 @@
-// 1.21.10	2025-11-17T20:38:35.527845	Ores and Tools Mod Recipes
+// 1.21.10	2025-11-17T22:15:29.227264	Ores and Tools Mod Recipes
 7f1f7301e4da8cf1c5cd84a2308537952b9d31a1 data/minecraft/advancement/recipes/combat/enderite_boots_smithing.json
 d8a92657ea7499e1c31191356de356104b268dec data/minecraft/advancement/recipes/combat/enderite_chestplate_smithing.json
 74115ba8afa2aec862d94e0f2869f111486626ee data/minecraft/advancement/recipes/combat/enderite_helmet_smithing.json
@@ -153,7 +153,7 @@ bcbfb596f5c3815a36b2938b2c52ff6217a80c94 data/oresandtools/recipe/obsidian_from_
 271d19d576cac0c33102cbd03dc069fdf9857e8a data/oresandtools/recipe/obsidian_leggings.json
 3f62e6a9eea102f2f4d522322b4fa00be679b0ac data/oresandtools/recipe/obsidian_pickaxe.json
 527087650cd68d4d8323861f38e51c9915113d9f data/oresandtools/recipe/obsidian_shard.json
-c7899229b80060a7f5704bf65b3b0e53b8a6d591 data/oresandtools/recipe/obsidian_shield.json
+628f428b96c588d5484c9cc19fb0a38723ff748a data/oresandtools/recipe/obsidian_shield.json
 9c94c67d2b6d4bf75cd536134acc63055c66e83c data/oresandtools/recipe/obsidian_shovel.json
 0f1bde940ea449b80994b5126b7b8ccee0987894 data/oresandtools/recipe/obsidian_sword.json
 ac867318e0d1f930abe996923cf862f85f172d90 data/oresandtools/recipe/shulker_backpack.json
