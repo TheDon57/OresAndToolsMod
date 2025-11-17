@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "oresandtools:enderite_dust"
+            "items": "#oresandtools:enderite_repair_materials"
           }
         ]
       },

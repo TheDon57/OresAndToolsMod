@@ -29,7 +29,7 @@ public class ModCreativeModeTabs {
                 output.accept(ModItems.URANIUM_INGOT);
                 output.accept(ModItems.IMPROVISED_REACTOR);
                 output.accept(ModItems.HARDENED_DIAMOND);
-                output.accept(ModItems.HOT_HARDENED_DIAMOND);
+                output.accept(ModItems.MOLTEN_INGOT);
                 output.accept(ModItems.OBSIDIAN_SHARD);
                 output.accept(ModItems.ENDERITE_LEATHER);
                 output.accept(ModItems.SHULKER_BACKPACK);
@@ -64,10 +64,10 @@ public class ModCreativeModeTabs {
                 output.accept(ModItems.HARDENED_DIAMOND_PICKAXE);
                 output.accept(ModItems.HARDENED_DIAMOND_AXE);
                 output.accept(ModItems.HARDENED_DIAMOND_HOE);
-                output.accept(ModItems.HOT_HARDENED_DIAMOND_SHOVEL);
-                output.accept(ModItems.HOT_HARDENED_DIAMOND_PICKAXE);
-                output.accept(ModItems.HOT_HARDENED_DIAMOND_AXE);
-                output.accept(ModItems.HOT_HARDENED_DIAMOND_HOE);
+                output.accept(ModItems.MOLTEN_SHOVEL);
+                output.accept(ModItems.MOLTEN_PICKAXE);
+                output.accept(ModItems.MOLTEN_AXE);
+                output.accept(ModItems.MOLTEN_HOE);
                 output.accept(ModItems.EMERALD_SHOVEL);
                 output.accept(ModItems.EMERALD_PICKAXE);
                 output.accept(ModItems.EMERALD_AXE);
@@ -85,7 +85,7 @@ public class ModCreativeModeTabs {
             .displayItems((itemDisplayParameters, output) -> {
                 output.accept(ModItems.STEEL_SWORD);
                 output.accept(ModItems.HARDENED_DIAMOND_SWORD);
-                output.accept(ModItems.HOT_HARDENED_DIAMOND_SWORD);
+                output.accept(ModItems.MOLTEN_SWORD);
                 output.accept(ModItems.ENDERITE_SWORD);
                 output.accept(ModItems.EMERALD_SWORD);
                 output.accept(ModItems.OBSIDIAN_SWORD);
@@ -103,10 +103,10 @@ public class ModCreativeModeTabs {
                 output.accept(ModItems.HARDENED_DIAMOND_CHESTPLATE);
                 output.accept(ModItems.HARDENED_DIAMOND_LEGGINGS);
                 output.accept(ModItems.HARDENED_DIAMOND_BOOTS);
-                output.accept(ModItems.HOT_HARDENED_DIAMOND_HELMET);
-                output.accept(ModItems.HOT_HARDENED_DIAMOND_CHESTPLATE);
-                output.accept(ModItems.HOT_HARDENED_DIAMOND_LEGGINGS);
-                output.accept(ModItems.HOT_HARDENED_DIAMOND_BOOTS);
+                output.accept(ModItems.MOLTEN_HELMET);
+                output.accept(ModItems.MOLTEN_CHESTPLATE);
+                output.accept(ModItems.MOLTEN_LEGGINGS);
+                output.accept(ModItems.MOLTEN_BOOTS);
                 output.accept(ModItems.EMERALD_HELMET);
                 output.accept(ModItems.EMERALD_CHESTPLATE);
                 output.accept(ModItems.EMERALD_LEGGINGS);

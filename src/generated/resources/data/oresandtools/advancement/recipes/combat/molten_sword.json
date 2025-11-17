@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_molten_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "oresandtools:molten_ingot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "oresandtools:molten_sword"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_molten_ingot"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "oresandtools:molten_sword"
+    ]
+  }
+}

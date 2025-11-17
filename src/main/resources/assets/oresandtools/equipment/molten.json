@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "oresandtools:molten"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "oresandtools:molten"
+      }
+    ]
+  }
+}

@@ -23,10 +23,10 @@ public class ModTags {
         public static final TagKey<Block> INCORRECT_FOR_ENDERITE_TOOL = createTag("incorrect_for_enderite_tool");
 
         public static final TagKey<Block> NEEDS_HARDENED_DIAMOND_TOOL = createTag("needs_hardened_diamond_tool");
-        public static final TagKey<Block> INCORRECT_FOR_HARDENED_DIAMOND_TOOL = createTag("incorrect_for_hardened_diamond_tool");
+        public static final TagKey<Block> INCORRECT_FOR_H_DIAMOND_TOOL = createTag("incorrect_for_hardened_diamond_tool");
 
-        public static final TagKey<Block> NEEDS_HOT_HARDENED_DIAMOND_TOOL = createTag("needs_hot_hardened_diamond_tool");
-        public static final TagKey<Block> INCORRECT_FOR_HOT_HARDENED_DIAMOND_TOOL = createTag("incorrect_for_hot_hardened_diamond_tool");
+        public static final TagKey<Block> NEEDS_MOLTEN_TOOL = createTag("needs_molten_tool");
+        public static final TagKey<Block> INCORRECT_FOR_MOLTEN_TOOL = createTag("incorrect_for_molten_tool");
 
         public static final TagKey<Block> NEEDS_EMERALD_TOOL = createTag("needs_emerald_tool");
         public static final TagKey<Block> INCORRECT_FOR_EMERALD_TOOL = createTag("incorrect_for_emerald_tool");
@@ -52,14 +52,14 @@ public class ModTags {
 
         public static final TagKey<Item> STEEL_REPAIR_MATERIALS = createTag("steel_repair_materials");
         public static final TagKey<Item> ENDERITE_REPAIR_MATERIALS = createTag("enderite_repair_materials");
-        public static final TagKey<Item> HARDENED_DIAMOND_REPAIR_MATERIALS = createTag("hardened_diamond_repair_materials");
-        public static final TagKey<Item> HOT_HARDENED_DIAMOND_REPAIR_MATERIALS = createTag("hot_hardened_diamond_repair_materials");
+        public static final TagKey<Item> H_DIAMOND_REPAIR_MATERIALS = createTag("hardened_diamond_repair_materials");
+        public static final TagKey<Item> MOLTEN_REPAIR_MATERIALS = createTag("molten_repair_materials");
         public static final TagKey<Item> EMERALD_REPAIR_MATERIALS = createTag("emerald_repair_materials");
         public static final TagKey<Item> OBSIDIAN_REPAIR_MATERIALS = createTag("obsidian_repair_materials");
 
         public static final TagKey<Item> IGNITION_ITEMS = createTag("ignition_items");
         public static final TagKey<Item> ENDERITE_ARMOR_SET = createTag("enderite_armor_set");
-        public static final TagKey<Item> HOT_HARDENED_DIAMOND_ARMOR_SET = createTag("hot_hardened_diamond_armor_set");
+        public static final TagKey<Item> MOLTEN_ARMOR_SET = createTag("molten_armor_set");
 
         private static TagKey<Item> createTag(String name) {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(OresAndToolsMod.MOD_ID, name));

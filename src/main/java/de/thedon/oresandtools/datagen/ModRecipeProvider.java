@@ -192,12 +192,12 @@ public class ModRecipeProvider extends RecipeProvider {
                 ModItems.HARDENED_DIAMOND_PICKAXE.get(),
                 ModItems.HARDENED_DIAMOND_SHOVEL.get(),
                 ModItems.HARDENED_DIAMOND_SWORD.get());
-        toolSetRecipes(output, ModItems.HOT_HARDENED_DIAMOND.get(),
-                ModItems.HOT_HARDENED_DIAMOND_AXE.get(),
-                ModItems.HOT_HARDENED_DIAMOND_HOE.get(),
-                ModItems.HOT_HARDENED_DIAMOND_PICKAXE.get(),
-                ModItems.HOT_HARDENED_DIAMOND_SHOVEL.get(),
-                ModItems.HOT_HARDENED_DIAMOND_SWORD.get());
+        toolSetRecipes(output, ModItems.MOLTEN_INGOT.get(),
+                ModItems.MOLTEN_AXE.get(),
+                ModItems.MOLTEN_HOE.get(),
+                ModItems.MOLTEN_PICKAXE.get(),
+                ModItems.MOLTEN_SHOVEL.get(),
+                ModItems.MOLTEN_SWORD.get());
         toolSetRecipes(output, Blocks.OBSIDIAN.asItem(),
                 ModItems.OBSIDIAN_AXE.get(),
                 ModItems.OBSIDIAN_HOE.get(),
@@ -228,11 +228,11 @@ public class ModRecipeProvider extends RecipeProvider {
                 ModItems.HARDENED_DIAMOND_CHESTPLATE.get(),
                 ModItems.HARDENED_DIAMOND_LEGGINGS.get(),
                 ModItems.HARDENED_DIAMOND_BOOTS.get());
-        armorSetRecipes(output, ModItems.HOT_HARDENED_DIAMOND.get(),
-                ModItems.HOT_HARDENED_DIAMOND_HELMET.get(),
-                ModItems.HOT_HARDENED_DIAMOND_CHESTPLATE.get(),
-                ModItems.HOT_HARDENED_DIAMOND_LEGGINGS.get(),
-                ModItems.HOT_HARDENED_DIAMOND_BOOTS.get());
+        armorSetRecipes(output, ModItems.MOLTEN_INGOT.get(),
+                ModItems.MOLTEN_HELMET.get(),
+                ModItems.MOLTEN_CHESTPLATE.get(),
+                ModItems.MOLTEN_LEGGINGS.get(),
+                ModItems.MOLTEN_BOOTS.get());
         armorSetRecipes(output, Items.OBSIDIAN,
                 ModItems.OBSIDIAN_HELMET.get(),
                 ModItems.OBSIDIAN_CHESTPLATE.get(),

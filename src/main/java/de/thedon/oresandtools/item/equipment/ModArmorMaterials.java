@@ -1,39 +1,50 @@
 package de.thedon.oresandtools.item.equipment;
 
+import com.google.common.collect.Maps;
 import de.thedon.oresandtools.util.ModTags;
-import net.minecraft.Util;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.equipment.ArmorType;
 
-import java.util.EnumMap;
+import java.util.Map;
 
 public class ModArmorMaterials {
-    public static final ArmorMaterial STEEL = new ArmorMaterial(20, protectionForType(2, 5, 7, 3, 6),
-            9, SoundEvents.ARMOR_EQUIP_IRON, 0.0f, 0.0f, ModTags.Items.STEEL_REPAIR_MATERIALS, ModEquipmentAssets.STEEL);
+    public static final ArmorMaterial STEEL;
+    public static final ArmorMaterial ENDERITE;
+    public static final ArmorMaterial H_DIAMOND;
+    public static final ArmorMaterial MOLTEN;
+    public static final ArmorMaterial EMERALD;
+    public static final ArmorMaterial OBSIDIAN;
 
-    public static final ArmorMaterial ENDERITE = new ArmorMaterial(50, protectionForType(4, 7, 10, 4, 15),
-            25, SoundEvents.ARMOR_EQUIP_GOLD, 3.0f, 0.0f, ModTags.Items.ENDERITE_REPAIR_MATERIALS, ModEquipmentAssets.ENDERITE);
+    private static Map<ArmorType, Integer> makeDefense(int boots, int leggings, int chestplate, int helmet, int body) {
+        return Maps.newEnumMap(
+                Map.of(
+                        ArmorType.BOOTS, boots,
+                        ArmorType.LEGGINGS, leggings,
+                        ArmorType.CHESTPLATE, chestplate,
+                        ArmorType.HELMET, helmet,
+                        ArmorType.BODY, body
+                )
+        );
+    }
 
-    public static final ArmorMaterial H_DIAMOND = new ArmorMaterial(65, protectionForType(3, 6, 8, 3, 11),
-            10, SoundEvents.ARMOR_EQUIP_DIAMOND, 2.0f, 0.0f, ModTags.Items.HARDENED_DIAMOND_REPAIR_MATERIALS, ModEquipmentAssets.H_DIAMOND);
+    static {
+        STEEL = new ArmorMaterial(20, makeDefense(2, 5, 7, 3, 6),
+                9, SoundEvents.ARMOR_EQUIP_IRON, 0.0f, 0.0f, ModTags.Items.STEEL_REPAIR_MATERIALS, ModEquipmentAssets.STEEL);
 
-    public static final ArmorMaterial HOT_H_DIAMOND = new ArmorMaterial(59, protectionForType(3, 6, 8, 3, 11),
-            11, SoundEvents.ARMOR_EQUIP_DIAMOND, 2.0f, 0.0f, ModTags.Items.HOT_HARDENED_DIAMOND_REPAIR_MATERIALS, ModEquipmentAssets.HOT_H_DIAMOND);
+        ENDERITE = new ArmorMaterial(50, makeDefense(4, 7, 10, 4, 15),
+                20, SoundEvents.ARMOR_EQUIP_NETHERITE, 3.0f, 0.2f, ModTags.Items.ENDERITE_REPAIR_MATERIALS, ModEquipmentAssets.ENDERITE);
 
-    public static final ArmorMaterial EMERALD = new ArmorMaterial(33, protectionForType(3, 6, 8, 3, 11),
-            14, SoundEvents.ARMOR_EQUIP_DIAMOND, 2.5f, 0.0f, ModTags.Items.EMERALD_REPAIR_MATERIALS, ModEquipmentAssets.EMERALD);
+        H_DIAMOND = new ArmorMaterial(39, makeDefense(3, 6, 8, 3, 11),
+                10, SoundEvents.ARMOR_EQUIP_DIAMOND, 2.0f, 0.1f, ModTags.Items.H_DIAMOND_REPAIR_MATERIALS, ModEquipmentAssets.H_DIAMOND);
 
-    public static final ArmorMaterial OBSIDIAN = new ArmorMaterial(62, protectionForType(3, 7, 9, 4, 13),
-            9, SoundEvents.ARMOR_EQUIP_NETHERITE, 1.5f, 0.5f, ModTags.Items.OBSIDIAN_REPAIR_MATERIALS, ModEquipmentAssets.OBSIDIAN);
+        MOLTEN = new ArmorMaterial(35, makeDefense(3, 6, 8, 3, 11),
+                15, SoundEvents.ARMOR_EQUIP_NETHERITE, 3.0f, 0.0f, ModTags.Items.MOLTEN_REPAIR_MATERIALS, ModEquipmentAssets.MOLTEN);
 
-    private static EnumMap<ArmorType, Integer> protectionForType(int boots, int leggings, int chestplate, int helmet, int body) {
-        return Util.make(new EnumMap<>(ArmorType.class), (type) -> {
-            type.put(ArmorType.BOOTS, boots);
-            type.put(ArmorType.LEGGINGS, leggings);
-            type.put(ArmorType.CHESTPLATE, chestplate);
-            type.put(ArmorType.HELMET, helmet);
-            type.put(ArmorType.BODY, body);
-        });
+        EMERALD = new ArmorMaterial(28, makeDefense(3, 6, 8, 3, 11),
+                12, SoundEvents.ARMOR_EQUIP_DIAMOND, 2.0f, 0.0f, ModTags.Items.EMERALD_REPAIR_MATERIALS, ModEquipmentAssets.EMERALD);
+
+        OBSIDIAN = new ArmorMaterial(43, makeDefense(3, 6, 7, 3, 7),
+                9, SoundEvents.ARMOR_EQUIP_NETHERITE, 3.0f, 0.5f, ModTags.Items.OBSIDIAN_REPAIR_MATERIALS, ModEquipmentAssets.OBSIDIAN);
     }
 }

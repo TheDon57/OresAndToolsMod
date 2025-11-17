@@ -96,15 +96,15 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 
         tag(ModTags.Blocks.NEEDS_HARDENED_DIAMOND_TOOL)
                 .addTag(BlockTags.NEEDS_DIAMOND_TOOL);
-        tag(ModTags.Blocks.INCORRECT_FOR_HARDENED_DIAMOND_TOOL)
+        tag(ModTags.Blocks.INCORRECT_FOR_H_DIAMOND_TOOL)
                 .addTag(BlockTags.INCORRECT_FOR_DIAMOND_TOOL)
                 .remove(ModTags.Blocks.NEEDS_HARDENED_DIAMOND_TOOL);
 
-        tag(ModTags.Blocks.NEEDS_HOT_HARDENED_DIAMOND_TOOL)
+        tag(ModTags.Blocks.NEEDS_MOLTEN_TOOL)
                 .addTag(BlockTags.NEEDS_DIAMOND_TOOL);
-        tag(ModTags.Blocks.INCORRECT_FOR_HOT_HARDENED_DIAMOND_TOOL)
+        tag(ModTags.Blocks.INCORRECT_FOR_MOLTEN_TOOL)
                 .addTag(BlockTags.INCORRECT_FOR_DIAMOND_TOOL)
-                .remove(ModTags.Blocks.NEEDS_HOT_HARDENED_DIAMOND_TOOL);
+                .remove(ModTags.Blocks.NEEDS_MOLTEN_TOOL);
 
         tag(ModTags.Blocks.NEEDS_EMERALD_TOOL)
                 .addTag(BlockTags.NEEDS_DIAMOND_TOOL);

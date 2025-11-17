@@ -3,12 +3,13 @@
   "category": "misc",
   "key": {
     "C": "minecraft:chest",
+    "S": "oresandtools:steel_ingot",
     "V": "oresandtools:enderite_ingot"
   },
   "pattern": [
-    "VVV",
-    "VCV",
-    "VVV"
+    "SVS",
+    "SCS",
+    "SSS"
   ],
   "result": {
     "count": 1,

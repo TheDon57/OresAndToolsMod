@@ -64,12 +64,12 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(Items.CHEST);
 
         tag(ModTags.Items.IGNITION_ITEMS)
-                .add(ModItems.HOT_HARDENED_DIAMOND.get())
-                .add(ModItems.HOT_HARDENED_DIAMOND_AXE.get())
-                .add(ModItems.HOT_HARDENED_DIAMOND_HOE.get())
-                .add(ModItems.HOT_HARDENED_DIAMOND_PICKAXE.get())
-                .add(ModItems.HOT_HARDENED_DIAMOND_SHOVEL.get())
-                .add(ModItems.HOT_HARDENED_DIAMOND_SWORD.get());
+                .add(ModItems.MOLTEN_INGOT.get())
+                .add(ModItems.MOLTEN_AXE.get())
+                .add(ModItems.MOLTEN_HOE.get())
+                .add(ModItems.MOLTEN_PICKAXE.get())
+                .add(ModItems.MOLTEN_SHOVEL.get())
+                .add(ModItems.MOLTEN_SWORD.get());
 
         tag(ModTags.Items.ENDERITE_ARMOR_SET)
                 .add(ModItems.ENDERITE_HELMET.get())
@@ -77,11 +77,11 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.ENDERITE_LEGGINGS.get())
                 .add(ModItems.ENDERITE_BOOTS.get());
 
-        tag(ModTags.Items.HOT_HARDENED_DIAMOND_ARMOR_SET)
-                .add(ModItems.HOT_HARDENED_DIAMOND_HELMET.get())
-                .add(ModItems.HOT_HARDENED_DIAMOND_CHESTPLATE.get())
-                .add(ModItems.HOT_HARDENED_DIAMOND_LEGGINGS.get())
-                .add(ModItems.HOT_HARDENED_DIAMOND_BOOTS.get());
+        tag(ModTags.Items.MOLTEN_ARMOR_SET)
+                .add(ModItems.MOLTEN_HELMET.get())
+                .add(ModItems.MOLTEN_CHESTPLATE.get())
+                .add(ModItems.MOLTEN_LEGGINGS.get())
+                .add(ModItems.MOLTEN_BOOTS.get());
 
         tag(ModTags.Items.STEEL_REPAIR_MATERIALS)
                 .add(ModItems.STEEL_INGOT.get());
@@ -89,11 +89,11 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         tag(ModTags.Items.ENDERITE_REPAIR_MATERIALS)
                 .add(ModItems.ENDERITE_INGOT.get());
 
-        tag(ModTags.Items.HARDENED_DIAMOND_REPAIR_MATERIALS)
+        tag(ModTags.Items.H_DIAMOND_REPAIR_MATERIALS)
                 .add(ModItems.HARDENED_DIAMOND.get());
 
-        tag(ModTags.Items.HOT_HARDENED_DIAMOND_REPAIR_MATERIALS)
-                .add(ModItems.HOT_HARDENED_DIAMOND.get());
+        tag(ModTags.Items.MOLTEN_REPAIR_MATERIALS)
+                .add(ModItems.MOLTEN_INGOT.get());
 
         tag(ModTags.Items.EMERALD_REPAIR_MATERIALS)
                 .add(Items.EMERALD);
@@ -114,10 +114,10 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.HARDENED_DIAMOND_CHESTPLATE.get())
                 .add(ModItems.HARDENED_DIAMOND_LEGGINGS.get())
                 .add(ModItems.HARDENED_DIAMOND_BOOTS.get())
-                .add(ModItems.HOT_HARDENED_DIAMOND_HELMET.get())
-                .add(ModItems.HOT_HARDENED_DIAMOND_CHESTPLATE.get())
-                .add(ModItems.HOT_HARDENED_DIAMOND_LEGGINGS.get())
-                .add(ModItems.HOT_HARDENED_DIAMOND_BOOTS.get())
+                .add(ModItems.MOLTEN_HELMET.get())
+                .add(ModItems.MOLTEN_CHESTPLATE.get())
+                .add(ModItems.MOLTEN_LEGGINGS.get())
+                .add(ModItems.MOLTEN_BOOTS.get())
                 .add(ModItems.EMERALD_HELMET.get())
                 .add(ModItems.EMERALD_CHESTPLATE.get())
                 .add(ModItems.EMERALD_LEGGINGS.get())
@@ -130,7 +130,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         tag(ItemTags.SHOVELS)
                 .add(ModItems.STEEL_SHOVEL.get())
                 .add(ModItems.HARDENED_DIAMOND_SHOVEL.get())
-                .add(ModItems.HOT_HARDENED_DIAMOND_SHOVEL.get())
+                .add(ModItems.MOLTEN_SHOVEL.get())
                 .add(ModItems.ENDERITE_SHOVEL.get())
                 .add(ModItems.EMERALD_SHOVEL.get())
                 .add(ModItems.OBSIDIAN_SHOVEL.get());
@@ -138,7 +138,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         tag(ItemTags.PICKAXES)
                 .add(ModItems.STEEL_PICKAXE.get())
                 .add(ModItems.HARDENED_DIAMOND_PICKAXE.get())
-                .add(ModItems.HOT_HARDENED_DIAMOND_PICKAXE.get())
+                .add(ModItems.MOLTEN_PICKAXE.get())
                 .add(ModItems.ENDERITE_PICKAXE.get())
                 .add(ModItems.EMERALD_PICKAXE.get())
                 .add(ModItems.OBSIDIAN_PICKAXE.get());
@@ -146,7 +146,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         tag(ItemTags.AXES)
                 .add(ModItems.STEEL_AXE.get())
                 .add(ModItems.HARDENED_DIAMOND_AXE.get())
-                .add(ModItems.HOT_HARDENED_DIAMOND_AXE.get())
+                .add(ModItems.MOLTEN_AXE.get())
                 .add(ModItems.ENDERITE_AXE.get())
                 .add(ModItems.EMERALD_AXE.get())
                 .add(ModItems.OBSIDIAN_AXE.get());
@@ -154,7 +154,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         tag(ItemTags.HOES)
                 .add(ModItems.STEEL_HOE.get())
                 .add(ModItems.HARDENED_DIAMOND_HOE.get())
-                .add(ModItems.HOT_HARDENED_DIAMOND_HOE.get())
+                .add(ModItems.MOLTEN_HOE.get())
                 .add(ModItems.ENDERITE_HOE.get())
                 .add(ModItems.EMERALD_HOE.get())
                 .add(ModItems.OBSIDIAN_HOE.get());
@@ -162,7 +162,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         tag(ItemTags.SWORDS)
                 .add(ModItems.STEEL_SWORD.get())
                 .add(ModItems.HARDENED_DIAMOND_SWORD.get())
-                .add(ModItems.HOT_HARDENED_DIAMOND_SWORD.get())
+                .add(ModItems.MOLTEN_SWORD.get())
                 .add(ModItems.ENDERITE_SWORD.get())
                 .add(ModItems.EMERALD_SWORD.get())
                 .add(ModItems.OBSIDIAN_SWORD.get());
@@ -170,7 +170,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         tag(ItemTags.HEAD_ARMOR)
                 .add(ModItems.STEEL_HELMET.get())
                 .add(ModItems.HARDENED_DIAMOND_HELMET.get())
-                .add(ModItems.HOT_HARDENED_DIAMOND_HELMET.get())
+                .add(ModItems.MOLTEN_HELMET.get())
                 .add(ModItems.ENDERITE_HELMET.get())
                 .add(ModItems.EMERALD_HELMET.get())
                 .add(ModItems.OBSIDIAN_HELMET.get());
@@ -178,7 +178,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         tag(ItemTags.CHEST_ARMOR)
                 .add(ModItems.STEEL_CHESTPLATE.get())
                 .add(ModItems.HARDENED_DIAMOND_CHESTPLATE.get())
-                .add(ModItems.HOT_HARDENED_DIAMOND_CHESTPLATE.get())
+                .add(ModItems.MOLTEN_CHESTPLATE.get())
                 .add(ModItems.ENDERITE_CHESTPLATE.get())
                 .add(ModItems.EMERALD_CHESTPLATE.get())
                 .add(ModItems.OBSIDIAN_CHESTPLATE.get());
@@ -186,7 +186,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         tag(ItemTags.LEG_ARMOR)
                 .add(ModItems.STEEL_LEGGINGS.get())
                 .add(ModItems.HARDENED_DIAMOND_LEGGINGS.get())
-                .add(ModItems.HOT_HARDENED_DIAMOND_LEGGINGS.get())
+                .add(ModItems.MOLTEN_LEGGINGS.get())
                 .add(ModItems.ENDERITE_LEGGINGS.get())
                 .add(ModItems.EMERALD_LEGGINGS.get())
                 .add(ModItems.OBSIDIAN_LEGGINGS.get());
@@ -194,7 +194,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         tag(ItemTags.FOOT_ARMOR)
                 .add(ModItems.STEEL_BOOTS.get())
                 .add(ModItems.HARDENED_DIAMOND_BOOTS.get())
-                .add(ModItems.HOT_HARDENED_DIAMOND_BOOTS.get())
+                .add(ModItems.MOLTEN_BOOTS.get())
                 .add(ModItems.ENDERITE_BOOTS.get())
                 .add(ModItems.EMERALD_BOOTS.get())
                 .add(ModItems.OBSIDIAN_BOOTS.get());
