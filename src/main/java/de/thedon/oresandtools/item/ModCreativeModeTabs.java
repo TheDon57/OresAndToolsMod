@@ -36,6 +36,7 @@ public class ModCreativeModeTabs {
 
                 output.accept(ModBlocks.STEEL_BLOCK);
                 output.accept(ModBlocks.HARDENED_DIAMOND_BLOCK);
+                output.accept(ModBlocks.ENDERITE_BLOCK);
                 output.accept(ModBlocks.ENDERITE_CHEST);
                 output.accept(ModBlocks.ENDERITE_ORE);
                 output.accept(ModBlocks.DEEPSLATE_ENDERITE_ORE);

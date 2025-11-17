@@ -1,8 +1,9 @@
-// 1.21.10	2025-11-15T17:29:52.323907	Loot Tables
+// 1.21.10	2025-11-17T20:38:35.530031	Loot Tables
 bbbfc2863f01fa40dbe45ffd2ea1a758ad68500a data/oresandtools/loot_table/blocks/deepslate_enderite_ore.json
 cbb45756571392c2dff11bee83c6c5c152e9448e data/oresandtools/loot_table/blocks/deepslate_obsidian_ore.json
 3f6a5e5420a595fecc31dc32b4cc93de8f49dc23 data/oresandtools/loot_table/blocks/deepslate_uranium_ore.json
 3251aca79ca930ff9003a688f20f5570f70a5f79 data/oresandtools/loot_table/blocks/deepslate_xp_ore.json
+dfbb2f8f265ed99a9ac6391a64ac6930be038e65 data/oresandtools/loot_table/blocks/enderite_block.json
 28f5a3960c3144443d5926155a2cc8da4a588f44 data/oresandtools/loot_table/blocks/enderite_chest.json
 5342dfa4143066257f943327f8976414ac3ede67 data/oresandtools/loot_table/blocks/enderite_ore.json
 a3d3e68846617236cc1b3c13284ec8c071331385 data/oresandtools/loot_table/blocks/endstone_enderite_ore.json

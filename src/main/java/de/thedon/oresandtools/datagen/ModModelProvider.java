@@ -33,6 +33,7 @@ public class ModModelProvider extends ModelProvider {
         /* BLOCKS */
         blockModels.createTrivialCube(ModBlocks.HARDENED_DIAMOND_BLOCK.get());
         blockModels.createTrivialCube(ModBlocks.STEEL_BLOCK.get());
+        blockModels.createTrivialCube(ModBlocks.ENDERITE_BLOCK.get());
 
         /* ORES */
         blockModels.createTrivialCube(ModBlocks.ENDERITE_ORE.get());

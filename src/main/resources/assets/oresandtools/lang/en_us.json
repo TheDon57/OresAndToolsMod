@@ -107,8 +107,9 @@
   "item.oresandtools.obsidian_shield.white": "White Obsidian Shield",
   "item.oresandtools.obsidian_shield.yellow": "Yellow Obsidian Shield",
 
-  "block.oresandtools.hardened_diamond_block" : "Block of Hardened Diamond",
   "block.oresandtools.steel_block" : "Block of Steel",
+  "block.oresandtools.hardened_diamond_block" : "Block of Hardened Diamond",
+  "block.oresandtools.enderite_block" : "Block of Enderite",
   "block.oresandtools.enderite_chest" : "Enderite Chest",
   "block.oresandtools.endstone_enderite_ore" : "Endstone Enderite Ore",
   "block.oresandtools.deepslate_enderite_ore" : "Deepslate Enderite Ore",

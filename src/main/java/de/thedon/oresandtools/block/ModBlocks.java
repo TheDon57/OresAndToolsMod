@@ -29,7 +29,8 @@ public class ModBlocks {
     /* NORMAL BLOCKS */
     public static final DeferredBlock<Block> HARDENED_DIAMOND_BLOCK = registerBlock("hardened_diamond_block", properties -> new Block(properties.strength(25f).requiresCorrectToolForDrops().mapColor(MapColor.DIAMOND).sound(SoundType.METAL)));
     public static final DeferredBlock<Block> STEEL_BLOCK = registerBlock("steel_block", properties -> new Block(properties.strength(8f, 10f).requiresCorrectToolForDrops().mapColor(MapColor.METAL).sound(SoundType.METAL)));
-    public static final DeferredBlock<Block> ENDERITE_CHEST = registerBlock("enderite_chest", properties -> new EnderiteChestBlock(ModBlockEntities.ENDERITE_CHEST::get, SoundEvents.CHEST_OPEN, SoundEvents.CHEST_CLOSE, properties.strength(5f).requiresCorrectToolForDrops().mapColor(MapColor.DIAMOND).sound(SoundType.METAL)));
+    public static final DeferredBlock<Block> ENDERITE_BLOCK = registerBlock("enderite_block", properties -> new Block(properties.strength(80f, 1200f).requiresCorrectToolForDrops().mapColor(MapColor.COLOR_PURPLE).sound(SoundType.NETHERITE_BLOCK)));
+    public static final DeferredBlock<Block> ENDERITE_CHEST = registerBlock("enderite_chest", properties -> new EnderiteChestBlock(ModBlockEntities.ENDERITE_CHEST::get, SoundEvents.CHEST_OPEN, SoundEvents.CHEST_CLOSE, properties.strength(25f, 1200f).requiresCorrectToolForDrops().mapColor(MapColor.COLOR_BLACK).sound(SoundType.METAL)));
 
     /* ORES */
     public static final DeferredBlock<Block> ENDERITE_ORE = registerBlock("enderite_ore", properties -> new DropExperienceBlock(UniformInt.of(3, 7), properties.strength(3f, 3f).requiresCorrectToolForDrops().mapColor(MapColor.STONE).sound(SoundType.STONE)));

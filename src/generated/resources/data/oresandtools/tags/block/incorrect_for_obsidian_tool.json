@@ -3,7 +3,6 @@
     "#oresandtools:needs_obsidian_tool"
   ],
   "values": [
-    "#minecraft:incorrect_for_diamond_tool",
-    "minecraft:obsidian"
+    "#minecraft:incorrect_for_iron_tool"
   ]
 }

@@ -1,17 +1,11 @@
 {
-  "type": "minecraft:crafting_shaped",
+  "type": "minecraft:crafting_shapeless",
   "category": "misc",
-  "key": {
-    "S": "oresandtools:steel_ingot",
-    "V": "oresandtools:enderite_dust"
-  },
-  "pattern": [
-    "VVV",
-    "VSV",
-    "VVV"
+  "ingredients": [
+    "oresandtools:enderite_block"
   ],
   "result": {
-    "count": 1,
+    "count": 9,
     "id": "oresandtools:enderite_ingot"
   }
 }

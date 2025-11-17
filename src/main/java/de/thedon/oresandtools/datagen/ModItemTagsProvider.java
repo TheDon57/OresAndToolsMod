@@ -198,6 +198,11 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.ENDERITE_BOOTS.get())
                 .add(ModItems.EMERALD_BOOTS.get())
                 .add(ModItems.OBSIDIAN_BOOTS.get());
+
+        tag(ItemTags.BEACON_PAYMENT_ITEMS)
+                .add(ModItems.STEEL_INGOT.get())
+                .add(ModItems.HARDENED_DIAMOND.get())
+                .add(ModItems.ENDERITE_INGOT.get());
     }
 
 }

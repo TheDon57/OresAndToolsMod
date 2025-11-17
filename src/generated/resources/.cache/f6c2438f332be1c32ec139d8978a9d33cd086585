@@ -1,8 +1,9 @@
-// 1.21.10	2025-11-17T18:45:07.951885	Model Definitions - oresandtools
+// 1.21.10	2025-11-17T20:38:35.53044	Model Definitions - oresandtools
 c9763e858a372ba10842b80a920665ee9daf8f99 assets/oresandtools/blockstates/deepslate_enderite_ore.json
 3021f8edf385f5d045943c39845f4313f92e8a19 assets/oresandtools/blockstates/deepslate_obsidian_ore.json
 2f22ddc4a167dcf628f8a6e83f31bf419f1b1fbf assets/oresandtools/blockstates/deepslate_uranium_ore.json
 b4f620da0ddaed477cfe3eacaad6e9b0c0e4b16f assets/oresandtools/blockstates/deepslate_xp_ore.json
+3ff5a1a7aa4b7bc3a0697cded0e273a06c1c2a36 assets/oresandtools/blockstates/enderite_block.json
 63902a8aac2ebbc446dc566893caf301a10491b9 assets/oresandtools/blockstates/enderite_chest.json
 6b19935d90dc32940685ab1bb645562a05571452 assets/oresandtools/blockstates/enderite_ore.json
 7ea4f6c59ddb15375686514c352b96ac3622d947 assets/oresandtools/blockstates/endstone_enderite_ore.json
@@ -32,6 +33,7 @@ c087f3c7bbefd4269d3153b4478ecc9ff3d5d3ef assets/oresandtools/items/emerald_helme
 e8ba1dd5ac2c9fab11398c50974b475570592546 assets/oresandtools/items/emerald_shovel.json
 1ce75199fee1bfce6f272a58e96c01e3273419ae assets/oresandtools/items/emerald_sword.json
 7f7693da4e992bc1963d15bcce721ead793f30b8 assets/oresandtools/items/enderite_axe.json
+3e9e0681e9ca7e286e987e8f111119ce54ef6dd2 assets/oresandtools/items/enderite_block.json
 8edd29de31e5f867a0020f179710424b3ed87c55 assets/oresandtools/items/enderite_boots.json
 f071b09cd78a7d3cae640dc982bd0e048caeab74 assets/oresandtools/items/enderite_bow.json
 5f20b8e76f9deaadbc7f774183cbde3a3b0d94ba assets/oresandtools/items/enderite_chest.json
@@ -112,6 +114,7 @@ c1f9b829024bbcdcaf5e8f2e1b2708df58bec03a assets/oresandtools/items/xp_ore.json
 25045779752b98545c2e7b31f55a767eeca0946c assets/oresandtools/models/block/deepslate_obsidian_ore.json
 9cb6a7fe823e3b58eaf2ef35931145bb48ef3ce7 assets/oresandtools/models/block/deepslate_uranium_ore.json
 44becfc6143c70bdf0c03879d741fdf78cc93c77 assets/oresandtools/models/block/deepslate_xp_ore.json
+f24acfecf54400aceee69aaaacdc4dae037fb51f assets/oresandtools/models/block/enderite_block.json
 8c0f2be533b535623c1b95e79c7ccf76854be60f assets/oresandtools/models/block/enderite_chest.json
 a1654c3c323954dc76beb1b0756a0eda68ef5732 assets/oresandtools/models/block/enderite_ore.json
 dc45190373843ac663fac645ad631790f5238ace assets/oresandtools/models/block/endstone_enderite_ore.json

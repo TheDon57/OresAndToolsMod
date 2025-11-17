@@ -33,6 +33,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         /* NORMAL BLOCKS */
         dropSelf(ModBlocks.HARDENED_DIAMOND_BLOCK.get());
         dropSelf(ModBlocks.STEEL_BLOCK.get());
+        dropSelf(ModBlocks.ENDERITE_BLOCK.get());
         dropSelf(ModBlocks.ENDERITE_CHEST.get());
         /* ORES */
         add(ModBlocks.ENDERITE_ORE.get(), this::createEnderiteOreDrops);

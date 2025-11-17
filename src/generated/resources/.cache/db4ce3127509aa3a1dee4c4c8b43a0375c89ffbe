@@ -1,5 +1,6 @@
-// 1.21.10	2025-11-17T03:11:56.452145	Tags for minecraft:item mod id oresandtools
+// 1.21.10	2025-11-17T21:11:39.362373	Tags for minecraft:item mod id oresandtools
 658b8c478e6125d4b974a16f98374816632c3837 data/minecraft/tags/item/axes.json
+fe0de7a73a155f6727209ce3b4443d588da6933b data/minecraft/tags/item/beacon_payment_items.json
 942312c5259725b0ccf53b1f31f838ff5f5f9179 data/minecraft/tags/item/chest_armor.json
 8df00f4744903eb02d57f9aaabc2905728f8a5d6 data/minecraft/tags/item/foot_armor.json
 fee01a8f986bd9a5ed9f66503003153b08dfcd03 data/minecraft/tags/item/head_armor.json

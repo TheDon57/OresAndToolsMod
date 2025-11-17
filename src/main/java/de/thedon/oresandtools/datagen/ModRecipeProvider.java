@@ -111,7 +111,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("VSV")
                 .pattern("VVV")
                 .unlockedBy(getHasMaterials(ModItems.ENDERITE_INGOT.get()), has(ModTags.Items.ENDERITE_INGOT_MATERIALS))
-                .save(output);
+                .save(output, ResourceKey.create(Registries.RECIPE, ResourceLocation.fromNamespaceAndPath(OresAndToolsMod.MOD_ID, getItemName(ModItems.ENDERITE_INGOT.get()) + "_2")));
         shaped(RecipeCategory.MISC, ModItems.ENDERITE_UPGRADE_SMITHING_TEMPLATE.get(), 2)
                 .define('T', ModItems.ENDERITE_UPGRADE_SMITHING_TEMPLATE.get())
                 .define('E', Blocks.END_STONE)
@@ -145,6 +145,8 @@ public class ModRecipeProvider extends RecipeProvider {
                 RecipeCategory.BUILDING_BLOCKS, ModBlocks.HARDENED_DIAMOND_BLOCK.get());
         nineBlockStorageRecipes(output, RecipeCategory.MISC, ModItems.STEEL_INGOT.get(),
                 RecipeCategory.BUILDING_BLOCKS, ModBlocks.STEEL_BLOCK.get());
+        nineBlockStorageRecipes(output, RecipeCategory.MISC, ModItems.ENDERITE_INGOT.get(),
+                RecipeCategory.BUILDING_BLOCKS, ModBlocks.ENDERITE_BLOCK.get());
         nineBlockStorageRecipes(output, RecipeCategory.MISC, ModItems.OBSIDIAN_SHARD.get(),
                 RecipeCategory.BUILDING_BLOCKS, Blocks.OBSIDIAN);
 

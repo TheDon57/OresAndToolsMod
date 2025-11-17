@@ -1,7 +1,8 @@
-// 1.21.10	2025-11-17T03:05:10.018808	Tags for minecraft:block mod id oresandtools
-48c71f08cf20c9ab396b4a1da042f9e256f738cf data/minecraft/tags/block/mineable/pickaxe.json
+// 1.21.10	2025-11-17T21:02:17.223296	Tags for minecraft:block mod id oresandtools
+6142b851de635a08f6c6d2a1f732c60b56b12580 data/minecraft/tags/block/beacon_base_blocks.json
+7e7041c9c95aadc3c3fc0badaeec94785785c5da data/minecraft/tags/block/mineable/pickaxe.json
 c528456dcaa0728ebd9a4afccef00864767bce84 data/minecraft/tags/block/mineable/shovel.json
-b5ac163a60948ae488dd9af5683f608fb74ba65d data/minecraft/tags/block/needs_diamond_tool.json
+1156a24657549e9ee1a1edfd98cf33781704a854 data/minecraft/tags/block/needs_diamond_tool.json
 40acfea603079d29f21f37112055f4d387f7f651 data/minecraft/tags/block/needs_iron_tool.json
 d99088d8929ed04c651a03da829b38d24aada1a9 data/minecraft/tags/block/needs_stone_tool.json
 b17aaaa0e6267f39e3c9c76e88c5693968daafa4 data/oresandtools/tags/block/enderite_ores.json
@@ -9,14 +10,14 @@ aa2c7bb14d185a700eb0c072a140bf743d113ed3 data/oresandtools/tags/block/incorrect_
 65bce105a012a426c3c6f5874d09f97b8e1c5743 data/oresandtools/tags/block/incorrect_for_enderite_tool.json
 cbb26ab91695f4ed0dad5303e357562a6a768346 data/oresandtools/tags/block/incorrect_for_hardened_diamond_tool.json
 07f6ec97ff712f996992f7e722dc8384575c90b3 data/oresandtools/tags/block/incorrect_for_molten_tool.json
-c126ecd930044489dc3c35fd4a1d92d267a253c3 data/oresandtools/tags/block/incorrect_for_obsidian_tool.json
+78da8ccaf8c183d305d5ca7968303c34476fab18 data/oresandtools/tags/block/incorrect_for_obsidian_tool.json
 7bf8ced34f7d0fd48d91be0f9842b50ee932db1d data/oresandtools/tags/block/incorrect_for_steel_tool.json
 ce7df0cd3a8aec4a7dd358081d339d9372dba076 data/oresandtools/tags/block/meltable_stones.json
 a249c46329a41538f49a564e1f14338aaf1be5a0 data/oresandtools/tags/block/needs_emerald_tool.json
 a249c46329a41538f49a564e1f14338aaf1be5a0 data/oresandtools/tags/block/needs_enderite_tool.json
 a249c46329a41538f49a564e1f14338aaf1be5a0 data/oresandtools/tags/block/needs_hardened_diamond_tool.json
 a249c46329a41538f49a564e1f14338aaf1be5a0 data/oresandtools/tags/block/needs_molten_tool.json
-a249c46329a41538f49a564e1f14338aaf1be5a0 data/oresandtools/tags/block/needs_obsidian_tool.json
+32b13946c4cd1f944b029659ccce5fcb2adad4ff data/oresandtools/tags/block/needs_obsidian_tool.json
 32b13946c4cd1f944b029659ccce5fcb2adad4ff data/oresandtools/tags/block/needs_steel_tool.json
 a6082109e623c2dde404ab31f6436d827d53a077 data/oresandtools/tags/block/obsidian_ores.json
 3d568f805938b47348a1503afa2eaa961618a52e data/oresandtools/tags/block/uranium_ores.json
