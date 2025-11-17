@@ -21,18 +21,18 @@ public class ModCreativeModeTabs {
             .displayItems((itemDisplayParameters, output) -> {
                 output.accept(ModItems.STEEL_CHUNK);
                 output.accept(ModItems.STEEL_INGOT);
-                output.accept(ModItems.ENDERITE_DUST);
-                output.accept(ModItems.ENDERITE_INGOT);
-                output.accept(ModItems.ENDERITE_UPGRADE_SMITHING_TEMPLATE);
-                output.accept(ModItems.DRAGONS_APPLE);
                 output.accept(ModItems.RAW_URANIUM);
                 output.accept(ModItems.URANIUM_INGOT);
                 output.accept(ModItems.IMPROVISED_REACTOR);
                 output.accept(ModItems.HARDENED_DIAMOND);
                 output.accept(ModItems.MOLTEN_INGOT);
                 output.accept(ModItems.OBSIDIAN_SHARD);
+                output.accept(ModItems.ENDERITE_DUST);
+                output.accept(ModItems.ENDERITE_INGOT);
+                output.accept(ModItems.ENDERITE_UPGRADE_SMITHING_TEMPLATE);
                 output.accept(ModItems.ENDERITE_LEATHER);
                 output.accept(ModItems.SHULKER_BACKPACK);
+                output.accept(ModItems.DRAGONS_APPLE);
 
                 output.accept(ModBlocks.STEEL_BLOCK);
                 output.accept(ModBlocks.HARDENED_DIAMOND_BLOCK);
@@ -51,38 +51,38 @@ public class ModCreativeModeTabs {
     public static Supplier<CreativeModeTab> TOOLS_TAB = CREATIVE_MODE_TABS.register("oat_tools_tab", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup." + OresAndToolsMod.MOD_ID + ".oat_tools_tab"))
             .withTabsBefore(ResourceLocation.fromNamespaceAndPath(OresAndToolsMod.MOD_ID, "oat_main_tab"))
-            .icon(() -> new ItemStack(ModItems.HARDENED_DIAMOND_AXE.get()))
+            .icon(() -> new ItemStack(ModItems.ENDERITE_PICKAXE.get()))
             .displayItems((itemDisplayParameters, output) -> {
                 output.accept(ModItems.STEEL_SHOVEL);
                 output.accept(ModItems.STEEL_PICKAXE);
                 output.accept(ModItems.STEEL_AXE);
                 output.accept(ModItems.STEEL_HOE);
-                output.accept(ModItems.ENDERITE_SHOVEL);
-                output.accept(ModItems.ENDERITE_PICKAXE);
-                output.accept(ModItems.ENDERITE_AXE);
-                output.accept(ModItems.ENDERITE_HOE);
-                output.accept(ModItems.HARDENED_DIAMOND_SHOVEL);
-                output.accept(ModItems.HARDENED_DIAMOND_PICKAXE);
-                output.accept(ModItems.HARDENED_DIAMOND_AXE);
-                output.accept(ModItems.HARDENED_DIAMOND_HOE);
-                output.accept(ModItems.MOLTEN_SHOVEL);
-                output.accept(ModItems.MOLTEN_PICKAXE);
-                output.accept(ModItems.MOLTEN_AXE);
-                output.accept(ModItems.MOLTEN_HOE);
                 output.accept(ModItems.EMERALD_SHOVEL);
                 output.accept(ModItems.EMERALD_PICKAXE);
                 output.accept(ModItems.EMERALD_AXE);
                 output.accept(ModItems.EMERALD_HOE);
+                output.accept(ModItems.MOLTEN_SHOVEL);
+                output.accept(ModItems.MOLTEN_PICKAXE);
+                output.accept(ModItems.MOLTEN_AXE);
+                output.accept(ModItems.MOLTEN_HOE);
+                output.accept(ModItems.HARDENED_DIAMOND_SHOVEL);
+                output.accept(ModItems.HARDENED_DIAMOND_PICKAXE);
+                output.accept(ModItems.HARDENED_DIAMOND_AXE);
+                output.accept(ModItems.HARDENED_DIAMOND_HOE);
                 output.accept(ModItems.OBSIDIAN_SHOVEL);
                 output.accept(ModItems.OBSIDIAN_PICKAXE);
                 output.accept(ModItems.OBSIDIAN_AXE);
                 output.accept(ModItems.OBSIDIAN_HOE);
+                output.accept(ModItems.ENDERITE_SHOVEL);
+                output.accept(ModItems.ENDERITE_PICKAXE);
+                output.accept(ModItems.ENDERITE_AXE);
+                output.accept(ModItems.ENDERITE_HOE);
             }).build());
     public static Supplier<CreativeModeTab> COMBAT_TAB = CREATIVE_MODE_TABS.register("oat_combat_tab", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup." + OresAndToolsMod.MOD_ID + ".oat_combat_tab"))
             .withTabsBefore(ResourceLocation.fromNamespaceAndPath(OresAndToolsMod.MOD_ID, "oat_main_tab"),
                             ResourceLocation.fromNamespaceAndPath(OresAndToolsMod.MOD_ID, "oat_tools_tab"))
-            .icon(() -> new ItemStack(ModItems.HARDENED_DIAMOND_SWORD.get()))
+            .icon(() -> new ItemStack(ModItems.MOLTEN_SWORD.get()))
             .displayItems((itemDisplayParameters, output) -> {
                 output.accept(ModItems.STEEL_SWORD);
                 output.accept(ModItems.HARDENED_DIAMOND_SWORD);
@@ -96,26 +96,26 @@ public class ModCreativeModeTabs {
                 output.accept(ModItems.STEEL_CHESTPLATE);
                 output.accept(ModItems.STEEL_LEGGINGS);
                 output.accept(ModItems.STEEL_BOOTS);
-                output.accept(ModItems.ENDERITE_HELMET);
-                output.accept(ModItems.ENDERITE_CHESTPLATE);
-                output.accept(ModItems.ENDERITE_LEGGINGS);
-                output.accept(ModItems.ENDERITE_BOOTS);
-                output.accept(ModItems.HARDENED_DIAMOND_HELMET);
-                output.accept(ModItems.HARDENED_DIAMOND_CHESTPLATE);
-                output.accept(ModItems.HARDENED_DIAMOND_LEGGINGS);
-                output.accept(ModItems.HARDENED_DIAMOND_BOOTS);
-                output.accept(ModItems.MOLTEN_HELMET);
-                output.accept(ModItems.MOLTEN_CHESTPLATE);
-                output.accept(ModItems.MOLTEN_LEGGINGS);
-                output.accept(ModItems.MOLTEN_BOOTS);
                 output.accept(ModItems.EMERALD_HELMET);
                 output.accept(ModItems.EMERALD_CHESTPLATE);
                 output.accept(ModItems.EMERALD_LEGGINGS);
                 output.accept(ModItems.EMERALD_BOOTS);
+                output.accept(ModItems.MOLTEN_HELMET);
+                output.accept(ModItems.MOLTEN_CHESTPLATE);
+                output.accept(ModItems.MOLTEN_LEGGINGS);
+                output.accept(ModItems.MOLTEN_BOOTS);
+                output.accept(ModItems.HARDENED_DIAMOND_HELMET);
+                output.accept(ModItems.HARDENED_DIAMOND_CHESTPLATE);
+                output.accept(ModItems.HARDENED_DIAMOND_LEGGINGS);
+                output.accept(ModItems.HARDENED_DIAMOND_BOOTS);
                 output.accept(ModItems.OBSIDIAN_HELMET);
                 output.accept(ModItems.OBSIDIAN_CHESTPLATE);
                 output.accept(ModItems.OBSIDIAN_LEGGINGS);
                 output.accept(ModItems.OBSIDIAN_BOOTS);
+                output.accept(ModItems.ENDERITE_HELMET);
+                output.accept(ModItems.ENDERITE_CHESTPLATE);
+                output.accept(ModItems.ENDERITE_LEGGINGS);
+                output.accept(ModItems.ENDERITE_BOOTS);
             }).build());
 
     public static void register(IEventBus eventBus) {
