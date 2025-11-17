@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_shulker_backpack": {
+    "has_shulker_backpack_materials_materials": {
       "conditions": {
         "items": [
           {
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_shulker_backpack"
+      "has_shulker_backpack_materials_materials"
     ]
   ],
   "rewards": {

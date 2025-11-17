@@ -54,7 +54,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("VOV")
                 .pattern("OAO")
                 .pattern("VOV")
-                .unlockedBy(getHasName(ModItems.DRAGONS_APPLE.get()), has(ModTags.Items.DRAGON_APPLE_MATERIALS))
+                .unlockedBy(getHasMaterials(ModItems.DRAGONS_APPLE.get()), has(ModTags.Items.DRAGON_APPLE_MATERIALS))
                 .save(output);
         shaped(RecipeCategory.MISC, ModItems.HARDENED_DIAMOND.get())
                 .define('O', Blocks.OBSIDIAN)
@@ -62,7 +62,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("ODO")
                 .pattern("DOD")
                 .pattern("ODO")
-                .unlockedBy(getHasName(ModItems.HARDENED_DIAMOND.get()), has(ModTags.Items.HARDENED_DIAMOND_MATERIALS))
+                .unlockedBy(getHasMaterials(ModItems.HARDENED_DIAMOND.get()), has(ModTags.Items.HARDENED_DIAMOND_MATERIALS))
                 .save(output, ResourceKey.create(Registries.RECIPE, ResourceLocation.fromNamespaceAndPath(OresAndToolsMod.MOD_ID, getItemName(ModItems.HARDENED_DIAMOND.get()) + "_shaped")));
         shaped(RecipeCategory.MISC, ModItems.IMPROVISED_REACTOR.get())
                 .define('C', ItemTags.COALS)
@@ -71,7 +71,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("C")
                 .pattern("U")
                 .pattern("B")
-                .unlockedBy(getHasName(ModItems.IMPROVISED_REACTOR.get()), has(ModTags.Items.IMPROVISED_REACTOR_MATERIALS))
+                .unlockedBy(getHasMaterials(ModItems.IMPROVISED_REACTOR.get()), has(ModTags.Items.IMPROVISED_REACTOR_MATERIALS))
                 .save(output);
         shaped(RecipeCategory.COMBAT, ModItems.OBSIDIAN_SHIELD.get())
                 .define('O', Blocks.OBSIDIAN)
@@ -79,14 +79,14 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("ODO")
                 .pattern("OOO")
                 .pattern(" O ")
-                .unlockedBy(getHasName(ModItems.OBSIDIAN_SHIELD.get()), has(ModTags.Items.OBSIDIAN_SHIELD_MATERIALS))
+                .unlockedBy(getHasMaterials(ModItems.OBSIDIAN_SHIELD.get()), has(ModTags.Items.OBSIDIAN_SHIELD_MATERIALS))
                 .save(output);
         shaped(RecipeCategory.MISC, ModItems.STEEL_CHUNK.get(), 2)
                 .define('C', ItemTags.COALS)
                 .define('I', Items.RAW_IRON)
                 .pattern("CI")
                 .pattern("IC")
-                .unlockedBy(getHasName(ModItems.STEEL_CHUNK.get()), has(ModTags.Items.STEEL_CHUNK_MATERIALS))
+                .unlockedBy(getHasMaterials(ModItems.STEEL_CHUNK.get()), has(ModTags.Items.STEEL_CHUNK_MATERIALS))
                 .save(output);
         shaped(RecipeCategory.MISC, ModItems.STEEL_CHUNK.get())
                 .define('C', ItemTags.COALS)
@@ -94,7 +94,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("III")
                 .pattern("ICI")
                 .pattern("III")
-                .unlockedBy(getHasName(ModItems.STEEL_CHUNK.get()), has(ModTags.Items.STEEL_CHUNK_MATERIALS))
+                .unlockedBy(getHasMaterials(ModItems.STEEL_CHUNK.get()), has(ModTags.Items.STEEL_CHUNK_MATERIALS))
                 .save(output, ResourceKey.create(Registries.RECIPE, ResourceLocation.fromNamespaceAndPath(OresAndToolsMod.MOD_ID, getItemName(ModItems.STEEL_CHUNK.get()) + "_2")));
         shaped(RecipeCategory.COMBAT, ModItems.ENDERITE_BOW.get())
                 .define('V', ModItems.ENDERITE_INGOT.get())
@@ -102,7 +102,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern(" VS")
                 .pattern("V S")
                 .pattern(" VS")
-                .unlockedBy(getHasName(ModItems.ENDERITE_BOW.get()), has(ModTags.Items.ENDERITE_REPAIR_MATERIALS))
+                .unlockedBy(getHasMaterials(ModItems.ENDERITE_BOW.get()), has(ModTags.Items.ENDERITE_REPAIR_MATERIALS))
                 .save(output);
         shaped(RecipeCategory.MISC, ModItems.ENDERITE_INGOT.get())
                 .define('V', ModItems.ENDERITE_DUST.get())
@@ -110,7 +110,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("VVV")
                 .pattern("VSV")
                 .pattern("VVV")
-                .unlockedBy(getHasName(ModItems.ENDERITE_INGOT.get()), has(ModTags.Items.ENDERITE_INGOT_MATERIALS))
+                .unlockedBy(getHasMaterials(ModItems.ENDERITE_INGOT.get()), has(ModTags.Items.ENDERITE_INGOT_MATERIALS))
                 .save(output);
         shaped(RecipeCategory.MISC, ModItems.ENDERITE_UPGRADE_SMITHING_TEMPLATE.get(), 2)
                 .define('T', ModItems.ENDERITE_UPGRADE_SMITHING_TEMPLATE.get())
@@ -119,7 +119,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("T")
                 .pattern("E")
                 .pattern("N")
-                .unlockedBy(getHasName(ModItems.ENDERITE_UPGRADE_SMITHING_TEMPLATE.get()), has(ModTags.Items.ENDERITE_REPAIR_MATERIALS))
+                .unlockedBy(getHasMaterials(ModItems.ENDERITE_UPGRADE_SMITHING_TEMPLATE.get()), has(ModTags.Items.ENDERITE_REPAIR_MATERIALS))
                 .save(output);
         shaped(RecipeCategory.MISC, ModItems.ENDERITE_LEATHER.get())
                 .define('V', ModItems.ENDERITE_DUST.get())
@@ -127,7 +127,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("VVV")
                 .pattern("VLV")
                 .pattern("VVV")
-                .unlockedBy(getHasName(ModItems.ENDERITE_LEATHER.get()), has(ModTags.Items.ENDERITE_LEATHER_MATERIALS))
+                .unlockedBy(getHasMaterials(ModItems.ENDERITE_LEATHER.get()), has(ModTags.Items.ENDERITE_LEATHER_MATERIALS))
                 .save(output);
         shaped(RecipeCategory.MISC, ModItems.SHULKER_BACKPACK.get())
                 .define('L', ModItems.ENDERITE_LEATHER.get())
@@ -137,7 +137,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("LSL")
                 .pattern("IEI")
                 .pattern("LSL")
-                .unlockedBy(getHasName(ModItems.SHULKER_BACKPACK.get()), has(ModTags.Items.SHULKER_BACKPACK_MATERIALS))
+                .unlockedBy(getHasMaterials(ModItems.SHULKER_BACKPACK.get()) + "_materials", has(ModTags.Items.SHULKER_BACKPACK_MATERIALS))
                 .save(output);
 
         /* NINE BLOCK STORAGE */
@@ -156,7 +156,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("SVS")
                 .pattern("SCS")
                 .pattern("SSS")
-                .unlockedBy(getHasName(ModBlocks.ENDERITE_CHEST.get()), has(ModTags.Items.ENDERITE_CHEST_MATERIALS))
+                .unlockedBy(getHasMaterials(ModBlocks.ENDERITE_CHEST.get()), has(ModTags.Items.ENDERITE_CHEST_MATERIALS))
                 .save(output);
 
         /* SMELTING & BLASTING */
@@ -192,12 +192,6 @@ public class ModRecipeProvider extends RecipeProvider {
                 ModItems.HARDENED_DIAMOND_PICKAXE.get(),
                 ModItems.HARDENED_DIAMOND_SHOVEL.get(),
                 ModItems.HARDENED_DIAMOND_SWORD.get());
-        toolSetRecipes(output, ModItems.MOLTEN_INGOT.get(),
-                ModItems.MOLTEN_AXE.get(),
-                ModItems.MOLTEN_HOE.get(),
-                ModItems.MOLTEN_PICKAXE.get(),
-                ModItems.MOLTEN_SHOVEL.get(),
-                ModItems.MOLTEN_SWORD.get());
         toolSetRecipes(output, Blocks.OBSIDIAN.asItem(),
                 ModItems.OBSIDIAN_AXE.get(),
                 ModItems.OBSIDIAN_HOE.get(),
@@ -210,6 +204,12 @@ public class ModRecipeProvider extends RecipeProvider {
                 ModItems.STEEL_PICKAXE.get(),
                 ModItems.STEEL_SHOVEL.get(),
                 ModItems.STEEL_SWORD.get());
+
+        moltenSmithing(Items.DIAMOND_SHOVEL, RecipeCategory.TOOLS, ModItems.MOLTEN_SHOVEL.get());
+        moltenSmithing(Items.DIAMOND_PICKAXE, RecipeCategory.TOOLS, ModItems.MOLTEN_PICKAXE.get());
+        moltenSmithing(Items.DIAMOND_AXE, RecipeCategory.TOOLS, ModItems.MOLTEN_AXE.get());
+        moltenSmithing(Items.DIAMOND_HOE, RecipeCategory.TOOLS, ModItems.MOLTEN_HOE.get());
+        moltenSmithing(Items.DIAMOND_SWORD, RecipeCategory.COMBAT, ModItems.MOLTEN_SWORD.get());
 
         enderiteSmithing(Items.NETHERITE_SHOVEL, RecipeCategory.TOOLS, ModItems.ENDERITE_SHOVEL.get());
         enderiteSmithing(Items.NETHERITE_PICKAXE, RecipeCategory.TOOLS, ModItems.ENDERITE_PICKAXE.get());
@@ -228,11 +228,6 @@ public class ModRecipeProvider extends RecipeProvider {
                 ModItems.HARDENED_DIAMOND_CHESTPLATE.get(),
                 ModItems.HARDENED_DIAMOND_LEGGINGS.get(),
                 ModItems.HARDENED_DIAMOND_BOOTS.get());
-        armorSetRecipes(output, ModItems.MOLTEN_INGOT.get(),
-                ModItems.MOLTEN_HELMET.get(),
-                ModItems.MOLTEN_CHESTPLATE.get(),
-                ModItems.MOLTEN_LEGGINGS.get(),
-                ModItems.MOLTEN_BOOTS.get());
         armorSetRecipes(output, Items.OBSIDIAN,
                 ModItems.OBSIDIAN_HELMET.get(),
                 ModItems.OBSIDIAN_CHESTPLATE.get(),
@@ -243,6 +238,11 @@ public class ModRecipeProvider extends RecipeProvider {
                 ModItems.STEEL_CHESTPLATE.get(),
                 ModItems.STEEL_LEGGINGS.get(),
                 ModItems.STEEL_BOOTS.get());
+
+        moltenSmithing(Items.DIAMOND_HELMET, RecipeCategory.COMBAT, ModItems.MOLTEN_HELMET.get());
+        moltenSmithing(Items.DIAMOND_CHESTPLATE, RecipeCategory.COMBAT, ModItems.MOLTEN_CHESTPLATE.get());
+        moltenSmithing(Items.DIAMOND_LEGGINGS, RecipeCategory.COMBAT, ModItems.MOLTEN_LEGGINGS.get());
+        moltenSmithing(Items.DIAMOND_BOOTS, RecipeCategory.COMBAT, ModItems.MOLTEN_BOOTS.get());
 
         enderiteSmithing(Items.NETHERITE_HELMET, RecipeCategory.COMBAT, ModItems.ENDERITE_HELMET.get());
         enderiteSmithing(Items.NETHERITE_CHESTPLATE, RecipeCategory.COMBAT, ModItems.ENDERITE_CHESTPLATE.get());
@@ -295,6 +295,18 @@ public class ModRecipeProvider extends RecipeProvider {
         }
     }
 
+    protected void moltenSmithing(Item ingredientItem, RecipeCategory category, Item resultItem) {
+        SmithingTransformRecipeBuilder.smithing(
+                        Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE),
+                        Ingredient.of(ingredientItem),
+                        this.tag(ModTags.Items.MOLTEN_REPAIR_MATERIALS),
+                        category,
+                        resultItem
+                )
+                .unlocks(getHasName(ModItems.MOLTEN_INGOT), this.has(ModTags.Items.MOLTEN_REPAIR_MATERIALS))
+                .save(this.output, getItemName(resultItem) + "_smithing");
+    }
+
     protected void enderiteSmithing(Item ingredientItem, RecipeCategory category, Item resultItem) {
         SmithingTransformRecipeBuilder.smithing(
                         Ingredient.of(ModItems.ENDERITE_UPGRADE_SMITHING_TEMPLATE),
@@ -303,7 +315,7 @@ public class ModRecipeProvider extends RecipeProvider {
                         category,
                         resultItem
                 )
-                .unlocks("has_enderite_ingot", this.has(ModTags.Items.ENDERITE_REPAIR_MATERIALS))
+                .unlocks(getHasName(ModItems.ENDERITE_INGOT), this.has(ModTags.Items.ENDERITE_REPAIR_MATERIALS))
                 .save(this.output, getItemName(resultItem) + "_smithing");
     }
 
@@ -406,5 +418,9 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("# #")
                 .pattern("# #")
                 .unlockedBy(getHasName(material), has(material));
+    }
+
+    protected static String getHasMaterials(ItemLike itemLike) {
+        return getHasName(itemLike) + "_materials";
     }
 }

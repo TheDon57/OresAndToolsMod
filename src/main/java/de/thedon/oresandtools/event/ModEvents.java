@@ -191,13 +191,13 @@ public class ModEvents {
         }
     
     
-        private static final ArrayList<ItemEntity> droppedDiamonds = new ArrayList<>();
+        private static final ArrayList<ItemEntity> droppedIngots = new ArrayList<>();
     
         @SubscribeEvent
         public static void onItemToss(ItemTossEvent event) {
             ItemEntity itemEntity = event.getEntity();
-            if (itemEntity.getItem().getItem() == ModItems.HARDENED_DIAMOND.get()) {
-                droppedDiamonds.add(itemEntity);
+            if (itemEntity.getItem().getItem() == Items.NETHERITE_INGOT) {
+                droppedIngots.add(itemEntity);
             }
         }
 
@@ -206,11 +206,11 @@ public class ModEvents {
             ItemEntity itemEntity = event.getEntity();
             if (itemEntity.isInLava()) {
                 Item item = itemEntity.getItem().getItem();
-                if (item == ModItems.HARDENED_DIAMOND.get() ||
+                if (item == Items.NETHERITE_INGOT ||
                     item == ModItems.MOLTEN_INGOT.get() ||
-                    item == ModItems.HEATING_HARDENED_DIAMOND_1.get() ||
-                    item == ModItems.HEATING_HARDENED_DIAMOND_2.get() ||
-                    item == ModItems.HEATING_HARDENED_DIAMOND_3.get()) {
+                    item == ModItems.HEATING_INGOT_1.get() ||
+                    item == ModItems.HEATING_INGOT_2.get() ||
+                    item == ModItems.HEATING_INGOT_3.get()) {
                     event.addExtraLife(1000);
                 }
             }
@@ -218,27 +218,27 @@ public class ModEvents {
     
         @SubscribeEvent
         public static void onPreLevelTick(LevelTickEvent.Pre event) {
-            for (ItemEntity diamond : droppedDiamonds) {
-                int count = diamond.getItem().getCount();
-                if (diamond.isInLava()) {
-                    if (diamond.getAge() >= 300) {
-                        diamond.setItem(new ItemStack(ModItems.MOLTEN_INGOT.get(), count));
+            for (ItemEntity ingot : droppedIngots) {
+                int count = ingot.getItem().getCount();
+                if (ingot.isInLava()) {
+                    if (ingot.getAge() >= 300) {
+                        ingot.setItem(new ItemStack(ModItems.MOLTEN_INGOT.get(), count));
                     }
-                    else if (diamond.getAge() >= 225) {
-                        diamond.setItem(new ItemStack(ModItems.HEATING_HARDENED_DIAMOND_3.get(), count));
+                    else if (ingot.getAge() >= 225) {
+                        ingot.setItem(new ItemStack(ModItems.HEATING_INGOT_3.get(), count));
                     }
-                    else if (diamond.getAge() >= 150) {
-                        diamond.setItem(new ItemStack(ModItems.HEATING_HARDENED_DIAMOND_2.get(), count));
+                    else if (ingot.getAge() >= 150) {
+                        ingot.setItem(new ItemStack(ModItems.HEATING_INGOT_2.get(), count));
                     }
-                    else if (diamond.getAge() >= 75) {
-                        diamond.setItem(new ItemStack(ModItems.HEATING_HARDENED_DIAMOND_1.get(), count));
+                    else if (ingot.getAge() >= 75) {
+                        ingot.setItem(new ItemStack(ModItems.HEATING_INGOT_1.get(), count));
                     }
                 } else {
-                    if (diamond.getAge() >= 6000) {
-                        diamond.remove(Entity.RemovalReason.DISCARDED);
+                    if (ingot.getAge() >= 6000) {
+                        ingot.remove(Entity.RemovalReason.DISCARDED);
                     }
-                    else if (!diamond.isInLava() && diamond.getItem().getItem() != ModItems.MOLTEN_INGOT.get()) {
-                        diamond.setItem(new ItemStack(ModItems.HARDENED_DIAMOND.get(), count));
+                    else if (!ingot.isInLava() && ingot.getItem().getItem() != ModItems.MOLTEN_INGOT.get()) {
+                        ingot.setItem(new ItemStack(Items.NETHERITE_INGOT, count));
                     }
                 }
             }
@@ -247,9 +247,9 @@ public class ModEvents {
         @SubscribeEvent
         public static void onPreItemEntityPickup(ItemEntityPickupEvent.Pre event) {
             Item item = event.getItemEntity().getItem().getItem();
-            if (item == ModItems.HEATING_HARDENED_DIAMOND_1.get() ||
-                item == ModItems.HEATING_HARDENED_DIAMOND_2.get() ||
-                item == ModItems.HEATING_HARDENED_DIAMOND_3.get()) {
+            if (item == ModItems.HEATING_INGOT_1.get() ||
+                item == ModItems.HEATING_INGOT_2.get() ||
+                item == ModItems.HEATING_INGOT_3.get()) {
                 event.setCanPickup(TriState.FALSE);
             }
         }
@@ -257,8 +257,8 @@ public class ModEvents {
         @SubscribeEvent
         public static void onPostItemEntityPickup(ItemEntityPickupEvent.Post event) {
             Item item = event.getOriginalStack().getItem();
-            if (item == ModItems.MOLTEN_INGOT.get() || item == ModItems.HARDENED_DIAMOND.get()) {
-                droppedDiamonds.remove(event.getItemEntity());
+            if (item == ModItems.MOLTEN_INGOT.get() || item == Items.NETHERITE_INGOT) {
+                droppedIngots.remove(event.getItemEntity());
             }
         }
     }

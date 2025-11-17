@@ -59,9 +59,9 @@ public class ModModelProvider extends ModelProvider {
 
         /* ITEMS */
         itemModels.generateFlatItem(ModItems.HARDENED_DIAMOND.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ModItems.HEATING_HARDENED_DIAMOND_1.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ModItems.HEATING_HARDENED_DIAMOND_2.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ModItems.HEATING_HARDENED_DIAMOND_3.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.HEATING_INGOT_1.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.HEATING_INGOT_2.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.HEATING_INGOT_3.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.MOLTEN_INGOT.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.ENDERITE_DUST.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.ENDERITE_INGOT.get(), ModelTemplates.FLAT_ITEM);

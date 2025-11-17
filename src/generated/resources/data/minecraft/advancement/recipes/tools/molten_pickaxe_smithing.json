@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "oresandtools:molten_ingot"
+            "items": "#oresandtools:molten_repair_materials"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "oresandtools:molten_leggings"
+        "recipe": "minecraft:molten_pickaxe_smithing"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "oresandtools:molten_leggings"
+      "minecraft:molten_pickaxe_smithing"
     ]
   }
 }

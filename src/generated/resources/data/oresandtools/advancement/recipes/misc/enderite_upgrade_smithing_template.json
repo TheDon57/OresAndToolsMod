@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_enderite_upgrade_smithing_template": {
+    "has_enderite_upgrade_smithing_template_materials": {
       "conditions": {
         "items": [
           {
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_enderite_upgrade_smithing_template"
+      "has_enderite_upgrade_smithing_template_materials"
     ]
   ],
   "rewards": {

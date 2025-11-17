@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_enderite_chest": {
+    "has_enderite_chest_materials": {
       "conditions": {
         "items": [
           {
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_enderite_chest"
+      "has_enderite_chest_materials"
     ]
   ],
   "rewards": {

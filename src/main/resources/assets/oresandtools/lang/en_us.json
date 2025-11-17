@@ -1,8 +1,8 @@
 {
   "item.oresandtools.hardened_diamond" : "Hardened Diamond",
-  "item.oresandtools.heating_hardened_diamond_1" : "Heating Hardened Diamond",
-  "item.oresandtools.heating_hardened_diamond_2" : "Heating Hardened Diamond",
-  "item.oresandtools.heating_hardened_diamond_3" : "Heating Hardened Diamond",
+  "item.oresandtools.heating_ingot_1" : "Heating Hardened Diamond",
+  "item.oresandtools.heating_ingot_2" : "Heating Hardened Diamond",
+  "item.oresandtools.heating_ingot_3" : "Heating Hardened Diamond",
   "item.oresandtools.molten_ingot" : "Molten Ingot",
   "item.oresandtools.enderite_dust" : "Enderite Dust",
   "item.oresandtools.obsidian_shard" : "Obsidian Shard",

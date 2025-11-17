@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "#oresandtools:molten_repair_materials",
+  "base": "minecraft:diamond_boots",
+  "result": {
+    "id": "oresandtools:molten_boots"
+  },
+  "template": "minecraft:netherite_upgrade_smithing_template"
+}

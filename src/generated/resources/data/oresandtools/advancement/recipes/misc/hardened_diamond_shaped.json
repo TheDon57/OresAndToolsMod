@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_hardened_diamond": {
+    "has_hardened_diamond_materials": {
       "conditions": {
         "items": [
           {
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_hardened_diamond"
+      "has_hardened_diamond_materials"
     ]
   ],
   "rewards": {
