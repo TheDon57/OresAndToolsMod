@@ -1,7 +1,6 @@
-package de.thedon.oresandtools.item.crafting;
+package de.thedon.oresandtools.recipe;
 
 import de.thedon.oresandtools.OresAndToolsMod;
-import de.thedon.oresandtools.item.crafting.custom.ObsidianShieldDecorationRecipe;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.crafting.CustomRecipe;
 import net.minecraft.world.item.crafting.Recipe;
@@ -11,7 +10,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
 
-public class ModRecipeSerializers {
+public class ModRecipes {
     public static final DeferredRegister<RecipeSerializer<?>> RECIPE_SERIALIZERS = DeferredRegister.create(BuiltInRegistries.RECIPE_SERIALIZER, OresAndToolsMod.MOD_ID);
 
     public static final Supplier<RecipeSerializer<ObsidianShieldDecorationRecipe>> OBSIDIAN_SHIELD_DECORATION = register("crafting_special_obsidian_shielddecoration", new CustomRecipe.Serializer<>(ObsidianShieldDecorationRecipe::new));

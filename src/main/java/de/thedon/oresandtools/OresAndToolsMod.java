@@ -6,7 +6,8 @@ import de.thedon.oresandtools.block.entity.ModBlockEntities;
 import de.thedon.oresandtools.block.entity.renderer.EnderiteChestRenderer;
 import de.thedon.oresandtools.item.ModCreativeModeTabs;
 import de.thedon.oresandtools.item.ModItems;
-import de.thedon.oresandtools.item.crafting.ModRecipeSerializers;
+import de.thedon.oresandtools.loot.ModLootModifiers;
+import de.thedon.oresandtools.recipe.ModRecipes;
 import de.thedon.oresandtools.render.ObsidianShieldSpecialRenderer;
 import de.thedon.oresandtools.screen.ModMenuTypes;
 import de.thedon.oresandtools.screen.custom.BackpackScreen;
@@ -43,10 +44,11 @@ public class OresAndToolsMod {
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
+        ModLootModifiers.register(modEventBus);
         ModBlockEntities.register(modEventBus);
 
         ModMenuTypes.register(modEventBus);
-        ModRecipeSerializers.register(modEventBus);
+        ModRecipes.register(modEventBus);
 
         modEventBus.addListener(this::addCreative);
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);

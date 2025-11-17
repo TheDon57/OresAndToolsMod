@@ -10,11 +10,17 @@
   "item.oresandtools.steel_chunk" : "Steel Chunk",
   "item.oresandtools.steel_ingot" : "Steel Ingot",
   "item.oresandtools.enderite_ingot" : "Enderite Ingot",
+  "item.oresandtools.enderite_upgrade_smithing_template": "Enderite Upgrade",
   "item.oresandtools.enderite_leather" : "Enderite Leather",
   "item.oresandtools.raw_uranium" : "Raw Uranium",
   "item.oresandtools.uranium_ingot" : "Uranium Ingot",
   "item.oresandtools.improvised_reactor" : "Improvised Reactor",
   "item.oresandtools.shulker_backpack" : "Shulker Backpack",
+
+  "item.oresandtools.smithing_template.enderite_upgrade.additions_slot_description": "Add Enderite Ingot",
+  "item.oresandtools.smithing_template.enderite_upgrade.applies_to": "Netherite Equipment",
+  "item.oresandtools.smithing_template.enderite_upgrade.base_slot_description": "Add netherite armor, weapon, or tool",
+  "item.oresandtools.smithing_template.enderite_upgrade.ingredients": "Enderite Ingot",
 
   "item.oresandtools.copper_shovel" : "Copper Shovel",
   "item.oresandtools.copper_pickaxe" : "Copper Pickaxe",

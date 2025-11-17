@@ -1,4 +1,4 @@
-// 1.21.10	2025-11-15T17:29:52.324464	Model Definitions - oresandtools
+// 1.21.10	2025-11-16T03:44:53.802192	Model Definitions - oresandtools
 c9763e858a372ba10842b80a920665ee9daf8f99 assets/oresandtools/blockstates/deepslate_enderite_ore.json
 3021f8edf385f5d045943c39845f4313f92e8a19 assets/oresandtools/blockstates/deepslate_obsidian_ore.json
 2f22ddc4a167dcf628f8a6e83f31bf419f1b1fbf assets/oresandtools/blockstates/deepslate_uranium_ore.json
@@ -46,6 +46,7 @@ bda893a2ad72e65309b8c8284cc6b9a96b08539c assets/oresandtools/items/enderite_ore.
 bc07ad0d006a51a0008c1ba6bfb68e7c59f60491 assets/oresandtools/items/enderite_pickaxe.json
 f137612a9eaa4bee6d3ecff834aeec06efe509c2 assets/oresandtools/items/enderite_shovel.json
 eca5f4169a450d29afc40246bbea4b63bd4de441 assets/oresandtools/items/enderite_sword.json
+9e4bf325fa9fe0c32151e50a88754f254116896e assets/oresandtools/items/enderite_upgrade_smithing_template.json
 fa2cbd3c63e6155685575e917f992eac160b1968 assets/oresandtools/items/endstone_enderite_ore.json
 b2e15c2f40d18cc967a535699d10aab89b089853 assets/oresandtools/items/hardened_diamond.json
 9239094389575976604e8cf8832aeff9e876b8b6 assets/oresandtools/items/hardened_diamond_axe.json
@@ -240,6 +241,7 @@ d875002d4cf7be5b2e396323c8ccf6d6a6d776d0 assets/oresandtools/models/item/enderit
 ad9e12fd51031fa27e64a43dd79cc307c65d2d2e assets/oresandtools/models/item/enderite_pickaxe.json
 c285f6d0911ea9ca42b8df9aed2fc69d2199238e assets/oresandtools/models/item/enderite_shovel.json
 ebc5194ba7e677a53b194cca8812c42609874133 assets/oresandtools/models/item/enderite_sword.json
+f9e906cd3b3874d4e3cf314fe085b49c0a02811c assets/oresandtools/models/item/enderite_upgrade_smithing_template.json
 8910f0a21dce61976151cfb6badb66fc31c12646 assets/oresandtools/models/item/hardened_diamond.json
 87c54e4e5d8f57c2f6efe25137edc0cb79d67776 assets/oresandtools/models/item/hardened_diamond_axe.json
 41cbbfdc334633e4132451f8f9b3536ab95bb2d7 assets/oresandtools/models/item/hardened_diamond_boots.json

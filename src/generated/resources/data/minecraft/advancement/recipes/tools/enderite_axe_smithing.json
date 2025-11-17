@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "oresandtools:enderite_ingot"
+            "items": "#oresandtools:enderite_repair_materials"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "oresandtools:enderite_shovel"
+        "recipe": "minecraft:enderite_axe_smithing"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "oresandtools:enderite_shovel"
+      "minecraft:enderite_axe_smithing"
     ]
   }
 }

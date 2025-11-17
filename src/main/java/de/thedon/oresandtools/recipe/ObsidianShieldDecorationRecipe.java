@@ -1,7 +1,6 @@
-package de.thedon.oresandtools.item.crafting.custom;
+package de.thedon.oresandtools.recipe;
 
 import de.thedon.oresandtools.item.ModItems;
-import de.thedon.oresandtools.item.crafting.ModRecipeSerializers;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.BannerItem;
@@ -83,6 +82,6 @@ public class ObsidianShieldDecorationRecipe extends CustomRecipe {
     }
 
     public @NotNull RecipeSerializer<ObsidianShieldDecorationRecipe> getSerializer() {
-        return ModRecipeSerializers.OBSIDIAN_SHIELD_DECORATION.get();
+        return ModRecipes.OBSIDIAN_SHIELD_DECORATION.get();
     }
 }

@@ -23,6 +23,7 @@ public class ModCreativeModeTabs {
                 output.accept(ModItems.STEEL_INGOT);
                 output.accept(ModItems.ENDERITE_DUST);
                 output.accept(ModItems.ENDERITE_INGOT);
+                output.accept(ModItems.ENDERITE_UPGRADE_SMITHING_TEMPLATE);
                 output.accept(ModItems.DRAGONS_APPLE);
                 output.accept(ModItems.RAW_URANIUM);
                 output.accept(ModItems.URANIUM_INGOT);

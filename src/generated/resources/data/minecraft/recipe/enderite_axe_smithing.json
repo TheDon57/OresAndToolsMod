@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "#oresandtools:enderite_repair_materials",
+  "base": "minecraft:netherite_axe",
+  "result": {
+    "id": "oresandtools:enderite_axe"
+  },
+  "template": "oresandtools:enderite_upgrade_smithing_template"
+}

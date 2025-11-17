@@ -5,8 +5,7 @@ import de.thedon.oresandtools.item.custom.*;
 import de.thedon.oresandtools.item.equipment.ModArmorMaterials;
 import de.thedon.oresandtools.util.ModTags;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.ShieldItem;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.equipment.ArmorType;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -26,6 +25,7 @@ public class ModItems {
     public static final DeferredItem<Item> STEEL_CHUNK = ITEMS.registerItem("steel_chunk", Item::new);
     public static final DeferredItem<Item> STEEL_INGOT = ITEMS.registerItem("steel_ingot", Item::new);
     public static final DeferredItem<Item> ENDERITE_INGOT = ITEMS.registerItem("enderite_ingot",properties -> new Item(properties.fireResistant()));
+    public static final DeferredItem<Item> ENDERITE_UPGRADE_SMITHING_TEMPLATE = ITEMS.registerItem("enderite_upgrade_smithing_template", properties -> ModSmithingTemplateItem.createEnderiteUpgradeTemplate(properties.rarity(Rarity.RARE)));
     public static final DeferredItem<Item> RAW_URANIUM = ITEMS.registerItem("raw_uranium", properties -> new ModItem(properties, true));
     public static final DeferredItem<Item> URANIUM_INGOT = ITEMS.registerItem("uranium_ingot", properties -> new ModItem(properties, true));
     public static final DeferredItem<Item> IMPROVISED_REACTOR = ITEMS.registerItem("improvised_reactor", ImprovisedReactorItem::new);
@@ -94,7 +94,7 @@ public class ModItems {
     public static final DeferredItem<Item> ENDERITE_BOW = ITEMS.registerItem("enderite_bow", properties -> new ModBowItem(ENDERITE_INGOT.get(), 1.1f, 60000, 20, properties.durability(3225)));
 
     /* SHIELDS */
-    public static final DeferredItem<Item> OBSIDIAN_SHIELD = ITEMS.registerItem("obsidian_shield", properties -> new ModShieldItem(1250, ModTags.Items.OBSIDIAN_REPAIRABLE, properties.fireResistant()));
+    public static final DeferredItem<Item> OBSIDIAN_SHIELD = ITEMS.registerItem("obsidian_shield", properties -> new ModShieldItem(1250, ModTags.Items.OBSIDIAN_REPAIR_MATERIALS, properties.fireResistant()));
 
 
     public static void register(IEventBus eventBus) {

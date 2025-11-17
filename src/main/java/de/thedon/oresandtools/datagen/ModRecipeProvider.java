@@ -81,7 +81,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern(" O ")
                 .unlockedBy(getHasName(ModItems.OBSIDIAN_SHIELD.get()), has(ModTags.Items.OBSIDIAN_SHIELD_MATERIALS))
                 .save(output);
-        shaped(RecipeCategory.MISC, ModItems.STEEL_CHUNK.get())
+        shaped(RecipeCategory.MISC, ModItems.STEEL_CHUNK.get(), 2)
                 .define('C', ItemTags.COALS)
                 .define('I', Items.RAW_IRON)
                 .pattern("CI")
@@ -102,7 +102,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern(" VS")
                 .pattern("V S")
                 .pattern(" VS")
-                .unlockedBy(getHasName(ModItems.ENDERITE_BOW.get()), has(ModItems.ENDERITE_DUST.get()))
+                .unlockedBy(getHasName(ModItems.ENDERITE_BOW.get()), has(ModTags.Items.ENDERITE_REPAIR_MATERIALS))
                 .save(output);
         shaped(RecipeCategory.MISC, ModItems.ENDERITE_INGOT.get())
                 .define('V', ModItems.ENDERITE_DUST.get())
@@ -111,6 +111,15 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("VSV")
                 .pattern("VVV")
                 .unlockedBy(getHasName(ModItems.ENDERITE_INGOT.get()), has(ModTags.Items.ENDERITE_INGOT_MATERIALS))
+                .save(output);
+        shaped(RecipeCategory.MISC, ModItems.ENDERITE_UPGRADE_SMITHING_TEMPLATE.get(), 2)
+                .define('T', ModItems.ENDERITE_UPGRADE_SMITHING_TEMPLATE.get())
+                .define('E', Blocks.END_STONE)
+                .define('N', Items.NETHERITE_INGOT)
+                .pattern("T")
+                .pattern("E")
+                .pattern("N")
+                .unlockedBy(getHasName(ModItems.ENDERITE_UPGRADE_SMITHING_TEMPLATE.get()), has(ModTags.Items.ENDERITE_REPAIR_MATERIALS))
                 .save(output);
         shaped(RecipeCategory.MISC, ModItems.ENDERITE_LEATHER.get())
                 .define('V', ModItems.ENDERITE_DUST.get())
@@ -141,11 +150,12 @@ public class ModRecipeProvider extends RecipeProvider {
 
         /* CHESTS */
         shaped(RecipeCategory.MISC, ModBlocks.ENDERITE_CHEST.get())
+                .define('S', ModItems.STEEL_INGOT.get())
                 .define('V', ModItems.ENDERITE_INGOT.get())
                 .define('C', Blocks.CHEST)
-                .pattern("VVV")
-                .pattern("VCV")
-                .pattern("VVV")
+                .pattern("SVS")
+                .pattern("SCS")
+                .pattern("SSS")
                 .unlockedBy(getHasName(ModBlocks.ENDERITE_CHEST.get()), has(ModTags.Items.ENDERITE_CHEST_MATERIALS))
                 .save(output);
 
@@ -200,12 +210,12 @@ public class ModRecipeProvider extends RecipeProvider {
                 ModItems.STEEL_PICKAXE.get(),
                 ModItems.STEEL_SHOVEL.get(),
                 ModItems.STEEL_SWORD.get());
-        toolSetRecipes(output, ModItems.ENDERITE_INGOT.get(),
-                ModItems.ENDERITE_AXE.get(),
-                ModItems.ENDERITE_HOE.get(),
-                ModItems.ENDERITE_PICKAXE.get(),
-                ModItems.ENDERITE_SHOVEL.get(),
-                ModItems.ENDERITE_SWORD.get());
+
+        enderiteSmithing(Items.NETHERITE_SHOVEL, RecipeCategory.TOOLS, ModItems.ENDERITE_SHOVEL.get());
+        enderiteSmithing(Items.NETHERITE_PICKAXE, RecipeCategory.TOOLS, ModItems.ENDERITE_PICKAXE.get());
+        enderiteSmithing(Items.NETHERITE_AXE, RecipeCategory.TOOLS, ModItems.ENDERITE_AXE.get());
+        enderiteSmithing(Items.NETHERITE_HOE, RecipeCategory.TOOLS, ModItems.ENDERITE_HOE.get());
+        enderiteSmithing(Items.NETHERITE_SWORD, RecipeCategory.COMBAT, ModItems.ENDERITE_SWORD.get());
 
         /* ARMOR */
         armorSetRecipes(output, Items.EMERALD,
@@ -233,13 +243,11 @@ public class ModRecipeProvider extends RecipeProvider {
                 ModItems.STEEL_CHESTPLATE.get(),
                 ModItems.STEEL_LEGGINGS.get(),
                 ModItems.STEEL_BOOTS.get());
-        armorSetRecipes(output, ModItems.ENDERITE_INGOT.get(),
-                ModItems.ENDERITE_HELMET.get(),
-                ModItems.ENDERITE_CHESTPLATE.get(),
-                ModItems.ENDERITE_LEGGINGS.get(),
-                ModItems.ENDERITE_BOOTS.get());
 
-
+        enderiteSmithing(Items.NETHERITE_HELMET, RecipeCategory.COMBAT, ModItems.ENDERITE_HELMET.get());
+        enderiteSmithing(Items.NETHERITE_CHESTPLATE, RecipeCategory.COMBAT, ModItems.ENDERITE_CHESTPLATE.get());
+        enderiteSmithing(Items.NETHERITE_LEGGINGS, RecipeCategory.COMBAT, ModItems.ENDERITE_LEGGINGS.get());
+        enderiteSmithing(Items.NETHERITE_BOOTS, RecipeCategory.COMBAT, ModItems.ENDERITE_BOOTS.get());
     }
     
     @ParametersAreNonnullByDefault
@@ -285,6 +293,18 @@ public class ModRecipeProvider extends RecipeProvider {
                     .unlockedBy(getHasName(itemlike), has(itemlike))
                     .save(pRecipeOutput, ResourceKey.create(Registries.RECIPE, ResourceLocation.fromNamespaceAndPath(OresAndToolsMod.MOD_ID, getItemName(pResult) + pRecipeName + "_" + getItemName(itemlike))));
         }
+    }
+
+    protected void enderiteSmithing(Item ingredientItem, RecipeCategory category, Item resultItem) {
+        SmithingTransformRecipeBuilder.smithing(
+                        Ingredient.of(ModItems.ENDERITE_UPGRADE_SMITHING_TEMPLATE),
+                        Ingredient.of(ingredientItem),
+                        this.tag(ModTags.Items.ENDERITE_REPAIR_MATERIALS),
+                        category,
+                        resultItem
+                )
+                .unlocks("has_enderite_ingot", this.has(ModTags.Items.ENDERITE_REPAIR_MATERIALS))
+                .save(this.output, getItemName(resultItem) + "_smithing");
     }
 
     protected void toolSetRecipes(RecipeOutput recipeOutput, Item material,

@@ -59,6 +59,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(Items.ENDER_EYE);
 
         tag(ModTags.Items.ENDERITE_CHEST_MATERIALS)
+                .add(ModItems.STEEL_INGOT.get())
                 .add(ModItems.ENDERITE_INGOT.get())
                 .add(Items.CHEST);
 
@@ -82,22 +83,22 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.HOT_HARDENED_DIAMOND_LEGGINGS.get())
                 .add(ModItems.HOT_HARDENED_DIAMOND_BOOTS.get());
 
-        tag(ModTags.Items.STEEL_REPAIRABLE)
+        tag(ModTags.Items.STEEL_REPAIR_MATERIALS)
                 .add(ModItems.STEEL_INGOT.get());
 
-        tag(ModTags.Items.ENDERITE_REPAIRABLE)
+        tag(ModTags.Items.ENDERITE_REPAIR_MATERIALS)
                 .add(ModItems.ENDERITE_INGOT.get());
 
-        tag(ModTags.Items.HARDENED_DIAMOND_REPAIRABLE)
+        tag(ModTags.Items.HARDENED_DIAMOND_REPAIR_MATERIALS)
                 .add(ModItems.HARDENED_DIAMOND.get());
 
-        tag(ModTags.Items.HOT_HARDENED_DIAMOND_REPAIRABLE)
+        tag(ModTags.Items.HOT_HARDENED_DIAMOND_REPAIR_MATERIALS)
                 .add(ModItems.HOT_HARDENED_DIAMOND.get());
 
-        tag(ModTags.Items.EMERALD_REPAIRABLE)
+        tag(ModTags.Items.EMERALD_REPAIR_MATERIALS)
                 .add(Items.EMERALD);
 
-        tag(ModTags.Items.OBSIDIAN_REPAIRABLE)
+        tag(ModTags.Items.OBSIDIAN_REPAIR_MATERIALS)
                 .add(Items.OBSIDIAN);
 
         tag(ItemTags.TRIMMABLE_ARMOR)
