@@ -1,4 +1,4 @@
-// 1.21.10	2025-11-17T20:38:35.53044	Model Definitions - oresandtools
+// 1.21.10	2025-11-17T23:27:55.328744	Model Definitions - oresandtools
 c9763e858a372ba10842b80a920665ee9daf8f99 assets/oresandtools/blockstates/deepslate_enderite_ore.json
 3021f8edf385f5d045943c39845f4313f92e8a19 assets/oresandtools/blockstates/deepslate_obsidian_ore.json
 2f22ddc4a167dcf628f8a6e83f31bf419f1b1fbf assets/oresandtools/blockstates/deepslate_uranium_ore.json
@@ -37,6 +37,7 @@ e8ba1dd5ac2c9fab11398c50974b475570592546 assets/oresandtools/items/emerald_shove
 8edd29de31e5f867a0020f179710424b3ed87c55 assets/oresandtools/items/enderite_boots.json
 f071b09cd78a7d3cae640dc982bd0e048caeab74 assets/oresandtools/items/enderite_bow.json
 5f20b8e76f9deaadbc7f774183cbde3a3b0d94ba assets/oresandtools/items/enderite_chest.json
+ba7be0d42216e5de0669dcb6eab1b5eed53d6333 assets/oresandtools/items/enderite_chest_upgrade.json
 e73d7ca18d5d8903e7e2e777485371c9d0a52127 assets/oresandtools/items/enderite_chestplate.json
 06a1e84542cfd61ac265759f0313bc07b47de7fc assets/oresandtools/items/enderite_dust.json
 f7c298e791ed189381075298804275e20a2a3041 assets/oresandtools/items/enderite_helmet.json
@@ -201,6 +202,7 @@ dd099d816b585caea18993a0063716d18c38b434 assets/oresandtools/models/item/enderit
 007cd629de7918122e4a35088d2e620c1cb8f14f assets/oresandtools/models/item/enderite_bow_pulling_1.json
 bb739333b4841c4249206e3fbb897b9d2070853f assets/oresandtools/models/item/enderite_bow_pulling_2.json
 9552ca0f14d77dfee2b4174520f103807b9f3d12 assets/oresandtools/models/item/enderite_chest.json
+fe082f4455d688dcc5ffa93b370fcad73b127baf assets/oresandtools/models/item/enderite_chest_upgrade.json
 1c2abbff458274d39985c251113bcaed77981b56 assets/oresandtools/models/item/enderite_chestplate.json
 a2a28340192dd093ead40bd6d998a672f7d82aab assets/oresandtools/models/item/enderite_chestplate_amethyst_trim.json
 49f2d736071b6ec44eedf1d9fd04bed89839889b assets/oresandtools/models/item/enderite_chestplate_copper_trim.json

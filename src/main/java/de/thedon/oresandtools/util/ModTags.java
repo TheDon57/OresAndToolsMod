@@ -49,6 +49,7 @@ public class ModTags {
         public static final TagKey<Item> ENDERITE_LEATHER_MATERIALS = createTag("enderite_leather_materials");
         public static final TagKey<Item> SHULKER_BACKPACK_MATERIALS = createTag("shulker_backpack_materials");
         public static final TagKey<Item> ENDERITE_CHEST_MATERIALS = createTag("enderite_chest_materials");
+        public static final TagKey<Item> ENDERITE_CHEST_UPGRADE_MATERIALS = createTag("enderite_chest_materials");
 
         public static final TagKey<Item> STEEL_REPAIR_MATERIALS = createTag("steel_repair_materials");
         public static final TagKey<Item> ENDERITE_REPAIR_MATERIALS = createTag("enderite_repair_materials");

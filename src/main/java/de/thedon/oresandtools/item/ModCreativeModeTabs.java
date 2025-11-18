@@ -30,6 +30,7 @@ public class ModCreativeModeTabs {
                 output.accept(ModItems.ENDERITE_DUST);
                 output.accept(ModItems.ENDERITE_INGOT);
                 output.accept(ModItems.ENDERITE_UPGRADE_SMITHING_TEMPLATE);
+                output.accept(ModItems.ENDERITE_CHEST_UPGRADE);
                 output.accept(ModItems.ENDERITE_LEATHER);
                 output.accept(ModItems.SHULKER_BACKPACK);
                 output.accept(ModItems.DRAGONS_APPLE);

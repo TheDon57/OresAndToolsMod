@@ -59,22 +59,23 @@ public class ModModelProvider extends ModelProvider {
 
 
         /* ITEMS */
-        itemModels.generateFlatItem(ModItems.HARDENED_DIAMOND.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ModItems.HEATING_INGOT_1.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ModItems.HEATING_INGOT_2.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ModItems.HEATING_INGOT_3.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ModItems.MOLTEN_INGOT.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ModItems.ENDERITE_DUST.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ModItems.ENDERITE_INGOT.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ModItems.ENDERITE_UPGRADE_SMITHING_TEMPLATE.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ModItems.OBSIDIAN_SHARD.get(), ModelTemplates.FLAT_ITEM);
-        itemModels.generateFlatItem(ModItems.DRAGONS_APPLE.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.STEEL_CHUNK.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.STEEL_INGOT.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.RAW_URANIUM.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.URANIUM_INGOT.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.IMPROVISED_REACTOR.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.HARDENED_DIAMOND.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.HEATING_INGOT_1.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.HEATING_INGOT_2.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.HEATING_INGOT_3.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.MOLTEN_INGOT.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.OBSIDIAN_SHARD.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.ENDERITE_DUST.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.ENDERITE_INGOT.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.ENDERITE_UPGRADE_SMITHING_TEMPLATE.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.ENDERITE_CHEST_UPGRADE.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.ENDERITE_LEATHER.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.DRAGONS_APPLE.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ModItems.SHULKER_BACKPACK.get(), ModelTemplates.FLAT_ITEM);
 
         /* TOOLS */
@@ -83,57 +84,57 @@ public class ModModelProvider extends ModelProvider {
         itemModels.generateFlatItem(ModItems.STEEL_AXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModels.generateFlatItem(ModItems.STEEL_HOE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModels.generateFlatItem(ModItems.STEEL_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
-        itemModels.generateFlatItem(ModItems.ENDERITE_SHOVEL.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
-        itemModels.generateFlatItem(ModItems.ENDERITE_PICKAXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
-        itemModels.generateFlatItem(ModItems.ENDERITE_AXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
-        itemModels.generateFlatItem(ModItems.ENDERITE_HOE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
-        itemModels.generateFlatItem(ModItems.ENDERITE_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
-        itemModels.generateFlatItem(ModItems.HARDENED_DIAMOND_SHOVEL.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
-        itemModels.generateFlatItem(ModItems.HARDENED_DIAMOND_PICKAXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
-        itemModels.generateFlatItem(ModItems.HARDENED_DIAMOND_AXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
-        itemModels.generateFlatItem(ModItems.HARDENED_DIAMOND_HOE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
-        itemModels.generateFlatItem(ModItems.HARDENED_DIAMOND_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
-        itemModels.generateFlatItem(ModItems.MOLTEN_SHOVEL.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
-        itemModels.generateFlatItem(ModItems.MOLTEN_PICKAXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
-        itemModels.generateFlatItem(ModItems.MOLTEN_AXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
-        itemModels.generateFlatItem(ModItems.MOLTEN_HOE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
-        itemModels.generateFlatItem(ModItems.MOLTEN_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModels.generateFlatItem(ModItems.EMERALD_SHOVEL.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModels.generateFlatItem(ModItems.EMERALD_PICKAXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModels.generateFlatItem(ModItems.EMERALD_AXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModels.generateFlatItem(ModItems.EMERALD_HOE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModels.generateFlatItem(ModItems.EMERALD_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(ModItems.MOLTEN_SHOVEL.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(ModItems.MOLTEN_PICKAXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(ModItems.MOLTEN_AXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(ModItems.MOLTEN_HOE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(ModItems.MOLTEN_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(ModItems.HARDENED_DIAMOND_SHOVEL.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(ModItems.HARDENED_DIAMOND_PICKAXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(ModItems.HARDENED_DIAMOND_AXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(ModItems.HARDENED_DIAMOND_HOE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(ModItems.HARDENED_DIAMOND_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModels.generateFlatItem(ModItems.OBSIDIAN_SHOVEL.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModels.generateFlatItem(ModItems.OBSIDIAN_PICKAXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModels.generateFlatItem(ModItems.OBSIDIAN_AXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModels.generateFlatItem(ModItems.OBSIDIAN_HOE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModels.generateFlatItem(ModItems.OBSIDIAN_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(ModItems.ENDERITE_SHOVEL.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(ModItems.ENDERITE_PICKAXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(ModItems.ENDERITE_AXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(ModItems.ENDERITE_HOE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(ModItems.ENDERITE_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
 
         /* ARMOR */
         itemModels.generateTrimmableItem(ModItems.STEEL_HELMET.get(), ModEquipmentAssets.STEEL, ItemModelGenerators.TRIM_PREFIX_HELMET, false);
         itemModels.generateTrimmableItem(ModItems.STEEL_CHESTPLATE.get(), ModEquipmentAssets.STEEL, ItemModelGenerators.TRIM_PREFIX_CHESTPLATE, false);
         itemModels.generateTrimmableItem(ModItems.STEEL_LEGGINGS.get(), ModEquipmentAssets.STEEL, ItemModelGenerators.TRIM_PREFIX_LEGGINGS, false);
         itemModels.generateTrimmableItem(ModItems.STEEL_BOOTS.get(), ModEquipmentAssets.STEEL, ItemModelGenerators.TRIM_PREFIX_BOOTS, false);
-        itemModels.generateTrimmableItem(ModItems.ENDERITE_HELMET.get(), ModEquipmentAssets.ENDERITE, ItemModelGenerators.TRIM_PREFIX_HELMET, false);
-        itemModels.generateTrimmableItem(ModItems.ENDERITE_CHESTPLATE.get(), ModEquipmentAssets.ENDERITE, ItemModelGenerators.TRIM_PREFIX_CHESTPLATE, false);
-        itemModels.generateTrimmableItem(ModItems.ENDERITE_LEGGINGS.get(), ModEquipmentAssets.ENDERITE, ItemModelGenerators.TRIM_PREFIX_LEGGINGS, false);
-        itemModels.generateTrimmableItem(ModItems.ENDERITE_BOOTS.get(), ModEquipmentAssets.ENDERITE, ItemModelGenerators.TRIM_PREFIX_BOOTS, false);
-        itemModels.generateTrimmableItem(ModItems.HARDENED_DIAMOND_HELMET.get(), ModEquipmentAssets.H_DIAMOND, ItemModelGenerators.TRIM_PREFIX_HELMET, false);
-        itemModels.generateTrimmableItem(ModItems.HARDENED_DIAMOND_CHESTPLATE.get(), ModEquipmentAssets.H_DIAMOND, ItemModelGenerators.TRIM_PREFIX_CHESTPLATE, false);
-        itemModels.generateTrimmableItem(ModItems.HARDENED_DIAMOND_LEGGINGS.get(), ModEquipmentAssets.H_DIAMOND, ItemModelGenerators.TRIM_PREFIX_LEGGINGS, false);
-        itemModels.generateTrimmableItem(ModItems.HARDENED_DIAMOND_BOOTS.get(), ModEquipmentAssets.H_DIAMOND, ItemModelGenerators.TRIM_PREFIX_BOOTS, false);
-        itemModels.generateTrimmableItem(ModItems.MOLTEN_HELMET.get(), ModEquipmentAssets.MOLTEN, ItemModelGenerators.TRIM_PREFIX_HELMET, false);
-        itemModels.generateTrimmableItem(ModItems.MOLTEN_CHESTPLATE.get(), ModEquipmentAssets.MOLTEN, ItemModelGenerators.TRIM_PREFIX_CHESTPLATE, false);
-        itemModels.generateTrimmableItem(ModItems.MOLTEN_LEGGINGS.get(), ModEquipmentAssets.MOLTEN, ItemModelGenerators.TRIM_PREFIX_LEGGINGS, false);
-        itemModels.generateTrimmableItem(ModItems.MOLTEN_BOOTS.get(), ModEquipmentAssets.MOLTEN, ItemModelGenerators.TRIM_PREFIX_BOOTS, false);
         itemModels.generateTrimmableItem(ModItems.EMERALD_HELMET.get(), ModEquipmentAssets.EMERALD, ItemModelGenerators.TRIM_PREFIX_HELMET, false);
         itemModels.generateTrimmableItem(ModItems.EMERALD_CHESTPLATE.get(), ModEquipmentAssets.EMERALD, ItemModelGenerators.TRIM_PREFIX_CHESTPLATE, false);
         itemModels.generateTrimmableItem(ModItems.EMERALD_LEGGINGS.get(), ModEquipmentAssets.EMERALD, ItemModelGenerators.TRIM_PREFIX_LEGGINGS, false);
         itemModels.generateTrimmableItem(ModItems.EMERALD_BOOTS.get(), ModEquipmentAssets.EMERALD, ItemModelGenerators.TRIM_PREFIX_BOOTS, false);
+        itemModels.generateTrimmableItem(ModItems.MOLTEN_HELMET.get(), ModEquipmentAssets.MOLTEN, ItemModelGenerators.TRIM_PREFIX_HELMET, false);
+        itemModels.generateTrimmableItem(ModItems.MOLTEN_CHESTPLATE.get(), ModEquipmentAssets.MOLTEN, ItemModelGenerators.TRIM_PREFIX_CHESTPLATE, false);
+        itemModels.generateTrimmableItem(ModItems.MOLTEN_LEGGINGS.get(), ModEquipmentAssets.MOLTEN, ItemModelGenerators.TRIM_PREFIX_LEGGINGS, false);
+        itemModels.generateTrimmableItem(ModItems.MOLTEN_BOOTS.get(), ModEquipmentAssets.MOLTEN, ItemModelGenerators.TRIM_PREFIX_BOOTS, false);
+        itemModels.generateTrimmableItem(ModItems.HARDENED_DIAMOND_HELMET.get(), ModEquipmentAssets.H_DIAMOND, ItemModelGenerators.TRIM_PREFIX_HELMET, false);
+        itemModels.generateTrimmableItem(ModItems.HARDENED_DIAMOND_CHESTPLATE.get(), ModEquipmentAssets.H_DIAMOND, ItemModelGenerators.TRIM_PREFIX_CHESTPLATE, false);
+        itemModels.generateTrimmableItem(ModItems.HARDENED_DIAMOND_LEGGINGS.get(), ModEquipmentAssets.H_DIAMOND, ItemModelGenerators.TRIM_PREFIX_LEGGINGS, false);
+        itemModels.generateTrimmableItem(ModItems.HARDENED_DIAMOND_BOOTS.get(), ModEquipmentAssets.H_DIAMOND, ItemModelGenerators.TRIM_PREFIX_BOOTS, false);
         itemModels.generateTrimmableItem(ModItems.OBSIDIAN_HELMET.get(), ModEquipmentAssets.OBSIDIAN, ItemModelGenerators.TRIM_PREFIX_HELMET, false);
         itemModels.generateTrimmableItem(ModItems.OBSIDIAN_CHESTPLATE.get(), ModEquipmentAssets.OBSIDIAN, ItemModelGenerators.TRIM_PREFIX_CHESTPLATE, false);
         itemModels.generateTrimmableItem(ModItems.OBSIDIAN_LEGGINGS.get(), ModEquipmentAssets.OBSIDIAN, ItemModelGenerators.TRIM_PREFIX_LEGGINGS, false);
         itemModels.generateTrimmableItem(ModItems.OBSIDIAN_BOOTS.get(), ModEquipmentAssets.OBSIDIAN, ItemModelGenerators.TRIM_PREFIX_BOOTS, false);
+        itemModels.generateTrimmableItem(ModItems.ENDERITE_HELMET.get(), ModEquipmentAssets.ENDERITE, ItemModelGenerators.TRIM_PREFIX_HELMET, false);
+        itemModels.generateTrimmableItem(ModItems.ENDERITE_CHESTPLATE.get(), ModEquipmentAssets.ENDERITE, ItemModelGenerators.TRIM_PREFIX_CHESTPLATE, false);
+        itemModels.generateTrimmableItem(ModItems.ENDERITE_LEGGINGS.get(), ModEquipmentAssets.ENDERITE, ItemModelGenerators.TRIM_PREFIX_LEGGINGS, false);
+        itemModels.generateTrimmableItem(ModItems.ENDERITE_BOOTS.get(), ModEquipmentAssets.ENDERITE, ItemModelGenerators.TRIM_PREFIX_BOOTS, false);
 
         /* BOWS */
         itemModels.createFlatItemModel(ModItems.ENDERITE_BOW.get(), ModelTemplates.BOW);

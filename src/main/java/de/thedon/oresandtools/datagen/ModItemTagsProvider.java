@@ -63,6 +63,10 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .add(ModItems.ENDERITE_INGOT.get())
                 .add(Items.CHEST);
 
+        tag(ModTags.Items.ENDERITE_CHEST_UPGRADE_MATERIALS)
+                .addTag(ModTags.Items.ENDERITE_CHEST_MATERIALS)
+                .remove(Items.CHEST);
+
         tag(ModTags.Items.IGNITION_ITEMS)
                 .add(ModItems.MOLTEN_INGOT.get())
                 .add(ModItems.MOLTEN_AXE.get())

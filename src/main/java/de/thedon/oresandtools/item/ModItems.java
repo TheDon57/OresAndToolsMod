@@ -26,6 +26,7 @@ public class ModItems {
     public static final DeferredItem<Item> ENDERITE_DUST = ITEMS.registerItem("enderite_dust",properties -> new Item(properties.fireResistant()));
     public static final DeferredItem<Item> ENDERITE_INGOT = ITEMS.registerItem("enderite_ingot",properties -> new Item(properties.fireResistant()));
     public static final DeferredItem<Item> ENDERITE_UPGRADE_SMITHING_TEMPLATE = ITEMS.registerItem("enderite_upgrade_smithing_template", properties -> ModSmithingTemplateItem.createEnderiteUpgradeTemplate(properties.rarity(Rarity.RARE)));
+    public static final DeferredItem<Item> ENDERITE_CHEST_UPGRADE = ITEMS.registerItem("enderite_chest_upgrade", ChestUpgradeItem::new);
     public static final DeferredItem<Item> RAW_URANIUM = ITEMS.registerItem("raw_uranium", properties -> new ModItem(properties, true));
     public static final DeferredItem<Item> URANIUM_INGOT = ITEMS.registerItem("uranium_ingot", properties -> new ModItem(properties, true));
     public static final DeferredItem<Item> IMPROVISED_REACTOR = ITEMS.registerItem("improvised_reactor", ImprovisedReactorItem::new);

@@ -139,6 +139,14 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("LSL")
                 .unlockedBy(getHasMaterials(ModItems.SHULKER_BACKPACK.get()) + "_materials", has(ModTags.Items.SHULKER_BACKPACK_MATERIALS))
                 .save(output);
+        shaped(RecipeCategory.MISC, ModItems.ENDERITE_CHEST_UPGRADE.get())
+                .define('S', ModItems.STEEL_INGOT.get())
+                .define('V', ModItems.ENDERITE_INGOT.get())
+                .pattern("SVS")
+                .pattern("S S")
+                .pattern("SSS")
+                .unlockedBy(getHasMaterials(ModItems.ENDERITE_CHEST_UPGRADE.get()), has(ModTags.Items.ENDERITE_CHEST_UPGRADE_MATERIALS))
+                .save(output);
 
         /* NINE BLOCK STORAGE */
         nineBlockStorageRecipes(output, RecipeCategory.MISC, ModItems.HARDENED_DIAMOND.get(),
