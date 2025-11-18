@@ -137,7 +137,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("LSL")
                 .pattern("IEI")
                 .pattern("LSL")
-                .unlockedBy(getHasMaterials(ModItems.SHULKER_BACKPACK.get()) + "_materials", has(ModTags.Items.SHULKER_BACKPACK_MATERIALS))
+                .unlockedBy(getHasMaterials(ModItems.SHULKER_BACKPACK.get()), has(ModTags.Items.SHULKER_BACKPACK_MATERIALS))
                 .save(output);
         shaped(RecipeCategory.MISC, ModItems.ENDERITE_CHEST_UPGRADE.get())
                 .define('S', ModItems.STEEL_INGOT.get())
@@ -146,6 +146,14 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("S S")
                 .pattern("SSS")
                 .unlockedBy(getHasMaterials(ModItems.ENDERITE_CHEST_UPGRADE.get()), has(ModTags.Items.ENDERITE_CHEST_UPGRADE_MATERIALS))
+                .save(output);
+        shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.CRYING_OBSIDIAN)
+                .define('S', ModItems.OBSIDIAN_SHARD.get())
+                .define('O', Blocks.OBSIDIAN)
+                .pattern("SSS")
+                .pattern("SOS")
+                .pattern("SSS")
+                .unlockedBy(getHasMaterials(Blocks.CRYING_OBSIDIAN), has(Blocks.OBSIDIAN))
                 .save(output);
 
         /* NINE BLOCK STORAGE */

@@ -1,4 +1,5 @@
-// 1.21.10	2025-11-17T23:27:55.326284	Ores and Tools Mod Recipes
+// 1.21.10	2025-11-18T23:44:43.676288	Ores and Tools Mod Recipes
+00d2763c53c9151f66a085350ac7404bd322face data/minecraft/advancement/recipes/building_blocks/crying_obsidian.json
 7f1f7301e4da8cf1c5cd84a2308537952b9d31a1 data/minecraft/advancement/recipes/combat/enderite_boots_smithing.json
 d8a92657ea7499e1c31191356de356104b268dec data/minecraft/advancement/recipes/combat/enderite_chestplate_smithing.json
 74115ba8afa2aec862d94e0f2869f111486626ee data/minecraft/advancement/recipes/combat/enderite_helmet_smithing.json
@@ -17,6 +18,7 @@ d9391f9013c63feec9f72df23f21da633eb439e3 data/minecraft/advancement/recipes/tool
 5614003f2fe1a23bb190dd31770b7143c8e1476f data/minecraft/advancement/recipes/tools/molten_hoe_smithing.json
 3f339c27245f08087c5efecd72c7792b0200d7b8 data/minecraft/advancement/recipes/tools/molten_pickaxe_smithing.json
 5af57ab3118a867c70c57c82166666375a5a5f35 data/minecraft/advancement/recipes/tools/molten_shovel_smithing.json
+374b6efca08d20dfbd817a76d0f0a588c1e35bee data/minecraft/recipe/crying_obsidian.json
 902aeb7aaa638c40c8dcb9cd3d5bd7bd600c9a50 data/minecraft/recipe/enderite_axe_smithing.json
 891fddec25f1a9a4f49e592d33068ce13685c119 data/minecraft/recipe/enderite_boots_smithing.json
 453ea86e77fe3db5d8c23ff688d6a640344ab4a8 data/minecraft/recipe/enderite_chestplate_smithing.json
@@ -89,7 +91,7 @@ cadf7478ffc9bd324369f6ef2a16e2c289da97e5 data/oresandtools/advancement/recipes/m
 17385126e1c285ca2953f8a480f7997cef11923a data/oresandtools/advancement/recipes/misc/hardened_diamond_shaped.json
 84e2621328ac1de7893a6300ecbdaf02b262c51b data/oresandtools/advancement/recipes/misc/improvised_reactor.json
 50df33f1f31d4bcf9c16d3189695ea6505ef71ee data/oresandtools/advancement/recipes/misc/obsidian_shard.json
-5da34cb95116bb0872643b48f6877a20479f8142 data/oresandtools/advancement/recipes/misc/shulker_backpack.json
+135d2bb748a4d978f745abcd4cd0ac7845c83fc4 data/oresandtools/advancement/recipes/misc/shulker_backpack.json
 b62258cb2eec0a29b7cb016507fe9ef41fdbbcdf data/oresandtools/advancement/recipes/misc/steel_chunk.json
 8256ada90ff7215fd1615904e7e1d512bdb61206 data/oresandtools/advancement/recipes/misc/steel_chunk_2.json
 09422ce07c9b8bdcefb728913dfcf40217487a11 data/oresandtools/advancement/recipes/misc/steel_ingot.json

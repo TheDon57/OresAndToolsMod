@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "O": "minecraft:obsidian",
+    "S": "oresandtools:obsidian_shard"
+  },
+  "pattern": [
+    "SSS",
+    "SOS",
+    "SSS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:crying_obsidian"
+  }
+}
