@@ -54,13 +54,6 @@ public class ModCreativeModeTabs {
             .withTabsBefore(ResourceLocation.fromNamespaceAndPath(OresAndToolsMod.MOD_ID, "oat_main_tab"))
             .icon(() -> new ItemStack(ModItems.ENDERITE_PICKAXE.get()))
             .displayItems((itemDisplayParameters, output) -> {
-                output.accept(ModItems.WOODEN_HAMMER);
-                output.accept(ModItems.COPPER_HAMMER);
-                output.accept(ModItems.STONE_HAMMER);
-                output.accept(ModItems.GOLDEN_HAMMER);
-                output.accept(ModItems.IRON_HAMMER);
-                output.accept(ModItems.DIAMOND_HAMMER);
-                output.accept(ModItems.NETHERITE_HAMMER);
                 output.accept(ModItems.STEEL_SHOVEL);
                 output.accept(ModItems.STEEL_PICKAXE);
                 output.accept(ModItems.STEEL_AXE);
@@ -91,6 +84,13 @@ public class ModCreativeModeTabs {
                 output.accept(ModItems.ENDERITE_AXE);
                 output.accept(ModItems.ENDERITE_HOE);
                 output.accept(ModItems.ENDERITE_HAMMER);
+                output.accept(ModItems.WOODEN_HAMMER);
+                output.accept(ModItems.COPPER_HAMMER);
+                output.accept(ModItems.STONE_HAMMER);
+                output.accept(ModItems.GOLDEN_HAMMER);
+                output.accept(ModItems.IRON_HAMMER);
+                output.accept(ModItems.DIAMOND_HAMMER);
+                output.accept(ModItems.NETHERITE_HAMMER);
             }).build());
     public static Supplier<CreativeModeTab> COMBAT_TAB = CREATIVE_MODE_TABS.register("oat_combat_tab", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup." + OresAndToolsMod.MOD_ID + ".oat_combat_tab"))
@@ -99,11 +99,31 @@ public class ModCreativeModeTabs {
             .icon(() -> new ItemStack(ModItems.MOLTEN_SWORD.get()))
             .displayItems((itemDisplayParameters, output) -> {
                 output.accept(ModItems.STEEL_SWORD);
-                output.accept(ModItems.HARDENED_DIAMOND_SWORD);
-                output.accept(ModItems.MOLTEN_SWORD);
-                output.accept(ModItems.ENDERITE_SWORD);
                 output.accept(ModItems.EMERALD_SWORD);
+                output.accept(ModItems.MOLTEN_SWORD);
+                output.accept(ModItems.HARDENED_DIAMOND_SWORD);
                 output.accept(ModItems.OBSIDIAN_SWORD);
+                output.accept(ModItems.ENDERITE_SWORD);
+                output.accept(ModItems.STEEL_AXE);
+                output.accept(ModItems.EMERALD_AXE);
+                output.accept(ModItems.MOLTEN_AXE);
+                output.accept(ModItems.HARDENED_DIAMOND_AXE);
+                output.accept(ModItems.OBSIDIAN_AXE);
+                output.accept(ModItems.ENDERITE_AXE);
+                output.accept(ModItems.STEEL_HAMMER);
+                output.accept(ModItems.EMERALD_HAMMER);
+                output.accept(ModItems.MOLTEN_HAMMER);
+                output.accept(ModItems.HARDENED_DIAMOND_HAMMER);
+                output.accept(ModItems.ENDERITE_HAMMER);
+                output.accept(ModItems.OBSIDIAN_HAMMER);
+                output.accept(ModItems.ENDERITE_HAMMER);
+                output.accept(ModItems.WOODEN_HAMMER);
+                output.accept(ModItems.COPPER_HAMMER);
+                output.accept(ModItems.STONE_HAMMER);
+                output.accept(ModItems.GOLDEN_HAMMER);
+                output.accept(ModItems.IRON_HAMMER);
+                output.accept(ModItems.DIAMOND_HAMMER);
+                output.accept(ModItems.NETHERITE_HAMMER);
                 output.accept(ModItems.ENDERITE_BOW);
                 output.accept(ModItems.OBSIDIAN_SHIELD);
                 output.accept(ModItems.STEEL_HELMET);
