@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_steel_ingot": {
+    "has_steel_tool_materials": {
       "conditions": {
         "items": [
           {
-            "items": "oresandtools:steel_ingot"
+            "items": "#oresandtools:steel_tool_materials"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_steel_ingot"
+      "has_steel_tool_materials"
     ]
   ],
   "rewards": {

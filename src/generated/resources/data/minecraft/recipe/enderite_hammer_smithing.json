@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "#oresandtools:enderite_tool_materials",
+  "base": "oresandtools:netherite_hammer",
+  "result": {
+    "id": "oresandtools:enderite_hammer"
+  },
+  "template": "oresandtools:enderite_upgrade_smithing_template"
+}

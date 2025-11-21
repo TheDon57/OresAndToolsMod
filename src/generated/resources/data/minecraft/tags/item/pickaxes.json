@@ -1,10 +1,10 @@
 {
   "values": [
     "oresandtools:steel_pickaxe",
-    "oresandtools:hardened_diamond_pickaxe",
-    "oresandtools:molten_pickaxe",
-    "oresandtools:enderite_pickaxe",
     "oresandtools:emerald_pickaxe",
-    "oresandtools:obsidian_pickaxe"
+    "oresandtools:molten_pickaxe",
+    "oresandtools:hardened_diamond_pickaxe",
+    "oresandtools:obsidian_pickaxe",
+    "oresandtools:enderite_pickaxe"
   ]
 }

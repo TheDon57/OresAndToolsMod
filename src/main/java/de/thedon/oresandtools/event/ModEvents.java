@@ -4,11 +4,13 @@ import de.thedon.oresandtools.Config;
 import de.thedon.oresandtools.OresAndToolsMod;
 import de.thedon.oresandtools.block.ModBlocks;
 import de.thedon.oresandtools.item.ModItems;
+import de.thedon.oresandtools.item.custom.HammerItem;
 import de.thedon.oresandtools.util.ModTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.TriState;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -44,13 +46,36 @@ import net.neoforged.neoforge.event.level.BlockEvent;
 import net.neoforged.neoforge.event.tick.LevelTickEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class ModEvents {
     @EventBusSubscriber(modid = OresAndToolsMod.MOD_ID)
     public static class NeoForgeEvents {
+        private static final Set<BlockPos> HARVESTED_BLOCKS = new HashSet<>();
+
+        @SubscribeEvent
+        public static void onHammerUsage(BlockEvent.BreakEvent event) {
+            Player player = event.getPlayer();
+            ItemStack mainHandItem = player.getMainHandItem();
+
+            if(mainHandItem.getItem() instanceof HammerItem hammer && player instanceof ServerPlayer serverPlayer) {
+                BlockPos initialBlockPos = event.getPos();
+                if(HARVESTED_BLOCKS.contains(initialBlockPos)) {
+                    return;
+                }
+
+                for(BlockPos pos : HammerItem.getBlocksToBeDestroyed(1, initialBlockPos, serverPlayer)) {
+                    if(pos == initialBlockPos || !hammer.isCorrectToolForDrops(mainHandItem, event.getLevel().getBlockState(pos))) {
+                        continue;
+                    }
+
+                    HARVESTED_BLOCKS.add(pos);
+                    serverPlayer.gameMode.destroyBlock(pos);
+                    HARVESTED_BLOCKS.remove(pos);
+                }
+            }
+        }
+
         @SubscribeEvent
         public static void onLivingShieldBlocked(LivingShieldBlockEvent event) {
             if (event.getEntity() instanceof Player player) {
@@ -191,13 +216,13 @@ public class ModEvents {
         }
     
     
-        private static final ArrayList<ItemEntity> droppedIngots = new ArrayList<>();
+        private static final ArrayList<ItemEntity> DROPPED_INGOTS = new ArrayList<>();
     
         @SubscribeEvent
         public static void onItemToss(ItemTossEvent event) {
             ItemEntity itemEntity = event.getEntity();
             if (itemEntity.getItem().getItem() == Items.NETHERITE_INGOT) {
-                droppedIngots.add(itemEntity);
+                DROPPED_INGOTS.add(itemEntity);
             }
         }
 
@@ -218,7 +243,7 @@ public class ModEvents {
     
         @SubscribeEvent
         public static void onPreLevelTick(LevelTickEvent.Pre event) {
-            for (ItemEntity ingot : droppedIngots) {
+            for (ItemEntity ingot : DROPPED_INGOTS) {
                 int count = ingot.getItem().getCount();
                 if (ingot.isInLava()) {
                     if (ingot.getAge() >= 300) {
@@ -258,7 +283,7 @@ public class ModEvents {
         public static void onPostItemEntityPickup(ItemEntityPickupEvent.Post event) {
             Item item = event.getOriginalStack().getItem();
             if (item == ModItems.MOLTEN_INGOT.get() || item == Items.NETHERITE_INGOT) {
-                droppedIngots.remove(event.getItemEntity());
+                DROPPED_INGOTS.remove(event.getItemEntity());
             }
         }
     }

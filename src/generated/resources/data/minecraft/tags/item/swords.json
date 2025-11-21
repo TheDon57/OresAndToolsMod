@@ -1,10 +1,10 @@
 {
   "values": [
     "oresandtools:steel_sword",
-    "oresandtools:hardened_diamond_sword",
-    "oresandtools:molten_sword",
-    "oresandtools:enderite_sword",
     "oresandtools:emerald_sword",
-    "oresandtools:obsidian_sword"
+    "oresandtools:molten_sword",
+    "oresandtools:hardened_diamond_sword",
+    "oresandtools:obsidian_sword",
+    "oresandtools:enderite_sword"
   ]
 }

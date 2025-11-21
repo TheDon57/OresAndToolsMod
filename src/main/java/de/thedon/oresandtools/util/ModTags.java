@@ -51,12 +51,12 @@ public class ModTags {
         public static final TagKey<Item> ENDERITE_CHEST_MATERIALS = createTag("enderite_chest_materials");
         public static final TagKey<Item> ENDERITE_CHEST_UPGRADE_MATERIALS = createTag("enderite_chest_materials");
 
-        public static final TagKey<Item> STEEL_REPAIR_MATERIALS = createTag("steel_repair_materials");
-        public static final TagKey<Item> ENDERITE_REPAIR_MATERIALS = createTag("enderite_repair_materials");
-        public static final TagKey<Item> H_DIAMOND_REPAIR_MATERIALS = createTag("hardened_diamond_repair_materials");
-        public static final TagKey<Item> MOLTEN_REPAIR_MATERIALS = createTag("molten_repair_materials");
-        public static final TagKey<Item> EMERALD_REPAIR_MATERIALS = createTag("emerald_repair_materials");
-        public static final TagKey<Item> OBSIDIAN_REPAIR_MATERIALS = createTag("obsidian_repair_materials");
+        public static final TagKey<Item> STEEL_TOOL_MATERIALS = createTag("steel_tool_materials");
+        public static final TagKey<Item> EMERALD_TOOL_MATERIALS = createTag("emerald_tool_materials");
+        public static final TagKey<Item> MOLTEN_TOOL_MATERIALS = createTag("molten_tool_materials");
+        public static final TagKey<Item> H_DIAMOND_TOOL_MATERIALS = createTag("hardened_diamond_tool_materials");
+        public static final TagKey<Item> OBSIDIAN_TOOL_MATERIALS = createTag("obsidian_tool_materials");
+        public static final TagKey<Item> ENDERITE_TOOL_MATERIALS = createTag("enderite_tool_materials");
 
         public static final TagKey<Item> IGNITION_ITEMS = createTag("ignition_items");
         public static final TagKey<Item> ENDERITE_ARMOR_SET = createTag("enderite_armor_set");

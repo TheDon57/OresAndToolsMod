@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "#oresandtools:molten_repair_materials"
+            "items": "#oresandtools:molten_tool_materials"
           }
         ]
       },

@@ -30,21 +30,21 @@ public class ModArmorMaterials {
 
     static {
         STEEL = new ArmorMaterial(20, makeDefense(2, 5, 7, 3, 6),
-                9, SoundEvents.ARMOR_EQUIP_IRON, 0.0f, 0.0f, ModTags.Items.STEEL_REPAIR_MATERIALS, ModEquipmentAssets.STEEL);
+                9, SoundEvents.ARMOR_EQUIP_IRON, 0.0f, 0.0f, ModTags.Items.STEEL_TOOL_MATERIALS, ModEquipmentAssets.STEEL);
 
         EMERALD = new ArmorMaterial(28, makeDefense(3, 6, 8, 3, 11),
-                12, SoundEvents.ARMOR_EQUIP_DIAMOND, 2.0f, 0.0f, ModTags.Items.EMERALD_REPAIR_MATERIALS, ModEquipmentAssets.EMERALD);
+                12, SoundEvents.ARMOR_EQUIP_DIAMOND, 2.0f, 0.0f, ModTags.Items.EMERALD_TOOL_MATERIALS, ModEquipmentAssets.EMERALD);
 
         MOLTEN = new ArmorMaterial(35, makeDefense(3, 6, 8, 3, 11),
-                15, SoundEvents.ARMOR_EQUIP_NETHERITE, 3.0f, 0.0f, ModTags.Items.MOLTEN_REPAIR_MATERIALS, ModEquipmentAssets.MOLTEN);
+                15, SoundEvents.ARMOR_EQUIP_NETHERITE, 3.0f, 0.0f, ModTags.Items.MOLTEN_TOOL_MATERIALS, ModEquipmentAssets.MOLTEN);
 
         H_DIAMOND = new ArmorMaterial(39, makeDefense(3, 6, 8, 3, 11),
-                10, SoundEvents.ARMOR_EQUIP_DIAMOND, 2.0f, 0.1f, ModTags.Items.H_DIAMOND_REPAIR_MATERIALS, ModEquipmentAssets.H_DIAMOND);
+                10, SoundEvents.ARMOR_EQUIP_DIAMOND, 2.0f, 0.1f, ModTags.Items.H_DIAMOND_TOOL_MATERIALS, ModEquipmentAssets.H_DIAMOND);
 
         OBSIDIAN = new ArmorMaterial(43, makeDefense(3, 6, 7, 3, 7),
-                9, SoundEvents.ARMOR_EQUIP_NETHERITE, 3.0f, 0.5f, ModTags.Items.OBSIDIAN_REPAIR_MATERIALS, ModEquipmentAssets.OBSIDIAN);
+                9, SoundEvents.ARMOR_EQUIP_NETHERITE, 3.0f, 0.5f, ModTags.Items.OBSIDIAN_TOOL_MATERIALS, ModEquipmentAssets.OBSIDIAN);
 
         ENDERITE = new ArmorMaterial(50, makeDefense(4, 7, 10, 4, 15),
-                20, SoundEvents.ARMOR_EQUIP_NETHERITE, 3.0f, 0.2f, ModTags.Items.ENDERITE_REPAIR_MATERIALS, ModEquipmentAssets.ENDERITE);
+                20, SoundEvents.ARMOR_EQUIP_NETHERITE, 3.0f, 0.2f, ModTags.Items.ENDERITE_TOOL_MATERIALS, ModEquipmentAssets.ENDERITE);
     }
 }

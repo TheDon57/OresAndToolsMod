@@ -1,6 +1,6 @@
 {
   "type": "minecraft:smithing_transform",
-  "addition": "#oresandtools:enderite_repair_materials",
+  "addition": "#oresandtools:enderite_tool_materials",
   "base": "minecraft:netherite_sword",
   "result": {
     "id": "oresandtools:enderite_sword"

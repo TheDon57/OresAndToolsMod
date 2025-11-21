@@ -1,6 +1,6 @@
 {
   "type": "minecraft:smithing_transform",
-  "addition": "#oresandtools:molten_repair_materials",
+  "addition": "#oresandtools:molten_tool_materials",
   "base": "minecraft:diamond_pickaxe",
   "result": {
     "id": "oresandtools:molten_pickaxe"

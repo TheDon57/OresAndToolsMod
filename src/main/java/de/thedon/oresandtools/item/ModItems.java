@@ -6,6 +6,7 @@ import de.thedon.oresandtools.item.equipment.ModArmorMaterials;
 import de.thedon.oresandtools.util.ModTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.item.equipment.ArmorType;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -34,35 +35,48 @@ public class ModItems {
     public static final DeferredItem<Item> SHULKER_BACKPACK = ITEMS.registerItem("shulker_backpack", properties -> new BackpackItem(properties.fireResistant(), false));
 
     /* TOOLS */
+    public static final DeferredItem<Item> WOODEN_HAMMER = ITEMS.registerItem("wooden_hammer", properties -> new HammerItem(ToolMaterial.WOOD, 8f, -3.7f, properties));
+    public static final DeferredItem<Item> COPPER_HAMMER = ITEMS.registerItem("copper_hammer", properties -> new HammerItem(ToolMaterial.COPPER, 9f, -3.7f, properties));
+    public static final DeferredItem<Item> STONE_HAMMER = ITEMS.registerItem("stone_hammer", properties -> new HammerItem(ToolMaterial.STONE, 9f, -3.7f, properties));
+    public static final DeferredItem<Item> GOLDEN_HAMMER = ITEMS.registerItem("golden_hammer", properties -> new HammerItem(ToolMaterial.GOLD, 8f, -3.7f, properties));
+    public static final DeferredItem<Item> IRON_HAMMER = ITEMS.registerItem("iron_hammer", properties -> new HammerItem(ToolMaterial.IRON, 8f, -3.6f, properties));
+    public static final DeferredItem<Item> DIAMOND_HAMMER = ITEMS.registerItem("diamond_hammer", properties -> new HammerItem(ToolMaterial.DIAMOND, 7f, -3.5f, properties));
+    public static final DeferredItem<Item> NETHERITE_HAMMER = ITEMS.registerItem("netherite_hammer", properties -> new HammerItem(ToolMaterial.NETHERITE, 7f, -3.5f, properties.fireResistant()));
     public static final DeferredItem<Item> STEEL_SHOVEL = ITEMS.registerItem("steel_shovel", properties -> new ModShovelItem(ModToolMaterials.STEEL, properties));
     public static final DeferredItem<Item> STEEL_PICKAXE = ITEMS.registerItem("steel_pickaxe", properties -> new ModPickaxeItem(ModToolMaterials.STEEL, properties));
     public static final DeferredItem<Item> STEEL_AXE = ITEMS.registerItem("steel_axe", properties -> new ModAxeItem(ModToolMaterials.STEEL, 6f, -3.1f, properties));
-    public static final DeferredItem<Item> STEEL_HOE = ITEMS.registerItem("steel_hoe", properties -> new ModHoeItem(ModToolMaterials.STEEL, -3, -1f, properties));
+    public static final DeferredItem<Item> STEEL_HOE = ITEMS.registerItem("steel_hoe", properties -> new ModHoeItem(ModToolMaterials.STEEL, -2f, -1f, properties));
+    public static final DeferredItem<Item> STEEL_HAMMER = ITEMS.registerItem("steel_hammer", properties -> new HammerItem(ModToolMaterials.STEEL, 8f, -3.6f, properties));
     public static final DeferredItem<Item> STEEL_SWORD = ITEMS.registerItem("steel_sword", properties -> new ModSwordItem(ModToolMaterials.STEEL, properties));
     public static final DeferredItem<Item> EMERALD_SHOVEL = ITEMS.registerItem("emerald_shovel", properties -> new ModShovelItem(ModToolMaterials.EMERALD, properties));
     public static final DeferredItem<Item> EMERALD_PICKAXE = ITEMS.registerItem("emerald_pickaxe", properties -> new ModPickaxeItem(ModToolMaterials.EMERALD, properties));
-    public static final DeferredItem<Item> EMERALD_AXE = ITEMS.registerItem("emerald_axe", properties -> new ModAxeItem(ModToolMaterials.EMERALD, 5.5f, -3.1f, properties));
-    public static final DeferredItem<Item> EMERALD_HOE = ITEMS.registerItem("emerald_hoe", properties -> new ModHoeItem(ModToolMaterials.EMERALD, -3, 0f, properties));
+    public static final DeferredItem<Item> EMERALD_AXE = ITEMS.registerItem("emerald_axe", properties -> new ModAxeItem(ModToolMaterials.EMERALD, 5f, -3f, properties));
+    public static final DeferredItem<Item> EMERALD_HOE = ITEMS.registerItem("emerald_hoe", properties -> new ModHoeItem(ModToolMaterials.EMERALD, -3f, 0f, properties));
+    public static final DeferredItem<Item> EMERALD_HAMMER = ITEMS.registerItem("emerald_hammer", properties -> new HammerItem(ModToolMaterials.EMERALD, 7f, -3.5f, properties));
     public static final DeferredItem<Item> EMERALD_SWORD = ITEMS.registerItem("emerald_sword", properties -> new ModSwordItem(ModToolMaterials.EMERALD, properties));
     public static final DeferredItem<Item> MOLTEN_SHOVEL = ITEMS.registerItem("molten_shovel", properties -> new ModShovelItem(ModToolMaterials.MOLTEN, properties.fireResistant(), true));
     public static final DeferredItem<Item> MOLTEN_PICKAXE = ITEMS.registerItem("molten_pickaxe", properties -> new ModPickaxeItem(ModToolMaterials.MOLTEN, properties.fireResistant(), true));
-    public static final DeferredItem<Item> MOLTEN_AXE = ITEMS.registerItem("molten_axe", properties -> new ModAxeItem(ModToolMaterials.MOLTEN, 6f, -3.1f, properties.fireResistant(), true));
-    public static final DeferredItem<Item> MOLTEN_HOE = ITEMS.registerItem("molten_hoe", properties -> new ModHoeItem(ModToolMaterials.MOLTEN, -3, 1f, properties.fireResistant(), true));
+    public static final DeferredItem<Item> MOLTEN_AXE = ITEMS.registerItem("molten_axe", properties -> new ModAxeItem(ModToolMaterials.MOLTEN, 6f, -3f, properties.fireResistant(), true));
+    public static final DeferredItem<Item> MOLTEN_HOE = ITEMS.registerItem("molten_hoe", properties -> new ModHoeItem(ModToolMaterials.MOLTEN, -2f, -1f, properties.fireResistant(), true));
+    public static final DeferredItem<Item> MOLTEN_HAMMER = ITEMS.registerItem("molten_hammer", properties -> new HammerItem(ModToolMaterials.MOLTEN, 9f, -3.5f, properties.fireResistant(), true));
     public static final DeferredItem<Item> MOLTEN_SWORD = ITEMS.registerItem("molten_sword", properties -> new ModSwordItem(ModToolMaterials.MOLTEN, properties.fireResistant(), true));
     public static final DeferredItem<Item> HARDENED_DIAMOND_SHOVEL = ITEMS.registerItem("hardened_diamond_shovel", properties -> new ModShovelItem(ModToolMaterials.H_DIAMOND, properties));
     public static final DeferredItem<Item> HARDENED_DIAMOND_PICKAXE = ITEMS.registerItem("hardened_diamond_pickaxe", properties -> new ModPickaxeItem(ModToolMaterials.H_DIAMOND, properties));
-    public static final DeferredItem<Item> HARDENED_DIAMOND_AXE = ITEMS.registerItem("hardened_diamond_axe", properties -> new ModAxeItem(ModToolMaterials.H_DIAMOND, 6f, -3.1f, properties));
-    public static final DeferredItem<Item> HARDENED_DIAMOND_HOE = ITEMS.registerItem("hardened_diamond_hoe", properties -> new ModHoeItem(ModToolMaterials.H_DIAMOND, -3, 1f, properties));
+    public static final DeferredItem<Item> HARDENED_DIAMOND_AXE = ITEMS.registerItem("hardened_diamond_axe", properties -> new ModAxeItem(ModToolMaterials.H_DIAMOND, 5f, -3f, properties));
+    public static final DeferredItem<Item> HARDENED_DIAMOND_HOE = ITEMS.registerItem("hardened_diamond_hoe", properties -> new ModHoeItem(ModToolMaterials.H_DIAMOND, -3f, 0f, properties));
+    public static final DeferredItem<Item> HARDENED_DIAMOND_HAMMER = ITEMS.registerItem("hardened_diamond_hammer", properties -> new HammerItem(ModToolMaterials.H_DIAMOND, 7f, -3.5f, properties));
     public static final DeferredItem<Item> HARDENED_DIAMOND_SWORD = ITEMS.registerItem("hardened_diamond_sword", properties -> new ModSwordItem(ModToolMaterials.H_DIAMOND, properties));
     public static final DeferredItem<Item> OBSIDIAN_SHOVEL = ITEMS.registerItem("obsidian_shovel", properties -> new ModShovelItem(ModToolMaterials.OBSIDIAN, properties));
     public static final DeferredItem<Item> OBSIDIAN_PICKAXE = ITEMS.registerItem("obsidian_pickaxe", properties -> new ModPickaxeItem(ModToolMaterials.OBSIDIAN, properties));
-    public static final DeferredItem<Item> OBSIDIAN_AXE = ITEMS.registerItem("obsidian_axe", properties -> new ModAxeItem(ModToolMaterials.OBSIDIAN, 5f, -3.1f, properties));
-    public static final DeferredItem<Item> OBSIDIAN_HOE = ITEMS.registerItem("obsidian_hoe", properties -> new ModHoeItem(ModToolMaterials.OBSIDIAN, -3, -1f, properties));
+    public static final DeferredItem<Item> OBSIDIAN_AXE = ITEMS.registerItem("obsidian_axe", properties -> new ModAxeItem(ModToolMaterials.OBSIDIAN, 6f, -3.2f, properties));
+    public static final DeferredItem<Item> OBSIDIAN_HOE = ITEMS.registerItem("obsidian_hoe", properties -> new ModHoeItem(ModToolMaterials.OBSIDIAN, -1f, -2f, properties));
+    public static final DeferredItem<Item> OBSIDIAN_HAMMER = ITEMS.registerItem("obsidian_hammer", properties -> new HammerItem(ModToolMaterials.OBSIDIAN, 9f, -3.7f, properties));
     public static final DeferredItem<Item> OBSIDIAN_SWORD = ITEMS.registerItem("obsidian_sword", properties -> new ModSwordItem(ModToolMaterials.OBSIDIAN, properties));
     public static final DeferredItem<Item> ENDERITE_SHOVEL = ITEMS.registerItem("enderite_shovel", properties -> new ModShovelItem(ModToolMaterials.ENDERITE, properties.fireResistant()));
     public static final DeferredItem<Item> ENDERITE_PICKAXE = ITEMS.registerItem("enderite_pickaxe", properties -> new ModPickaxeItem(ModToolMaterials.ENDERITE, properties.fireResistant()));
-    public static final DeferredItem<Item> ENDERITE_AXE = ITEMS.registerItem("enderite_axe", properties -> new ModAxeItem(ModToolMaterials.ENDERITE, 4f, -3.1f, properties.fireResistant()));
-    public static final DeferredItem<Item> ENDERITE_HOE = ITEMS.registerItem("enderite_hoe", properties -> new ModHoeItem(ModToolMaterials.ENDERITE, -3, 1f, properties.fireResistant()));
+    public static final DeferredItem<Item> ENDERITE_AXE = ITEMS.registerItem("enderite_axe", properties -> new ModAxeItem(ModToolMaterials.ENDERITE, 5f, -3f, properties.fireResistant()));
+    public static final DeferredItem<Item> ENDERITE_HOE = ITEMS.registerItem("enderite_hoe", properties -> new ModHoeItem(ModToolMaterials.ENDERITE, -4f, 0f, properties.fireResistant()));
+    public static final DeferredItem<Item> ENDERITE_HAMMER = ITEMS.registerItem("enderite_hammer", properties -> new HammerItem(ModToolMaterials.ENDERITE, 7f, -3.5f, properties.fireResistant()));
     public static final DeferredItem<Item> ENDERITE_SWORD = ITEMS.registerItem("enderite_sword", properties -> new ModSwordItem(ModToolMaterials.ENDERITE, properties.fireResistant()));
 
     /* ARMOR */
@@ -95,7 +109,7 @@ public class ModItems {
     public static final DeferredItem<Item> ENDERITE_BOW = ITEMS.registerItem("enderite_bow", properties -> new ModBowItem(ENDERITE_INGOT.get(), 1.1f, 60000, 20, properties.durability(3225)));
 
     /* SHIELDS */
-    public static final DeferredItem<Item> OBSIDIAN_SHIELD = ITEMS.registerItem("obsidian_shield", properties -> new ModShieldItem(1250, ModTags.Items.OBSIDIAN_REPAIR_MATERIALS, properties.fireResistant()));
+    public static final DeferredItem<Item> OBSIDIAN_SHIELD = ITEMS.registerItem("obsidian_shield", properties -> new ModShieldItem(1250, ModTags.Items.OBSIDIAN_TOOL_MATERIALS, properties.fireResistant()));
 
 
     public static void register(IEventBus eventBus) {

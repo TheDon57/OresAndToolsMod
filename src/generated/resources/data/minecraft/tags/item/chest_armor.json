@@ -1,10 +1,10 @@
 {
   "values": [
     "oresandtools:steel_chestplate",
-    "oresandtools:hardened_diamond_chestplate",
-    "oresandtools:molten_chestplate",
-    "oresandtools:enderite_chestplate",
     "oresandtools:emerald_chestplate",
-    "oresandtools:obsidian_chestplate"
+    "oresandtools:molten_chestplate",
+    "oresandtools:hardened_diamond_chestplate",
+    "oresandtools:obsidian_chestplate",
+    "oresandtools:enderite_chestplate"
   ]
 }
