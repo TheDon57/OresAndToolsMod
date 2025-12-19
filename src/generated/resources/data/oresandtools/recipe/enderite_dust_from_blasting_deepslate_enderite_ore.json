@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 90,
+  "experience": 2.0,
+  "group": "enderite_dust",
+  "ingredient": "oresandtools:deepslate_enderite_ore",
+  "result": {
+    "count": 1,
+    "id": "oresandtools:enderite_dust"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "remove": [
+    "minecraft:chest"
+  ],
+  "values": [
+    "oresandtools:steel_ingot",
+    "oresandtools:enderite_ingot",
+    "minecraft:chest",
+    "#oresandtools:enderite_chest_materials"
+  ]
+}

@@ -7,9 +7,9 @@ import net.minecraft.world.item.equipment.EquipmentAsset;
 
 public interface ModEquipmentAssets {
     ResourceKey<EquipmentAsset> STEEL = createId("steel");
-    ResourceKey<EquipmentAsset> VALYRIAN = createId("valyrian");
+    ResourceKey<EquipmentAsset> ENDERITE = createId("enderite");
     ResourceKey<EquipmentAsset> H_DIAMOND = createId("hardened_diamond");
-    ResourceKey<EquipmentAsset> HOT_H_DIAMOND = createId("hot_hardened_diamond");
+    ResourceKey<EquipmentAsset> MOLTEN = createId("molten");
     ResourceKey<EquipmentAsset> EMERALD = createId("emerald");
     ResourceKey<EquipmentAsset> OBSIDIAN = createId("obsidian");
 

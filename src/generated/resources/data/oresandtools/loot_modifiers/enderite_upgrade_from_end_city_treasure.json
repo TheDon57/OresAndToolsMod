@@ -1,0 +1,14 @@
+{
+  "type": "oresandtools:item",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:chests/end_city_treasure"
+    },
+    {
+      "chance": 0.5,
+      "condition": "minecraft:random_chance"
+    }
+  ],
+  "item": "oresandtools:enderite_upgrade_smithing_template"
+}

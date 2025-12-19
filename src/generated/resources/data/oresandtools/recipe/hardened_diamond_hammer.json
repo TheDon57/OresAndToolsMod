@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": "#oresandtools:hardened_diamond_tool_materials",
+    "S": "minecraft:stick"
+  },
+  "pattern": [
+    "###",
+    "###",
+    " S "
+  ],
+  "result": {
+    "count": 1,
+    "id": "oresandtools:hardened_diamond_hammer"
+  }
+}

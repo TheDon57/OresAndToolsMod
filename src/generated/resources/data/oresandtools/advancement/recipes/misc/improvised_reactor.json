@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_improvised_reactor": {
+    "has_improvised_reactor_materials": {
       "conditions": {
         "items": [
           {
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_improvised_reactor"
+      "has_improvised_reactor_materials"
     ]
   ],
   "rewards": {

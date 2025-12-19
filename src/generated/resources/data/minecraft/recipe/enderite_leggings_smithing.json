@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "#oresandtools:enderite_tool_materials",
+  "base": "minecraft:netherite_leggings",
+  "result": {
+    "id": "oresandtools:enderite_leggings"
+  },
+  "template": "oresandtools:enderite_upgrade_smithing_template"
+}

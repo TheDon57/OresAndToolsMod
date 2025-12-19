@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_obsidian_shield": {
+    "has_obsidian_shield_materials": {
       "conditions": {
         "items": [
           {
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_obsidian_shield"
+      "has_obsidian_shield_materials"
     ]
   ],
   "rewards": {

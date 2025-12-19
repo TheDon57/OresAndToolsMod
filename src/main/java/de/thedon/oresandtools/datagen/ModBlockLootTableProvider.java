@@ -33,11 +33,12 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         /* NORMAL BLOCKS */
         dropSelf(ModBlocks.HARDENED_DIAMOND_BLOCK.get());
         dropSelf(ModBlocks.STEEL_BLOCK.get());
-        dropSelf(ModBlocks.VALYRIAN_CHEST.get());
+        dropSelf(ModBlocks.ENDERITE_BLOCK.get());
+        dropSelf(ModBlocks.ENDERITE_CHEST.get());
         /* ORES */
-        add(ModBlocks.VALYRIAN_ORE.get(), this::createValyrianOreDrops);
-        add(ModBlocks.DEEPSLATE_VALYRIAN_ORE.get(), this::createValyrianOreDrops);
-        add(ModBlocks.ENDSTONE_VALYRIAN_ORE.get(), this::createValyrianOreDrops);
+        add(ModBlocks.ENDERITE_ORE.get(), this::createEnderiteOreDrops);
+        add(ModBlocks.DEEPSLATE_ENDERITE_ORE.get(), this::createEnderiteOreDrops);
+        add(ModBlocks.ENDSTONE_ENDERITE_ORE.get(), this::createEnderiteOreDrops);
         add(ModBlocks.OBSIDIAN_ORE.get(), this::createObsidianOreDrops);
         add(ModBlocks.DEEPSLATE_OBSIDIAN_ORE.get(), this::createObsidianOreDrops);
         add(ModBlocks.XP_ORE.get(), (pBlock) -> createSingleItemTableWithSilkTouch(pBlock, Items.COBBLESTONE));
@@ -58,13 +59,13 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         return ModBlocks.BLOCKS.getEntries().stream().map(Holder::value)::iterator;
     }
 
-    protected LootTable.Builder createValyrianOreDrops(Block block) {
+    protected LootTable.Builder createEnderiteOreDrops(Block block) {
         HolderLookup.RegistryLookup<Enchantment> registrylookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
         return createSilkTouchDispatchTable(block,
-                this.applyExplosionDecay(block, LootItem.lootTableItem(ModItems.VALYRIAN_DUST.get())
+                this.applyExplosionDecay(block, LootItem.lootTableItem(ModItems.ENDERITE_DUST.get())
                                 .apply(SetItemCountFunction.setCount(BinomialDistributionGenerator.binomial(3, 0.5F)))
                                 .when(LootItemRandomChanceCondition.randomChance(0.25F)))
-                        .append(LootItem.lootTableItem(ModItems.VALYRIAN_DUST.get())
+                        .append(LootItem.lootTableItem(ModItems.ENDERITE_DUST.get())
                                 .apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE)))));
     }
 

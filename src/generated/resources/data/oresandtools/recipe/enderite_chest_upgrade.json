@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "S": "oresandtools:steel_ingot",
+    "V": "oresandtools:enderite_ingot"
+  },
+  "pattern": [
+    "SVS",
+    "S S",
+    "SSS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "oresandtools:enderite_chest_upgrade"
+  }
+}

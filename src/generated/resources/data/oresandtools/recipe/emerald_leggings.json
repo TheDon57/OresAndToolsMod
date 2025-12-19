@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "#": "minecraft:emerald"
+    "#": "#oresandtools:emerald_tool_materials"
   },
   "pattern": [
     "###",

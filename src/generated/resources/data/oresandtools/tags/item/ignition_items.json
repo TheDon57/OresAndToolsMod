@@ -1,10 +1,10 @@
 {
   "values": [
-    "oresandtools:hot_hardened_diamond",
-    "oresandtools:hot_hardened_diamond_axe",
-    "oresandtools:hot_hardened_diamond_hoe",
-    "oresandtools:hot_hardened_diamond_pickaxe",
-    "oresandtools:hot_hardened_diamond_shovel",
-    "oresandtools:hot_hardened_diamond_sword"
+    "oresandtools:molten_ingot",
+    "oresandtools:molten_axe",
+    "oresandtools:molten_hoe",
+    "oresandtools:molten_pickaxe",
+    "oresandtools:molten_shovel",
+    "oresandtools:molten_sword"
   ]
 }

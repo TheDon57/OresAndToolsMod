@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "S": "minecraft:string",
+    "V": "oresandtools:enderite_ingot"
+  },
+  "pattern": [
+    " VS",
+    "V S",
+    " VS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "oresandtools:enderite_bow"
+  }
+}

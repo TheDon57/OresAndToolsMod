@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": "minecraft:chest",
+    "S": "oresandtools:steel_ingot",
+    "V": "oresandtools:enderite_ingot"
+  },
+  "pattern": [
+    "SVS",
+    "SCS",
+    "SSS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "oresandtools:enderite_chest"
+  }
+}

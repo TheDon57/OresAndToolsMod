@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_molten_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#oresandtools:molten_tool_materials"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:molten_chestplate_smithing"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_molten_ingot"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:molten_chestplate_smithing"
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "#oresandtools:molten_tool_materials",
+  "base": "minecraft:diamond_sword",
+  "result": {
+    "id": "oresandtools:molten_sword"
+  },
+  "template": "minecraft:netherite_upgrade_smithing_template"
+}

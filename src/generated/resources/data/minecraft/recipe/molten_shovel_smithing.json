@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "#oresandtools:molten_tool_materials",
+  "base": "minecraft:diamond_shovel",
+  "result": {
+    "id": "oresandtools:molten_shovel"
+  },
+  "template": "minecraft:netherite_upgrade_smithing_template"
+}

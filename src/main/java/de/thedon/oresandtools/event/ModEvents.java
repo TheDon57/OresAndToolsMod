@@ -4,13 +4,13 @@ import de.thedon.oresandtools.Config;
 import de.thedon.oresandtools.OresAndToolsMod;
 import de.thedon.oresandtools.block.ModBlocks;
 import de.thedon.oresandtools.item.ModItems;
+import de.thedon.oresandtools.item.custom.HammerItem;
 import de.thedon.oresandtools.util.ModTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.TriState;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -23,7 +23,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.AbstractSkeleton;
 import net.minecraft.world.entity.monster.Zombie;
-import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -39,7 +38,6 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.item.ItemExpireEvent;
 import net.neoforged.neoforge.event.entity.item.ItemTossEvent;
-import net.neoforged.neoforge.event.entity.living.LivingDropsEvent;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 import net.neoforged.neoforge.event.entity.living.LivingShieldBlockEvent;
 import net.neoforged.neoforge.event.entity.player.AttackEntityEvent;
@@ -48,14 +46,36 @@ import net.neoforged.neoforge.event.level.BlockEvent;
 import net.neoforged.neoforge.event.tick.LevelTickEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class ModEvents {
     @EventBusSubscriber(modid = OresAndToolsMod.MOD_ID)
     public static class NeoForgeEvents {
+        private static final Set<BlockPos> HARVESTED_BLOCKS = new HashSet<>();
+
+        @SubscribeEvent
+        public static void onHammerUsage(BlockEvent.BreakEvent event) {
+            Player player = event.getPlayer();
+            ItemStack mainHandItem = player.getMainHandItem();
+
+            if(mainHandItem.getItem() instanceof HammerItem hammer && player instanceof ServerPlayer serverPlayer) {
+                BlockPos initialBlockPos = event.getPos();
+                if(HARVESTED_BLOCKS.contains(initialBlockPos)) {
+                    return;
+                }
+
+                for(BlockPos pos : HammerItem.getBlocksToBeDestroyed(1, initialBlockPos, serverPlayer)) {
+                    if(pos == initialBlockPos || !hammer.isCorrectToolForDrops(mainHandItem, event.getLevel().getBlockState(pos))) {
+                        continue;
+                    }
+
+                    HARVESTED_BLOCKS.add(pos);
+                    serverPlayer.gameMode.destroyBlock(pos);
+                    HARVESTED_BLOCKS.remove(pos);
+                }
+            }
+        }
+
         @SubscribeEvent
         public static void onLivingShieldBlocked(LivingShieldBlockEvent event) {
             if (event.getEntity() instanceof Player player) {
@@ -101,11 +121,11 @@ public class ModEvents {
                         .toList();
 
                 if (armorItems.size() == 4 && !Config.disableSetBonuses) {
-                    if (armorItems.stream().allMatch(stack -> stack.is(ModTags.Items.VALYRIAN_ARMOR_SET))) {
+                    if (armorItems.stream().allMatch(stack -> stack.is(ModTags.Items.ENDERITE_ARMOR_SET))) {
                         event.setCanceled(event.getSource().is(DamageTypes.ON_FIRE) || event.getSource().is(DamageTypes.IN_FIRE));
                         player.clearFire();
                     }
-                    if (armorItems.stream().allMatch(stack -> stack.is(ModTags.Items.HOT_HARDENED_DIAMOND_ARMOR_SET))) {
+                    if (armorItems.stream().allMatch(stack -> stack.is(ModTags.Items.MOLTEN_ARMOR_SET))) {
                         DamageSource source = event.getSource();
                         if (source.getDirectEntity() instanceof LivingEntity living && source.is(DamageTypes.MOB_ATTACK)) {
                             living.igniteForTicks(Config.hotDiaFireReflectDuration);
@@ -196,13 +216,13 @@ public class ModEvents {
         }
     
     
-        private static final ArrayList<ItemEntity> droppedDiamonds = new ArrayList<>();
+        private static final ArrayList<ItemEntity> DROPPED_INGOTS = new ArrayList<>();
     
         @SubscribeEvent
         public static void onItemToss(ItemTossEvent event) {
             ItemEntity itemEntity = event.getEntity();
-            if (itemEntity.getItem().getItem() == ModItems.HARDENED_DIAMOND.get()) {
-                droppedDiamonds.add(itemEntity);
+            if (itemEntity.getItem().getItem() == Items.NETHERITE_INGOT) {
+                DROPPED_INGOTS.add(itemEntity);
             }
         }
 
@@ -211,11 +231,11 @@ public class ModEvents {
             ItemEntity itemEntity = event.getEntity();
             if (itemEntity.isInLava()) {
                 Item item = itemEntity.getItem().getItem();
-                if (item == ModItems.HARDENED_DIAMOND.get() ||
-                    item == ModItems.HOT_HARDENED_DIAMOND.get() ||
-                    item == ModItems.HEATING_HARDENED_DIAMOND_1.get() ||
-                    item == ModItems.HEATING_HARDENED_DIAMOND_2.get() ||
-                    item == ModItems.HEATING_HARDENED_DIAMOND_3.get()) {
+                if (item == Items.NETHERITE_INGOT ||
+                    item == ModItems.MOLTEN_INGOT.get() ||
+                    item == ModItems.HEATING_INGOT_1.get() ||
+                    item == ModItems.HEATING_INGOT_2.get() ||
+                    item == ModItems.HEATING_INGOT_3.get()) {
                     event.addExtraLife(1000);
                 }
             }
@@ -223,27 +243,27 @@ public class ModEvents {
     
         @SubscribeEvent
         public static void onPreLevelTick(LevelTickEvent.Pre event) {
-            for (ItemEntity diamond : droppedDiamonds) {
-                int count = diamond.getItem().getCount();
-                if (diamond.isInLava()) {
-                    if (diamond.getAge() >= 300) {
-                        diamond.setItem(new ItemStack(ModItems.HOT_HARDENED_DIAMOND.get(), count));
+            for (ItemEntity ingot : DROPPED_INGOTS) {
+                int count = ingot.getItem().getCount();
+                if (ingot.isInLava()) {
+                    if (ingot.getAge() >= 300) {
+                        ingot.setItem(new ItemStack(ModItems.MOLTEN_INGOT.get(), count));
                     }
-                    else if (diamond.getAge() >= 225) {
-                        diamond.setItem(new ItemStack(ModItems.HEATING_HARDENED_DIAMOND_3.get(), count));
+                    else if (ingot.getAge() >= 225) {
+                        ingot.setItem(new ItemStack(ModItems.HEATING_INGOT_3.get(), count));
                     }
-                    else if (diamond.getAge() >= 150) {
-                        diamond.setItem(new ItemStack(ModItems.HEATING_HARDENED_DIAMOND_2.get(), count));
+                    else if (ingot.getAge() >= 150) {
+                        ingot.setItem(new ItemStack(ModItems.HEATING_INGOT_2.get(), count));
                     }
-                    else if (diamond.getAge() >= 75) {
-                        diamond.setItem(new ItemStack(ModItems.HEATING_HARDENED_DIAMOND_1.get(), count));
+                    else if (ingot.getAge() >= 75) {
+                        ingot.setItem(new ItemStack(ModItems.HEATING_INGOT_1.get(), count));
                     }
                 } else {
-                    if (diamond.getAge() >= 6000) {
-                        diamond.remove(Entity.RemovalReason.DISCARDED);
+                    if (ingot.getAge() >= 6000) {
+                        ingot.remove(Entity.RemovalReason.DISCARDED);
                     }
-                    else if (!diamond.isInLava() && diamond.getItem().getItem() != ModItems.HOT_HARDENED_DIAMOND.get()) {
-                        diamond.setItem(new ItemStack(ModItems.HARDENED_DIAMOND.get(), count));
+                    else if (!ingot.isInLava() && ingot.getItem().getItem() != ModItems.MOLTEN_INGOT.get()) {
+                        ingot.setItem(new ItemStack(Items.NETHERITE_INGOT, count));
                     }
                 }
             }
@@ -252,9 +272,9 @@ public class ModEvents {
         @SubscribeEvent
         public static void onPreItemEntityPickup(ItemEntityPickupEvent.Pre event) {
             Item item = event.getItemEntity().getItem().getItem();
-            if (item == ModItems.HEATING_HARDENED_DIAMOND_1.get() ||
-                item == ModItems.HEATING_HARDENED_DIAMOND_2.get() ||
-                item == ModItems.HEATING_HARDENED_DIAMOND_3.get()) {
+            if (item == ModItems.HEATING_INGOT_1.get() ||
+                item == ModItems.HEATING_INGOT_2.get() ||
+                item == ModItems.HEATING_INGOT_3.get()) {
                 event.setCanPickup(TriState.FALSE);
             }
         }
@@ -262,8 +282,8 @@ public class ModEvents {
         @SubscribeEvent
         public static void onPostItemEntityPickup(ItemEntityPickupEvent.Post event) {
             Item item = event.getOriginalStack().getItem();
-            if (item == ModItems.HOT_HARDENED_DIAMOND.get() || item == ModItems.HARDENED_DIAMOND.get()) {
-                droppedDiamonds.remove(event.getItemEntity());
+            if (item == ModItems.MOLTEN_INGOT.get() || item == Items.NETHERITE_INGOT) {
+                DROPPED_INGOTS.remove(event.getItemEntity());
             }
         }
     }
